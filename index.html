@@ -1,1745 +1,1471 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <title>Floralte | Diseño Floral</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Floralte — Ramos, arreglos y eventos</title>
+  <meta name="description" content="Floralte Diseño Floral: ramos, arreglos, eventos y decoración. Envío gratis en Guadalajara, Zapopan y Tlaquepaque." />
+  <meta name="theme-color" content="#ffd1e8" />
 
-  <!-- Tipografías -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@500;600&display=swap" rel="stylesheet">
+  <!-- Fonts -->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,700&family=Cinzel:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
   <style>
-    :root {
-      --color-primary: #d14f7b;
-      --color-primary-soft: #ffe4f1;
-      --color-accent: #ffb4c8;
-      --color-bg: #fffafc;
-      --color-text: #2d2330;
-      --shadow-soft: 0 10px 25px rgba(0, 0, 0, 0.08);
+    :root{
+      --pink: #ff2f7d;
+      --pink-2: #ff6aa8;
+      --pink-soft: #ffe2ee;
+      --bg: #fff7fb;
+      --card: #ffffff;
+      --ink: #2d1b2a;
+      --muted: rgba(45,27,42,.72);
+      --line: rgba(0,0,0,.10);
+      --shadow: 0 12px 28px rgba(0,0,0,.12);
       --radius-xl: 24px;
-    }
-
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(180deg, #ffe4ec, #fff8d6, #e8ffe8);
-      color: var(--color-text);
-      scroll-behavior: smooth;
-      font-size: 15px;
-    }
-
-    h1, h2, h3, h4 {
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      color: #8d3f6a;
-      margin: 0 0 18px 0;
-      letter-spacing: 0.3px;
-    }
-
-    h2 { font-size: 28px; }
-    h3 { font-size: 20px; }
-
-    p {
-      line-height: 1.6;
-      margin: 0 0 14px 0;
-    }
-
-    a { color: inherit; text-decoration: none; }
-
-    /* ========= ANIMACIONES BASE ========= */
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(18px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes subtleFloat {
-      0%   { transform: translateY(0px); }
-      50%  { transform: translateY(-4px); }
-      100% { transform: translateY(0px); }
-    }
-
-    .fade-up { opacity: 0; animation: fadeUp 0.8s ease forwards; }
-    .fade-up-delay { opacity: 0; animation: fadeUp 0.9s ease forwards; animation-delay: 0.18s; }
-
-    /* ========= HEADER / MENÚ MOBILE-FIRST ========= */
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(255, 255, 255, 0.98);
-      backdrop-filter: blur(12px);
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-    }
-
-    .header-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 8px 14px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-      min-height: 56px;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      color: var(--color-primary);
-    }
-
-    .logo-icon {
-      font-size: 22px;
-      animation: subtleFloat 3s ease-in-out infinite;
-    }
-
-    .logo-text-main {
-      font-family: 'Dancing Script', cursive;
-      font-size: 22px;
-      letter-spacing: 0.5px;
-    }
-
-    .logo-text-sub {
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: #8c6f85;
-    }
-
-    .logo-text-wrapper {
-      display: flex;
-      flex-direction: column;
-      line-height: 1.1;
-    }
-
-    /* Menú móvil */
-    nav {
-      position: absolute;
-      top: 56px;
-      left: 0;
-      right: 0;
-      background: #ffffffef;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 0 16px;
-      gap: 12px;
-      max-height: 0;
-      overflow: hidden;
-      opacity: 0;
-      transform: translateY(-8px);
-      transition:
-        max-height 0.25s ease-out,
-        opacity 0.22s ease-out,
-        transform 0.22s ease-out;
-    }
-
-    nav.open {
-      max-height: 360px;
-      opacity: 1;
-      transform: translateY(0);
-      padding-bottom: 12px;
-      padding-top: 6px;
-    }
-
-    .menu {
-      display: flex;
-      flex-direction: column;
-      list-style: none;
-      gap: 6px;
-      padding: 0;
-      margin: 0;
-      width: 100%;
-    }
-
-    .menu > li > a {
-      font-size: 14px;
-      color: #555;
-      padding: 6px 0;
-      display: inline-block;
-      border-bottom: 1px solid transparent;
-      transition: color 0.2s ease, border-color 0.2s ease;
-      cursor: pointer;
-    }
-
-    .menu > li > a:hover {
-      color: var(--color-primary);
-      border-bottom-color: var(--color-primary-soft);
-    }
-
-    .submenu {
-      list-style: none;
-      padding-left: 10px;
-      margin: 2px 0 0 0;
-    }
-
-    .submenu a {
-      font-size: 13px;
-      color: #777;
-      padding: 3px 0;
-      display: inline-block;
-      transition: color 0.2s ease;
-      cursor: pointer;
-    }
-
-    .submenu a:hover { color: var(--color-primary); }
-
-    .menu-cta-wrapper {
-      width: 100%;
-      padding-top: 4px;
-      border-top: 1px solid #f1e1ea;
-      margin-top: 4px;
-    }
-
-    .btn-cta {
-      background: var(--color-primary);
-      color: #fff;
-      border-radius: 999px;
-      padding: 9px 16px;
-      font-size: 14px;
-      font-weight: 600;
-      text-decoration: none;
-      box-shadow: 0 8px 20px rgba(209, 79, 123, 0.4);
-      border: none;
-      cursor: pointer;
-      white-space: nowrap;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      transition:
-        transform 0.15s ease,
-        box-shadow 0.15s ease,
-        background 0.15s ease,
-        filter 0.15s ease;
-    }
-
-    .btn-cta:hover {
-      background: #e0638a;
-      transform: translateY(-1px) scale(1.01);
-      box-shadow: 0 12px 28px rgba(209, 79, 123, 0.5);
-      filter: brightness(1.05);
-    }
-
-    .btn-cta:active {
-      transform: translateY(0) scale(0.98);
-      box-shadow: 0 6px 16px rgba(209, 79, 123, 0.35);
-    }
-
-    .menu-toggle {
-      display: block;
-      background: none;
-      border: none;
-      font-size: 26px;
-      cursor: pointer;
-      color: var(--color-primary);
-      padding: 6px;
-      border-radius: 999px;
-      transition: background 0.2s ease, transform 0.2s ease;
-    }
-
-    .menu-toggle:active {
-      transform: scale(0.95);
-      background: #ffe6f0;
-    }
-
-    /* ========= SECCIONES COMO "PÁGINAS" ========= */
-
-    section { padding: 52px 14px; }
-
-    .section-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .view-section {
-      display: none;
-      min-height: calc(100vh - 56px);
-    }
-
-    .view-section.active { display: block; }
-
-    /* ========= HERO ========= */
-
-    .hero-section { padding: 0; }
-    #inicio.hero-section { padding: 0; }
-
-    .hero {
-      position: relative;
-      min-height: calc(100vh - 56px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 78px 16px 40px;
-      overflow: hidden;
-      background-image: url("images/por1.jpg");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(circle at top left, rgba(255, 255, 255, 0.96), transparent 55%),
-        linear-gradient(120deg, rgba(255, 250, 252, 0.9), rgba(255, 228, 241, 0.45), rgba(0, 0, 0, 0.15));
-      z-index: 1;
-    }
-
-    .hero-inner {
-      max-width: 1200px;
-      width: 100%;
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-      z-index: 2;
-      color: #2c1d2b;
-    }
-
-    .hero-text { padding: 0; }
-    .hero-text.fade-up { animation-delay: 0.05s; }
-
-    .hero-text h1 {
-      font-size: 28px;
-      line-height: 1.2;
-      color: #7f325c;
-      text-shadow: 0 2px 10px rgba(255, 255, 255, 0.9);
-    }
-
-    .hero-text p {
-      font-size: 15px;
-      margin-top: 10px;
-      margin-bottom: 18px;
-      color: #5a4a5e;
-      max-width: 440px;
-    }
-
-    .hero-badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 12px;
-      font-size: 12px;
-    }
-
-    .badge {
-      background: #fff;
-      border-radius: 999px;
-      padding: 5px 11px;
-      box-shadow: 0 5px 12px rgba(0,0,0,0.06);
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      align-items: center;
-      margin-top: 8px;
-    }
-
-    .btn-outline {
-      border-radius: 999px;
-      border: 1px solid var(--color-primary);
-      background: #fff;
-      padding: 9px 16px;
-      font-size: 13px;
-      font-weight: 500;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      text-decoration: none;
-      color: var(--color-primary);
-      box-shadow: 0 6px 16px rgba(209, 79, 123, 0.12);
-      transition:
-        background 0.15s ease,
-        color 0.15s ease,
-        transform 0.15s ease,
-        box-shadow 0.15s ease;
-    }
-
-    .btn-outline:hover {
-      background: var(--color-primary-soft);
-      transform: translateY(-1px);
-      box-shadow: 0 10px 22px rgba(209, 79, 123, 0.2);
-    }
-
-    .btn-outline:active { transform: translateY(0); }
-
-    .hero-side-card {
-      background: rgba(255, 255, 255, 0.96);
-      border-radius: var(--radius-xl);
-      padding: 16px 18px;
-      box-shadow: var(--shadow-soft);
-      font-size: 13px;
-    }
-
-    .hero-side-card.fade-up-delay { animation-delay: 0.22s; }
-
-    .hero-side-card h3 { font-size: 18px; margin-bottom: 8px; }
-
-    .hero-side-card ul {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 8px 0;
-      font-size: 13px;
-    }
-
-    .hero-side-card li {
-      margin-bottom: 6px;
-      display: flex;
-      align-items: flex-start;
-      gap: 6px;
-    }
-
-    .hero-side-card li span { font-size: 16px; margin-top: 2px; }
-
-    /* ========= SECCIONES GENERALES ========= */
-
-    .section-header { text-align: center; margin-bottom: 26px; }
-
-    .section-header p {
-      max-width: 640px;
-      margin: 0 auto;
-      font-size: 13px;
-      color: #5c4b61;
-    }
-
-    .section-tag {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 1.6px;
-      color: var(--color-primary);
-      font-weight: 600;
-      margin-bottom: 6px;
-    }
-
-    .section-divider {
-      width: 60px;
-      height: 3px;
-      margin: 12px auto 0;
-      border-radius: 999px;
-      background: linear-gradient(90deg, #f7a1c6, #ffd5e5);
-    }
-
-    /* ========= GALERÍA ========= */
-
-    .galeria {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
-    }
-
-    .galeria img {
-      width: 100%;
-      display: block;
-      height: 170px;
-      object-fit: cover;
-      border-radius: 18px;
-      box-shadow: var(--shadow-soft);
-      transition: transform 0.22s ease, box-shadow 0.22s ease, filter 0.22s ease;
-    }
-
-    .galeria img:hover {
-      transform: translateY(-3px) scale(1.01);
-      box-shadow: 0 12px 26px rgba(0,0,0,0.18);
-      filter: brightness(1.02);
-    }
-
-    /* ========= ARMA TU RAMO ========= */
-
-    #arma-tu-ramo { background: #fff; }
-
-    .builder-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-    }
-
-    .builder-panel {
-      background: #fff7fb;
-      border-radius: var(--radius-xl);
-      padding: 16px 16px 18px;
-      box-shadow: var(--shadow-soft);
-    }
-
-    .builder-panel p { font-size: 13px; color: #666; }
-
-    .builder-flowers {
-      margin-top: 10px;
-      display: grid;
-      grid-template-columns: minmax(0, 1fr);
-      gap: 12px;
-    }
-
-    .flor-card {
-      background: #fff;
-      border-radius: 18px;
-      padding: 10px 12px 12px;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.06);
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
-    }
-
-    .flor-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 22px rgba(0,0,0,0.12);
-    }
-
-    .flor-name { font-weight: 600; font-size: 15px; color: #7b3f5e; }
-    .flor-precio { font-size: 13px; color: #777; }
-
-    .flor-controls {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      align-items: center;
-      margin-top: 4px;
-    }
-
-    .flor-controls label { font-size: 11px; color: #666; }
-
-    .flor-select, .flor-qty {
-      border-radius: 999px;
-      border: 1px solid #ddd;
-      padding: 5px 9px;
-      font-size: 13px;
-      background: #fff;
-    }
-
-    .flor-qty { width: 70px; }
-
-    .flor-header {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 6px;
-    }
-
-    .flor-image-wrap {
-      flex: 0 0 64px;
-      height: 64px;
-      border-radius: 14px;
-      overflow: hidden;
-      background: #f9f0f5;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.06);
-    }
-
-    .flor-image-wrap img.flor-image {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .btn-add {
-      border-radius: 999px;
-      border: none;
-      background: var(--color-primary);
-      color: #fff;
-      padding: 7px 12px;
-      font-size: 12px;
-      font-weight: 600;
-      cursor: pointer;
-      margin-left: auto;
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      box-shadow: 0 6px 16px rgba(209, 79, 123, 0.3);
-      transition:
-        background 0.15s ease,
-        transform 0.15s ease,
-        box-shadow 0.15s ease;
-    }
-
-    .btn-add:hover {
-      background: #e0638a;
-      transform: translateY(-1px);
-      box-shadow: 0 9px 20px rgba(209, 79, 123, 0.4);
-    }
-
-    .btn-add:active {
-      transform: translateY(0);
-      box-shadow: 0 4px 10px rgba(209, 79, 123, 0.3);
-    }
-
-    .builder-summary { display: flex; flex-direction: column; gap: 10px; }
-
-    .summary-list {
-      max-height: 260px;
-      overflow-y: auto;
-      background: #fff;
-      border-radius: 14px;
-      padding: 10px 12px;
-      border: 1px solid #f1c8da;
-    }
-
-    .summary-empty { font-size: 13px; color: #777; }
-
-    .summary-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 13px;
-      padding: 4px 0;
-      border-bottom: 1px dashed #f1d2df;
-    }
-
-    .summary-item:last-child { border-bottom: none; }
-    .summary-item small { color: #777; }
-
-    .summary-total {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-weight: 600;
-      margin-top: 6px;
-      font-size: 15px;
-    }
-
-    .summary-actions {
-      margin-top: 10px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .btn-secondary {
-      border-radius: 999px;
-      border: 1px solid #ccc;
-      background: #fff;
-      padding: 8px 14px;
-      font-size: 13px;
-      cursor: pointer;
-      transition:
-        background 0.15s ease,
-        transform 0.15s ease,
-        box-shadow 0.15s ease;
-    }
-
-    .btn-secondary:hover {
-      background: #fdf3f8;
-      transform: translateY(-1px);
-      box-shadow: 0 8px 18px rgba(0,0,0,0.06);
-    }
-
-    .btn-secondary:active { transform: translateY(0); }
-
-    .btn-whatsapp {
-      border-radius: 999px;
-      border: none;
-      background: #25d366;
-      color: #fff;
-      padding: 9px 16px;
-      font-size: 14px;
-      font-weight: 600;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      box-shadow: 0 10px 24px rgba(0,0,0,0.24);
-      transition:
-        background 0.15s ease,
-        transform 0.15s ease,
-        box-shadow 0.15s ease;
-    }
-
-    .btn-whatsapp:hover {
-      background: #1ebe5a;
-      transform: translateY(-1px);
-      box-shadow: 0 14px 28px rgba(0,0,0,0.28);
-    }
-
-    .btn-whatsapp:active { transform: translateY(0); }
-
-    .builder-note {
-      font-size: 11px;
-      color: #777;
-      margin-top: 6px;
-    }
-
-    /* ========= NUEVO: ENVOLTURA (PAPEL / ESTILO / COLOR) ========= */
-    .wrap-card {
-      margin-top: 10px;
-      background: #fff;
-      border-radius: 18px;
-      padding: 12px 12px 14px;
-      border: 1px dashed #f1c8da;
-    }
-
-    .wrap-card h4 {
-      font-size: 16px;
-      margin-bottom: 6px;
-      font-style: normal;
-      color: #7b3f5e;
-    }
-
-    .wrap-card p {
-      font-size: 12px;
-      color: #666;
-      margin-bottom: 10px;
-    }
-
-    .wrap-grid {
-      display: grid;
-      gap: 12px;
-      grid-template-columns: 1fr;
-    }
-
-    @media(min-width: 768px){
-      .wrap-grid{ grid-template-columns: 1fr 1fr; }
-      .wrap-grid .wrap-field:nth-child(3){ grid-column: 1 / -1; }
-    }
-
-    .wrap-field label {
-      display: block;
-      font-size: 12px;
-      font-weight: 600;
-      color: #6a5268;
-      margin-bottom: 8px;
-    }
-
-    .segmented {
-      display:flex;
-      gap:10px;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-
-    .seg-btn {
-      border: 1px solid rgba(0,0,0,.12);
-      background: rgba(255,255,255,.98);
-      padding: 10px 12px;
-      border-radius: 14px;
-      cursor: pointer;
-      font-size: 13px;
-      transition: transform .08s ease, box-shadow .2s ease, border-color .2s ease;
-    }
-
-    .seg-btn:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 10px 22px rgba(0,0,0,.06);
-    }
-
-    .seg-btn.isActive {
-      border-color: rgba(209, 79, 123, .45);
-      box-shadow: 0 10px 22px rgba(209, 79, 123, .18);
-    }
-
-    .color-row{
-      display:flex;
-      gap:10px;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-
-    .color-dot{
-      width: 34px;
-      height: 34px;
-      border-radius: 999px;
-      border: 1px solid rgba(0,0,0,.12);
-      background: var(--c);
-      cursor:pointer;
-      position: relative;
-      transition: transform .08s ease, box-shadow .2s ease;
-    }
-
-    .color-dot:hover{
-      transform: translateY(-1px);
-      box-shadow: 0 10px 20px rgba(0,0,0,.10);
-    }
-
-    .color-dot.isActive::after{
+ --bgSoft: var(--bg);
+  --max: 1200px;
+  --primary: linear-gradient(135deg, var(--pink) 0%, var(--pink-2) 100%);
+  --shadow2: 0 12px 28px rgba(0,0,0,.10);
+  --r2: 22px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--ink);
+      background: var(--bg);
+      overflow-x:hidden;
+    }
+
+    a{color:inherit; text-decoration:none}
+    img{max-width:100%; display:block}
+
+    /* ========= Splash ========= */
+    #splash{
+      position:fixed; inset:0; z-index:9999;
+      display:grid; place-items:center;
+      background: var(--bgSoft);
+      transition: opacity .55s ease, transform .55s ease;
+      transition: opacity .55s ease, transform .55s ease;
+    }
+    #splash.hide{opacity:0; transform:scale(1.02); pointer-events:none}
+    .splash-card{
+      width:min(520px, 92vw);
+      border-radius: 30px;
+      padding: 22px 18px;
+      background: rgba(255,255,255,.82);
+      border:1px solid rgba(0,0,0,.08);
+      box-shadow: var(--shadow);
+      text-align:center;
+      position:relative;
+      overflow:hidden;
+    }
+    .splash-card:before{
       content:"";
-      position:absolute;
-      inset:-4px;
+      position:absolute; inset:-60px;
+      background: conic-gradient(from 180deg, rgba(255,79,164,.22), rgba(255,143,182,.20), rgba(255,122,194,.20), rgba(255,79,164,.22));
+      filter: blur(18px);
+      animation: spin 7s linear infinite;
+      opacity:.55;
+    }
+    .splash-inner{position:relative; z-index:2}
+    .brand{
+      font-family: "Playfair Display", serif;
+      font-weight:700;
+      letter-spacing:.2px;
+      font-size: 38px;
+      margin: 2px 0 6px;
+    }
+    .brand small{
+      display:block;
+      font-family: Inter, sans-serif;
+      font-weight:800;
+      letter-spacing:.35em;
+      text-transform:uppercase;
+      font-size:11px;
+      color: rgba(30, 14, 32, .55);
+      margin-top:6px;
+    }
+    .loader{
+      margin: 14px auto 0;
+      width: 62px; height: 62px;
       border-radius: 999px;
-      border: 2px solid rgba(209, 79, 123, .55);
+      border: 3px solid rgba(0,0,0,.08);
+      border-top-color: rgba(255,79,164,.55);
+      border-right-color: rgba(255,143,182,.55);
+      animation: spin 1.05s linear infinite;
+    }
+    @keyframes spin{to{transform:rotate(360deg)}}
+
+    /* ========= Floating petals (always-on animation) ========= */
+    #petals{
+      position:fixed; inset:0; pointer-events:none; z-index:0;
+      overflow:hidden;
+    }
+    .petal{
+      position:absolute;
+      top:-20vh;
+      width:14px; height:22px;
+      border-radius: 20px 20px 20px 20px;
+      filter: blur(.2px);
+      transform: rotate(16deg);
+      animation: fall linear infinite;
+      opacity:.9;
+    }
+    @keyframes fall{
+      0%{transform: translateY(-30vh) rotate(0deg); }
+      100%{transform: translateY(120vh) rotate(420deg); }
     }
 
-    .other-color{
-      margin-top: 10px;
+    /* ========= Header / Nav ========= */
+    header{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(14px);
+      background: rgba(255,255,255,.65);
+      border-bottom: 1px solid rgba(0,0,0,.06);
+    }
+    .navwrap{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 10px 14px;
       display:flex;
-      gap:10px;
-      flex-wrap: wrap;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+    }
+    .logo{
+      display:flex; align-items:center; gap:10px;
+      font-weight:900;
+      letter-spacing:.2px;
+    }
+    .logo-badge{
+      width:40px; height:40px; border-radius:14px;
+      display:grid; place-items:center;
+      background: rgba(255,79,164,.14);
+      border: 1px solid rgba(0,0,0,.08);
+      box-shadow: 0 12px 22px rgba(0,0,0,.06);
+      font-size:18px;
+    }
+    .logo strong{font-family:"Playfair Display", serif; font-size:18px}
+    .logo span{font-size:12px; color:rgba(30,14,32,.6); font-weight:800; letter-spacing:.22em; text-transform:uppercase}
+
+    nav{
+      display:flex; align-items:center; gap:8px;
+    }
+    .navlink{
+      padding:10px 12px;
+      border-radius:999px;
+      font-weight:800;
+      font-size:13px;
+      color: rgba(30,14,32,.72);
+      transition: transform .12s ease, background .12s ease;
+      white-space:nowrap;
+    }
+    .navlink:hover{background: rgba(255, 79, 164, .10); transform: translateY(-1px);}
+    .nav-actions{display:flex; align-items:center; gap:10px}
+
+    .menu-toggle{
+      display:none;
+      width:42px; height:42px;
+      border-radius:14px;
+      border:1px solid rgba(0,0,0,.10);
+      background: rgba(255,255,255,.85);
+      cursor:pointer;
+      box-shadow: 0 10px 20px rgba(0,0,0,.06);
     }
 
-    .other-color input{
-      flex: 1 1 240px;
-      border-radius: 14px;
-      border: 1px solid rgba(0,0,0,.12);
-      padding: 10px 12px;
-      outline: none;
-      font-size: 13px;
-      background: rgba(255,255,255,.98);
+    .btn{
+      border:none;
+      cursor:pointer;
+      border-radius:999px;
+      font-weight:900;
+      padding:11px 14px;
+      font-size:13px;
+      transition: transform .12s ease, box-shadow .2s ease, filter .2s ease;
+    }
+    .btn:active{transform:translateY(1px)}
+    .btn-primary{
+      background: var(--primary);
+      box-shadow: 0 16px 34px rgba(255, 79, 164, .20);
+    }
+    .btn-primary:hover{filter:saturate(1.05)}
+    .btn-ghost{
+      background: rgba(255,255,255,.86);
+      border: 1px solid rgba(0,0,0,.10);
+      box-shadow: 0 14px 26px rgba(0,0,0,.06);
+      color: rgba(30,14,32,.82);
+    }
+    .btn-ghost:hover{transform:translateY(-1px)}
+
+    .cartbtn{
+      position:relative;
+      border-radius:14px;
+      width:44px; height:44px;
+      border:1px solid rgba(0,0,0,.10);
+      background: rgba(255,255,255,.85);
+      cursor:pointer;
+      box-shadow: 0 10px 20px rgba(0,0,0,.06);
+      display:grid; place-items:center;
+      font-weight:900;
+    }
+    .badge{
+      position:absolute; top:-7px; right:-7px;
+      width:20px; height:20px;
+      border-radius:999px;
+      background: rgba(255,79,164,.14);
+      color:white;
+      display:grid; place-items:center;
+      font-size:11px;
+      border:2px solid rgba(255,255,255,.9);
+      box-shadow: 0 10px 18px rgba(0,0,0,.10);
     }
 
-    .ghostBtn{
-      border-radius: 14px;
-      border: 1px solid rgba(209, 79, 123, .45);
-      background: rgba(209, 79, 123, .08);
+    @media(max-width: 980px){
+      .menu-toggle{display:grid; place-items:center}
+      nav{
+        position:fixed; left:14px; right:14px; top:70px;
+        background: rgba(255,255,255,.86);
+        border:1px solid rgba(0,0,0,.10);
+        border-radius: 20px;
+        padding: 10px;
+        box-shadow: var(--shadow);
+        display:none;
+        flex-direction:column;
+        align-items:stretch;
+        gap:6px;
+        z-index:60;
+      }
+      nav.open{display:flex}
+      .navlink{border-radius:14px}
+      .nav-actions{gap:8px}
+    }
+
+    /* ========= Sections / Layout ========= */
+    main{position:relative; z-index:1}
+    .section{padding: 70px 14px}
+    .inner{max-width: var(--max); margin: 0 auto}
+    .section-head{display:flex; flex-direction:column; gap:10px; margin-bottom:18px}
+    .kicker{
+      display:inline-flex; align-items:center; gap:10px;
+      padding: 8px 12px;
+      border-radius:999px;
+      font-weight:900;
+      font-size:12px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      background: rgba(255, 79, 164, .08);
+      border:1px solid rgba(255,79,164,.12);
+      color: rgba(30, 14, 32, .78);
+      width:fit-content;
+    }
+    h1,h2,h3{font-family:"Playfair Display", serif; margin:0}
+    h2{font-size:34px; line-height:1.15}
+    p{margin:0; color: rgba(30,14,32,.72)}
+    .divider{
+      height:1px; width:100%;
+      background: rgba(0,0,0,.10);
+      margin-top:12px;
+    }
+
+    /* ========= Hero ========= */
+    /* HERO */
+.hero {
+  position: relative;
+  min-height: 100vh;
+
+}
+
+  /* 🔥 IMAGEN NÍTIDA */
+  background-image: url("images/hero.jpg"); /* CAMBIA LA RUTA */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* OVERLAY ROSA SUAVE (SIN BLUR) */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 182, 193, 0.18); /* rosa pastel ligero */
+  z-index: 1;
+}
+
+/* CONTENIDO */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 2rem;
+  max-width: 720px;
+  color: #ffffff;
+}
+
+/* TITULO */
+.hero-content h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+
+  /* 🔥 Elegancia */
+  text-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+/* TEXTO */
+.hero-content p {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  text-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* BOTÓN */
+.hero-btn {
+  display: inline-block;
+  padding: 0.85rem 2.2rem;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #e11d48; /* rosa elegante */
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.hero-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+}
+
+
+    /* ========= Product Grid ========= */
+    .controls{
+      display:flex; flex-direction:column; gap:10px;
+      margin-bottom: 14px;
+    }
+    .chips{display:flex; flex-wrap:wrap; gap:8px}
+    .chip{
+      border:1px solid rgba(0,0,0,.12);
+      background: rgba(255,255,255,.92);
       padding: 10px 12px;
+      border-radius: 999px;
       cursor:pointer;
       font-size: 13px;
-      color: #7b3f5e;
-      font-weight: 600;
+      font-weight: 900;
+      color: rgba(30,14,32,.74);
+      transition: transform .12s ease, box-shadow .18s ease, border-color .18s ease;
     }
-
-    .hint {
-      display:block;
-      margin-top: 8px;
-      font-size: 11px;
-      color: rgba(0,0,0,.55);
+    .chip:hover{transform:translateY(-1px); box-shadow: 0 14px 22px rgba(0,0,0,.06)}
+    .chip.active{border-color: rgba(255,79,164,.45); box-shadow: 0 16px 26px rgba(255,79,164,.12)}
+    .row{
+      display:flex; gap:10px; flex-wrap:wrap; align-items:center;
     }
-
-    /* ========= PREVIEW IA ========= */
-
-    .preview-card {
-      margin-top: 14px;
-      background: #fff;
-      border-radius: 18px;
-      padding: 12px 12px 14px;
-      border: 1px dashed #f1c8da;
-    }
-
-    .preview-card h4 {
-      font-size: 16px;
-      margin-bottom: 6px;
-      font-style: normal;
-    }
-
-    .preview-card p {
-      font-size: 12px;
-      color: #666;
-      margin-bottom: 8px;
-    }
-
-    .preview-image-wrapper {
-      margin-top: 10px;
-      display: none;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .preview-image-wrapper.show { display: flex; }
-    .preview-loading { font-size: 12px; color: #777; }
-
-    .preview-image-wrapper img {
-      width: 100%;
+    .search{
+      flex: 1;
+      min-width: 220px;
       border-radius: 14px;
-      max-height: 260px;
-      object-fit: cover;
-      box-shadow: var(--shadow-soft);
-    }
-
-    .preview-hint { font-size: 11px; color: #888; }
-
-    /* ========= CONTACTO ========= */
-
-    #contacto { background: #fff; }
-
-    .contact-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-    }
-
-    .contact-info-card {
-      background: #fff7fb;
-      border-radius: var(--radius-xl);
-      padding: 18px 18px;
-      box-shadow: var(--shadow-soft);
-    }
-
-    .contact-info-card p,
-    .contact-info-card li { font-size: 14px; }
-
-    .contact-info-card ul {
-      list-style: none;
-      padding: 0;
-      margin: 12px 0 0 0;
-    }
-
-    .contact-form {
-      background: #fff;
-      border-radius: var(--radius-xl);
-      padding: 18px 18px 22px;
-      box-shadow: var(--shadow-soft);
-    }
-
-    .form-row {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .form-group { margin-bottom: 10px; width: 100%; }
-
-    .form-group label {
-      display: block;
+      border:1px solid rgba(0,0,0,.12);
+      padding: 11px 12px;
+      outline:none;
       font-size: 13px;
-      margin-bottom: 4px;
-      color: #555;
+      background: rgba(255,255,255,.92);
+    }
+    .select{
+      border-radius: 14px;
+      border:1px solid rgba(0,0,0,.12);
+      padding: 11px 12px;
+      outline:none;
+      font-size: 13px;
+      background: rgba(255,255,255,.92);
+      font-weight:800;
+      color: rgba(30,14,32,.72);
     }
 
-    .form-group input,
-    .form-group textarea,
-    .form-group select {
-      width: 100%;
-      border-radius: 10px;
-      border: 1px solid #ddd;
-      padding: 9px 10px;
-      font-size: 14px;
-      font-family: inherit;
-    }
-
-    .form-group textarea { resize: vertical; min-height: 90px; }
-
-    .form-note { font-size: 11px; color: #777; margin-top: 4px; }
-
-    /* ========= QUIÉNES SOMOS ========= */
-
-    #quienes .about-card {
-      background: #fff;
-      border-radius: var(--radius-xl);
-      padding: 20px 18px;
-      box-shadow: var(--shadow-soft);
-      display: flex;
-      flex-direction: column;
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(1, minmax(0,1fr));
       gap: 14px;
-      font-size: 14px;
     }
+    @media(min-width: 720px){ .grid{grid-template-columns: repeat(2, minmax(0,1fr));} }
+    @media(min-width: 1050px){ .grid{grid-template-columns: repeat(3, minmax(0,1fr));} }
 
-    .about-highlights {
-      list-style: none;
-      padding: 0;
-      margin: 8px 0 0 0;
-      font-size: 14px;
+    .product{
+      background: rgba(255,255,255,.92);
+      border:1px solid rgba(0,0,0,.06);
+      border-radius: 20px;
+      overflow:hidden;
+      box-shadow: var(--shadow2);
+      display:flex;
+      flex-direction:column;
+      min-height: 100%;
+      cursor:pointer;
+      transition: transform .16s ease, box-shadow .18s ease, filter .18s ease;
     }
-
-    .about-highlights li { margin-bottom: 6px; }
-
-    /* ========= FOOTER ========= */
-
-    footer {
-      background: #1f1b20;
-      color: #f0e7f3;
-      padding: 22px 14px 70px;
-      font-size: 12px;
-    }
-
-    .footer-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 8px;
-      align-items: center;
-    }
-
-    /* ========= BOTÓN WHATSAPP FLOTANTE ========= */
-
-    .whatsapp-fab {
-      position: fixed;
-      right: 16px;
-      bottom: 16px;
-      background: #25d366;
-      color: #fff;
-      border-radius: 999px;
-      padding: 10px 14px;
-      font-size: 14px;
-      font-weight: 600;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      box-shadow: 0 12px 26px rgba(0,0,0,0.25);
-      z-index: 1000;
-      transition:
-        transform 0.15s ease,
-        box-shadow 0.15s ease,
-        background 0.15s ease;
-    }
-
-    .whatsapp-fab span { font-size: 18px; }
-
-    .whatsapp-fab:hover {
-      background: #1ebe5a;
+    .product:hover{
       transform: translateY(-2px);
-      box-shadow: 0 16px 32px rgba(0,0,0,0.3);
+      box-shadow: 0 18px 34px rgba(0,0,0,.10);
+      filter: saturate(1.02);
     }
-
-    .whatsapp-fab:active { transform: translateY(0); }
-
-    /* ========= OVERLAY RAMO EN PROGRESO ========= */
-
-    .ramo-overlay {
-      position: fixed;
-      left: 12px;
-      right: 12px;
-      bottom: 80px;
-      background: #ffffff;
+    .product-media{
+      height: 178px;
+      background: rgba(255,79,164,.14);
+      position:relative;
+      overflow:hidden;
+    }
+    .product-media img{
+      width:100%; height:100%;
+      object-fit: cover;
+      transform: scale(1.02);
+      transition: transform .26s ease;
+      filter: saturate(1.02);
+    }
+    .product:hover .product-media img{transform:scale(1.07)}
+    .tag{
+      position:absolute; top:12px; left:12px;
+      background: rgba(255,255,255,.90);
+      border:1px solid rgba(0,0,0,.08);
       border-radius: 999px;
-      box-shadow: 0 12px 28px rgba(0,0,0,0.18);
-      padding: 10px 14px;
-      display: none;
-      z-index: 999;
+      padding: 8px 10px;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color: rgba(30,14,32,.72);
+      box-shadow: 0 12px 20px rgba(0,0,0,.06);
     }
-
-    .ramo-overlay-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 8px;
+    .product-body{
+      padding: 12px 12px 14px;
+      display:flex; flex-direction:column; gap:10px;
+      flex: 1;
+    }
+    .product-name{
+      font-weight: 900;
+      color: rgba(60, 20, 50, .92);
+      line-height: 1.2;
+      font-size: 15px;
+    }
+    .product-meta{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:10px;
       font-size: 13px;
+      color: rgba(30,14,32,.66);
+      font-weight: 800;
     }
-
-    .ramo-overlay-main {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
+    .price{font-weight: 900; color: rgba(30,14,32,.92)}
+    .product-actions{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      margin-top:auto;
     }
-
-    .ramo-overlay-title {
-      font-weight: 600;
-      color: #7b3f5e;
-      font-size: 13px;
-    }
-
-    .ramo-overlay-detail {
-      font-size: 12px;
-      color: #666;
-    }
-
-    .ramo-overlay-btn {
+    .qty{
+      width: 92px;
       border-radius: 999px;
-      border: none;
-      background: var(--color-primary);
-      color: #fff;
-      padding: 7px 10px;
-      font-size: 12px;
-      font-weight: 600;
-      cursor: pointer;
-      white-space: nowrap;
-      transition:
-        background 0.15s ease,
-        transform 0.15s ease,
-        box-shadow 0.15s ease;
-      box-shadow: 0 8px 18px rgba(209, 79, 123, 0.4);
+      border:1px solid rgba(0,0,0,.14);
+      padding: 9px 10px;
+      background: rgba(255,255,255,.95);
+      font-weight: 900;
+      outline:none;
     }
 
-    .ramo-overlay-btn:hover {
-      background: #e0638a;
-      transform: translateY(-1px);
-      box-shadow: 0 10px 22px rgba(209, 79, 123, 0.5);
+    /* ========= Drawer (Cart) ========= */
+    .drawer-backdrop{
+      position:fixed; inset:0;
+      background: rgba(0,0,0,.35);
+      z-index: 3000;
+      opacity:0; pointer-events:none;
+      transition: opacity .2s ease;
+    }
+    .drawer-backdrop.show{opacity:1; pointer-events:auto}
+    .drawer{
+      position:fixed; top:0; right:0;
+      width: min(460px, 92vw);
+      height:100%;
+      background: rgba(255,255,255,.96);
+      border-left: 1px solid rgba(0,0,0,.10);
+      z-index: 3100;
+      transform: translateX(110%);
+      transition: transform .25s ease;
+      display:flex; flex-direction:column;
+      backdrop-filter: blur(12px);
+    }
+    .drawer.show{transform: translateX(0)}
+    .drawer-head{
+      padding: 14px 14px;
+      border-bottom: 1px solid rgba(0,0,0,.08);
+      display:flex; align-items:center; justify-content:space-between; gap:10px;
+    }
+    .xbtn{
+      border:none;
+      background: rgba(0,0,0,.06);
+      width: 40px; height: 40px;
+      border-radius: 999px;
+      cursor:pointer;
+      font-size: 18px;
+      transition: transform .12s ease, background .12s ease;
+    }
+    .xbtn:hover{transform:translateY(-1px); background: rgba(0,0,0,.08)}
+    .drawer-body{
+      padding: 14px;
+      overflow:auto;
+      display:flex; flex-direction:column;
+      gap: 12px;
+    }
+    .cart-empty{
+      background: rgba(255, 228, 241, .35);
+      border: 1px solid rgba(255,79,164,.18);
+      border-radius: 18px;
+      padding: 14px;
+      color: rgba(30,14,32,.74);
+      font-weight:800;
+    }
+    .cart-items{display:flex; flex-direction:column; gap:10px}
+    .cart-item{
+      display:flex; justify-content:space-between; gap:10px;
+      border: 1px solid rgba(0,0,0,.08);
+      background: rgba(255,255,255,.92);
+      border-radius: 18px;
+      padding: 12px;
+      box-shadow: 0 12px 20px rgba(0,0,0,.06);
+    }
+    .cart-item small{color: rgba(30,14,32,.62); font-weight:800}
+    .cart-item-actions{display:flex; flex-direction:column; gap:8px; align-items:flex-end}
+    .mini{
+      width: 70px;
+      border-radius: 999px;
+      border:1px solid rgba(0,0,0,.14);
+      padding: 8px 10px;
+      background: rgba(255,255,255,.95);
+      font-weight: 900;
+      outline:none;
+    }
+    .link-danger{
+      border:none;
+      background:transparent;
+      cursor:pointer;
+      color: rgba(255,79,164,.90);
+      font-weight: 900;
+    }
+    .totals{
+      display:flex; justify-content:space-between; align-items:center;
+      font-weight: 900;
+      color: rgba(30,14,32,.92);
+      border-top: 1px solid rgba(0,0,0,.08);
+      padding-top: 12px;
+      margin-top: 6px;
+    }
+    .stack{display:flex; flex-direction:column; gap:8px}
+    .label{font-size:12px; font-weight:900; color: rgba(30,14,32,.70)}
+    .hint{font-size:12px; color: rgba(30,14,32,.62); font-weight:700}
+    .field{
+      width:100%;
+      border-radius: 14px;
+      border:1px solid rgba(0,0,0,.12);
+      padding: 11px 12px;
+      background: rgba(255,255,255,.92);
+      outline:none;
+      font-size: 13px;
+      font-weight: 800;
+    }
+    .drawer-actions{display:flex; gap:10px; flex-wrap:wrap; align-items:center}
+    .btn-wide{width:100%}
+
+    /* ========= Modal (Product detail) ========= */
+    .modal-backdrop{
+      position:fixed; inset:0;
+      background: rgba(0,0,0,.45);
+      z-index: 3200;
+      opacity:0; pointer-events:none;
+      transition: opacity .2s ease;
+      display:grid; place-items:center;
+      padding: 14px;
+    }
+    .modal-backdrop.show{opacity:1; pointer-events:auto}
+    .modal{
+      width: min(980px, 96vw);
+      border-radius: 26px;
+      background: rgba(255,255,255,.98);
+      border:1px solid rgba(0,0,0,.10);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      transform: translateY(10px) scale(.99);
+      opacity:0;
+      transition: transform .2s ease, opacity .2s ease;
+    }
+    .modal-backdrop.show .modal{transform: translateY(0) scale(1); opacity:1}
+    .modal-grid{
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap:0;
+    }
+    @media(max-width: 920px){
+      .modal-grid{grid-template-columns:1fr}
+    }
+    .modal-media{
+      background: rgba(255,79,164,.14);
+      min-height: 320px;
+      position:relative;
+    }
+    .modal-media img{width:100%; height:100%; object-fit:cover}
+    .modal-body{padding: 16px 16px 18px}
+    .modal-body h3{font-size: 30px; margin-bottom: 8px}
+    .modal-body .meta{display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap; margin: 10px 0 8px}
+    .rel-grid{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 10px;
+      margin-top: 12px;
+    }
+    @media(max-width: 520px){ .rel-grid{grid-template-columns:1fr} }
+    .rel{
+      border:1px solid rgba(0,0,0,.08);
+      border-radius: 18px;
+      overflow:hidden;
+      background: rgba(255,255,255,.92);
+      cursor:pointer;
+      box-shadow: 0 12px 20px rgba(0,0,0,.06);
+      transition: transform .15s ease;
+    }
+    .rel:hover{transform: translateY(-2px)}
+    .rel img{height: 92px; width:100%; object-fit:cover}
+    .rel .relb{padding: 10px; display:flex; flex-direction:column; gap:6px}
+    .rel strong{font-size:13px}
+    .rel small{color: rgba(30,14,32,.62); font-weight:800}
+
+    /* ========= Arma tu ramo ========= */
+    #arma-tu-ramo{background: var(--bg)}
+    .builder-grid{display:flex; flex-direction:column; gap:18px}
+    @media(min-width: 980px){ .builder-grid{flex-direction:row} }
+    .panel{
+      border-radius: var(--r2);
+      background: rgba(255,255,255,.80);
+      border:1px solid rgba(0,0,0,.08);
+      box-shadow: var(--shadow2);
+      padding: 16px 16px 18px;
+    }
+    .builder-flowers{margin-top:10px; display:grid; grid-template-columns: minmax(0,1fr); gap:12px}
+    @media(min-width: 720px){ .builder-flowers{grid-template-columns: repeat(2, minmax(0,1fr));} }
+    @media(min-width: 1150px){ .builder-flowers{grid-template-columns: repeat(3, minmax(0,1fr));} }
+
+    .flor-card{
+      background: rgba(255,255,255,.92);
+      border-radius: 20px;
+      padding: 10px 12px 12px;
+      box-shadow: 0 12px 20px rgba(0,0,0,.06);
+      border: 1px solid rgba(0,0,0,.06);
+      display:flex; flex-direction:column; gap:6px;
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+    .flor-card:hover{transform: translateY(-2px); box-shadow: 0 18px 26px rgba(0,0,0,.10)}
+    .flor-header{display:flex; gap:10px; align-items:center}
+    .flor-image{
+      width:64px; height:64px;
+      border-radius: 16px;
+      overflow:hidden;
+      background: rgba(255,79,164,.14);
+      border: 1px solid rgba(0,0,0,.08);
+      box-shadow: 0 10px 18px rgba(0,0,0,.06);
+      flex: 0 0 auto;
+    }
+    .flor-image img{width:100%; height:100%; object-fit:cover}
+    .flor-name{font-weight: 900; color: rgba(60, 20, 50, .92)}
+    .flor-precio{font-size: 12px; color: rgba(30,14,32,.64); font-weight: 800}
+    .flor-controls{display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin-top:4px}
+    .flor-controls label{font-size: 11px; font-weight: 900; color: rgba(30,14,32,.62)}
+    .flor-select, .flor-qty{
+      border-radius: 999px;
+      border:1px solid rgba(0,0,0,.14);
+      padding: 6px 10px;
+      font-size: 13px;
+      background: rgba(255,255,255,.95);
+      font-weight: 900;
+      outline:none;
+    }
+    .flor-qty{width: 92px}
+    .addbtn{
+      margin-left:auto;
+      border:none; cursor:pointer;
+      border-radius: 999px;
+      padding: 9px 12px;
+      font-weight: 900;
+      background: rgba(255,79,164,.12);
+      border: 1px solid rgba(255,79,164,.18);
+      color: rgba(60,20,50,.92);
+      transition: transform .12s ease, background .12s ease;
+    }
+    .addbtn:hover{transform: translateY(-1px); background: rgba(255,79,164,.16)}
+
+    .summary{
+      min-width: min(420px, 100%);
+    }
+    .summary h3{font-size: 24px}
+    .summary-list{display:flex; flex-direction:column; gap:10px; margin-top:10px}
+    .sumrow{
+      display:flex; justify-content:space-between; gap:10px;
+      border:1px solid rgba(0,0,0,.08);
+      background: rgba(255,255,255,.92);
+      border-radius: 18px;
+      padding: 12px;
+      box-shadow: 0 10px 18px rgba(0,0,0,.06);
+      font-weight: 800;
+      color: rgba(30,14,32,.80);
+    }
+    .summary-actions{display:flex; flex-wrap:wrap; gap:10px; margin-top:12px}
+    .btn-secondary{
+      background: rgba(255,255,255,.90);
+      border: 1px solid rgba(0,0,0,.12);
+      box-shadow: 0 14px 22px rgba(0,0,0,.06);
+      color: rgba(30,14,32,.82);
     }
 
-    .ramo-overlay-btn:active { transform: translateY(0); }
-    .ramo-overlay.show { display: block; }
-
-    /* ========= RESPONSIVE ========= */
-
-    @media (min-width: 600px) {
-      .galeria { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    /* ========= Eventos ========= */
+    #eventos{background: var(--bg)}
+    .event-grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
     }
-
-    @media (min-width: 768px) {
-      .hero-inner {
-        display: grid;
-        grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-        gap: 40px;
-      }
-
-      .hero { padding: 96px 32px 70px; }
-      .hero-text h1 { font-size: 34px; }
-
-      .builder-flowers { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-
-      .contact-grid {
-        display: grid;
-        grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-        gap: 26px;
-      }
-
-      #quienes .about-card {
-        display: grid;
-        grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
-        gap: 20px;
-      }
-
-      .form-row { flex-direction: row; }
-      .galeria { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    @media(min-width: 980px){ .event-grid{grid-template-columns: 1.15fr .85fr;} }
+    .card{
+      border-radius: var(--r2);
+      background: rgba(255,255,255,.80);
+      border:1px solid rgba(0,0,0,.08);
+      box-shadow: var(--shadow2);
+      padding: 16px 16px 18px;
     }
-
-    @media (min-width: 960px) {
-      .header-inner { padding: 10px 18px; }
-
-      nav {
-        position: static;
-        background: transparent;
-        flex-direction: row;
-        align-items: center;
-        padding: 0;
-        gap: 24px;
-        max-height: none;
-        overflow: visible;
-        opacity: 1;
-        transform: none;
-      }
-
-      .menu { flex-direction: row; gap: 20px; width: auto; }
-      .menu > li { position: relative; }
-      .menu > li > a { padding-bottom: 4px; border-bottom: none; }
-
-      .menu > li > a::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 0;
-        height: 2px;
-        background: var(--color-primary);
-        transition: width 0.3s;
-      }
-
-      .menu > li > a:hover::after { width: 100%; }
-
-      .submenu {
-        position: absolute;
-        top: 30px;
-        left: 0;
-        background: #fff;
-        border-radius: 12px;
-        padding: 10px 12px;
-        box-shadow: var(--shadow-soft);
-        margin: 0;
-        min-width: 180px;
-        transform: translateY(8px);
-        opacity: 0;
-        pointer-events: none;
-        transition: all 0.2s ease-out;
-      }
-
-      .submenu-parent:hover .submenu {
-        opacity: 1;
-        pointer-events: auto;
-        transform: translateY(0);
-      }
-
-      .menu-cta-wrapper { width: auto; padding-top: 0; border-top: none; margin-top: 0; }
-      .menu-toggle { display: none; }
-
-      .hero { max-height: 780px; }
-
-      footer { padding-bottom: 26px; }
-      .whatsapp-fab { display: none; }
-      .ramo-overlay { display: none !important; }
+    .card h3{font-size: 24px; margin-bottom: 10px}
+    .grid2{display:grid; grid-template-columns: 1fr; gap:10px}
+    @media(min-width: 560px){ .grid2{grid-template-columns: 1fr 1fr} }
+    .checklist{display:flex; flex-direction:column; gap:10px; margin-top: 6px}
+    .chk{
+      display:flex; gap:10px; align-items:flex-start;
+      border:1px solid rgba(0,0,0,.08);
+      background: rgba(255,255,255,.92);
+      border-radius: 18px;
+      padding: 12px;
+      box-shadow: 0 10px 18px rgba(0,0,0,.06);
     }
+    .chk input{margin-top: 3px}
+    .chk strong{font-weight: 900}
+    .chk small{display:block; color: rgba(30,14,32,.62); font-weight: 800; margin-top: 2px}
+
+    /* ========= Reviews ========= */
+    .reviews{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+    @media(min-width: 980px){ .reviews{grid-template-columns: 1.05fr .95fr;} }
+    .review-card{
+      border-radius: var(--r2);
+      background: rgba(255,255,255,.80);
+      border:1px solid rgba(0,0,0,.08);
+      box-shadow: var(--shadow2);
+      padding: 16px 16px 18px;
+      overflow:hidden;
+      position:relative;
+    }
+    .review-card:before{
+      content:"";
+      position:absolute; inset:-120px;
+      background: rgba(255,79,164,.10);
+      filter: blur(16px);
+      opacity:.7;
+    }
+    .review-card > *{position:relative; z-index:2}
+    .review-list{display:flex; flex-direction:column; gap:10px; margin-top:10px}
+    .review{
+      border:1px solid rgba(0,0,0,.08);
+      background: rgba(255,255,255,.92);
+      border-radius: 18px;
+      padding: 12px;
+      box-shadow: 0 10px 18px rgba(0,0,0,.06);
+    }
+    .review strong{display:block; font-weight: 900}
+    .stars{letter-spacing:.12em; font-weight:900; color: rgba(255,79,164,.80); margin-top:2px}
+    .review p{margin-top:6px; font-size: 13px}
+
+    /* ========= Footer ========= */
+    footer{
+      padding: 26px 14px 40px;
+      border-top: 1px solid rgba(0,0,0,.06);
+      background: rgba(255,255,255,.70);
+      backdrop-filter: blur(12px);
+    }
+    .foot{max-width: var(--max); margin:0 auto; display:flex; flex-direction:column; gap:10px}
+    .foot small{color: rgba(30,14,32,.62); font-weight: 800}
+
+    /* ========= Reveal-on-scroll ========= */
+    .reveal{opacity:0; transform: translateY(10px); transition: opacity .55s ease, transform .55s ease}
+    .reveal.on{opacity:1; transform: translateY(0)}
+  
+    /* ===== HERO (original vibe) ===== */
+
+    .heroLux{
+  position: relative;
+  min-height: 92vh;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+
+  /* variables SOLO del hero */
+  --brand:#ff4fa3;
+  --brand2:#ff78c6;
+  --heroShadow: rgba(0,0,0,.42);
+
+  /* ✅ IMAGEN NÍTIDA: SIN BLUR */
+  background-image: url("images/por1.jpg"); /* <-- tu hero */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+    /* Esto ayuda a que se vea "crisp" en pantallas grandes */
+    image-rendering: auto;
+  }
+
+  /* Overlay mínimo para legibilidad (NO blur) */
+  .heroLux__overlay{
+    position:absolute;
+    inset:0;
+    z-index:1;
+
+    /* Rosa intenso pero MUY sutil para no “lavar” la foto */
+    background:
+      radial-gradient(900px 420px at 50% 55%, rgba(255,79,163,.16), transparent 60%),
+      linear-gradient(180deg, rgba(0,0,0,.22), rgba(0,0,0,.22));
+  }
+
+  .heroLux__inner{
+    position:relative;
+    z-index:2;
+    width:min(1100px, 92vw);
+    padding: clamp(18px, 4vw, 56px);
+  }
+
+  .heroLux__copy{
+    max-width: 860px;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .heroLux__kicker{
+    display:inline-flex;
+    gap:.5rem;
+    align-items:center;
+    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    font-weight: 600;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    font-size: .78rem;
+    color: rgba(255,255,255,.92);
+    padding: .6rem 1rem;
+    border-radius: 999px;
+
+    /* Glass elegante SIN blur */
+    background: rgba(255,255,255,.10);
+    border: 1px solid rgba(255,255,255,.18);
+    box-shadow: 0 16px 40px rgba(0,0,0,.16);
+    margin-bottom: 1.25rem;
+  }
+
+  .heroLux__title{
+    margin: 0 0 1.1rem 0;
+    line-height: 1.02;
+  }
+
+  .heroLux__titleTop{
+    display:block;
+    font-family: Cinzel, serif;
+    font-weight: 600;
+    letter-spacing: .10em;
+    text-transform: uppercase;
+    font-size: clamp(1.05rem, 2.4vw, 1.65rem);
+    color: rgba(255,255,255,.92);
+  }
+
+  /* Extravagante + elegante */
+  .heroLux__titleMain{
+    display:block;
+    font-family: "Playfair Display", serif;
+    font-style: italic;
+    font-weight: 700;
+    font-size: clamp(3.6rem, 8vw, 6.6rem);
+    letter-spacing: -0.02em;
+
+    /* Gradiente rosa premium en letras */
+    background: linear-gradient(90deg, #fff 0%, var(--brand2) 35%, var(--brand) 70%, #fff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+
+    text-shadow: 0 20px 60px var(--heroShadow);
+  }
+
+  .heroLux__sub{
+    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    font-size: clamp(1.05rem, 2.2vw, 1.25rem);
+    line-height: 1.7;
+    margin: 0 auto 2rem auto;
+    color: rgba(255,255,255,.92);
+    max-width: 760px;
+    text-shadow: 0 14px 35px rgba(0,0,0,.35);
+  }
+
+  .heroLux__actions{
+    display:flex;
+    gap: .9rem;
+    justify-content:center;
+    flex-wrap: wrap;
+  }
+
+  .heroLux__btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding: 1rem 1.6rem;
+    border-radius: 999px;
+    text-decoration:none;
+    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    font-weight: 650;
+    letter-spacing: .02em;
+    transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+    will-change: transform;
+  }
+
+  .heroLux__btn--primary{
+    color: #ffffff;
+    background: linear-gradient(135deg, var(--brand) 0%, var(--brand2) 100%);
+    box-shadow: 0 18px 45px rgba(255,79,163,.22), 0 18px 45px rgba(0,0,0,.22);
+  }
+
+  .heroLux__btn--ghost{
+    color: rgba(255,255,255,.95);
+    background: rgba(255,255,255,.12);
+    border: 1px solid rgba(255,255,255,.22);
+    box-shadow: 0 18px 45px rgba(0,0,0,.18);
+  }
+
+  .heroLux__btn:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 22px 55px rgba(0,0,0,.28);
+  }
+
+  /* Móvil: que no se vaya enorme */
+  @media (max-width: 520px){
+    .heroLux{ min-height: 88vh; }
+    .heroLux__kicker{ font-size:.72rem; letter-spacing:.18em; }
+    .heroLux__btn{ width: 100%; padding: 1rem 1.2rem; }
+  }
+
   </style>
+
+  <!-- Minimal splash fallback: hide even if later JS fails -->
+  <script>
+    window.setTimeout</script>
 </head>
 
 <body>
-
-  <!-- ========== HEADER ========== -->
-  <header>
-    <div class="header-inner">
-      <div class="logo">
-        <div class="logo-icon">🌸</div>
-        <div class="logo-text-wrapper">
-          <span class="logo-text-main">Floralte</span>
-          <span class="logo-text-sub">Diseño Floral</span>
+  <div id="splash" aria-hidden="true">
+    <div class="splash-card">
+      <div class="splash-inner">
+        <div class="brand">Floralte <span aria-hidden="true">🌸</span><small>DISEÑO FLORAL</small></div>
+        <div style="color:rgba(30,14,32,.70); font-weight:800; font-size:13px">
+          Cargando experiencia…
         </div>
+        <div class="loader" aria-hidden="true"></div>
       </div>
-
-      <button class="menu-toggle" aria-label="Abrir menú">☰</button>
-
-      <nav>
-        <ul class="menu">
-          <li><a data-section="inicio">Inicio</a></li>
-
-          <li class="submenu-parent">
-            <a data-section="catalogo">Catálogo</a>
-            <ul class="submenu">
-              <li><a data-section="ramos">Ramos</a></li>
-              <li><a data-section="arreglos">Arreglos</a></li>
-              <li><a data-section="coronas">Coronas</a></li>
-              <li><a data-section="regalos">Regalos</a></li>
-            </ul>
-          </li>
-
-          <li><a data-section="arma-tu-ramo">Arma tu ramo</a></li>
-          <li><a data-section="eventos">Eventos</a></li>
-          <li><a data-section="contacto">Contacto</a></li>
-          <li><a data-section="quienes">¿Quiénes somos?</a></li>
-        </ul>
-
-        <div class="menu-cta-wrapper">
-          <button class="btn-cta" type="button" onclick="showSection('contacto')">
-            ✨ Crear cotización ahora
-          </button>
-        </div>
-      </nav>
-    </div>
-  </header>
-
-  <!-- ========== INICIO (HERO) ========== -->
-  <section id="inicio" class="hero-section view-section active">
-    <div class="hero">
-      <div class="hero-inner">
-        <div class="hero-text fade-up">
-          <div class="hero-badges">
-            <div class="badge"><span>💐</span> Diseño floral a medida</div>
-            <div class="badge"><span>🚚</span> Entrega en Guadalajara</div>
-            <div class="badge"><span>🤍</span> Eventos & detalles</div>
-          </div>
-
-          <h1>Flores que dicen lo que las palabras no alcanzan a expresar.</h1>
-          <p>
-            En Floralte transformamos tus emociones en arreglos únicos: desde un ramo
-            sorpresa hasta la decoración completa de tu evento.
-          </p>
-
-          <div class="hero-actions">
-            <button class="btn-cta" type="button" onclick="showSection('arma-tu-ramo')">
-              🌷 Armar mi ramo ahora
-            </button>
-            <button class="btn-outline" type="button" onclick="showSection('catalogo')">
-              Ver catálogo de diseños
-            </button>
-          </div>
-        </div>
-
-        <aside class="hero-side-card fade-up-delay">
-          <h3>¿Buscas algo especial hoy?</h3>
-          <ul>
-            <li><span>✨</span> Ramos personalizados según ocasión y presupuesto.</li>
-            <li><span>📅</span> Agenda tu evento con propuesta floral completa.</li>
-            <li><span>💌</span> Tarjeta de mensaje incluida en tus entregas.</li>
-            <li><span>📲</span> Atención directa por WhatsApp para cambios y dudas.</li>
-          </ul>
-        </aside>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== CATÁLOGO GENERAL ========== -->
-  <section id="catalogo" class="view-section">
-    <div class="section-inner">
-      <div class="section-header">
-        <div class="section-tag">Catálogo</div>
-        <h2>Arreglos pensados para cada ocasión</h2>
-        <p>
-          Desde detalles sencillos hasta ramos espectaculares. Inspírate con algunos
-          de nuestros diseños y luego personaliza el tuyo.
-        </p>
-        <div class="section-divider"></div>
-      </div>
-
-      <div class="galeria">
-        <img src="images/ram1.jpg" alt="Ramo Floralte 1">
-        <img src="images/ram2.jpg" alt="Ramo Floralte 2">
-        <img src="images/ram3.jpg" alt="Ramo Floralte 3">
-        <img src="images/ram4.jpg" alt="Ramo Floralte 4">
-        <img src="images/ram9.jpg" alt="Ramo Floralte 5">
-        <img src="images/ram10.jpg" alt="Ramo Floralte 6">
-        <img src="images/ram12.jpg" alt="Ramo Floralte 7">
-        <img src="images/ram13.jpg" alt="Ramo Floralte 8">
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== ARMA TU RAMO ========== -->
-  <section id="arma-tu-ramo" class="view-section">
-    <div class="section-inner">
-      <div class="section-header">
-        <div class="section-tag">Personaliza tu diseño</div>
-        <h2>Arma tu ramo Floralte</h2>
-        <p>
-          Elige el tipo de flor, color y cantidad. Nosotros nos encargamos de que se
-          vea armonioso, fresco y con el sello Floralte. Este cálculo es aproximado
-          y sirve como base para tu cotización.
-        </p>
-        <div class="section-divider"></div>
-      </div>
-
-      <div class="builder-grid">
-        <!-- Panel flores -->
-        <div class="builder-panel">
-          <h3>1. Elige tus flores</h3>
-          <p>
-            Selecciona el tipo de flor, el color (si aplica) y la cantidad de tallos.
-            Puedes combinar varias flores en el mismo ramo.
-          </p>
-
-          <div id="builder-flowers" class="builder-flowers">
-            <!-- JS inyecta las tarjetas de flores -->
-          </div>
-        </div>
-
-        <!-- Panel resumen -->
-        <div class="builder-panel">
-          <div class="builder-summary">
-            <div>
-              <h3>2. Tu ramo en progreso</h3>
-              <p>Revisa la composición y el aproximado del ramo que estás creando.</p>
-            </div>
-
-            <div id="summary-list" class="summary-list">
-              <div class="summary-empty">
-                Aún no has agregado flores. Empieza eligiendo una en el panel de la izquierda.
-              </div>
-            </div>
-
-            <div class="summary-total">
-              <span>Total aproximado</span>
-              <span id="summary-total">$0 MXN</span>
-            </div>
-
-            <!-- ✅ NUEVO: ENVOLTURA -->
-            <div class="wrap-card" id="wrap-card">
-              <h4>Envoltura del ramo</h4>
-              <p>Selecciona papel, estilo y color. Esto también se mandará en WhatsApp y al preview IA.</p>
-
-              <div class="wrap-grid">
-                <div class="wrap-field">
-                  <label>Tipo de papel</label>
-                  <div class="segmented" id="paper-type">
-                    <button type="button" class="seg-btn isActive" data-paper="coreano">Coreano</button>
-                    <button type="button" class="seg-btn" data-paper="kraft">Kraft</button>
-                    <button type="button" class="seg-btn" data-paper="peyon">Peyón</button>
-                  </div>
-                  <small class="hint">Si no eligen, por default queda “Coreano”.</small>
-                </div>
-
-                <div class="wrap-field">
-                  <label>Estilo</label>
-                  <div class="segmented" id="wrap-style">
-                    <button type="button" class="seg-btn isActive" data-style="circular">Circular</button>
-                    <button type="button" class="seg-btn" data-style="una-vista">De una vista</button>
-                  </div>
-                  <small class="hint">“De una vista” es más editorial/frontal.</small>
-                </div>
-
-                <div class="wrap-field">
-                  <label>Color del papel</label>
-                  <div class="color-row" id="paper-colors">
-                    <button type="button" class="color-dot isActive" data-color="Blanco" style="--c:#ffffff" aria-label="Blanco"></button>
-                    <button type="button" class="color-dot" data-color="Beige" style="--c:#f5f0e6" aria-label="Beige"></button>
-                    <button type="button" class="color-dot" data-color="Negro" style="--c:#0b0b0b" aria-label="Negro"></button>
-                    <button type="button" class="color-dot" data-color="Rosa pastel" style="--c:#f7c8d7" aria-label="Rosa pastel"></button>
-                    <button type="button" class="color-dot" data-color="Lila" style="--c:#c9b6ff" aria-label="Lila"></button>
-                    <button type="button" class="color-dot" data-color="Azul cielo" style="--c:#bfe6ff" aria-label="Azul cielo"></button>
-                    <button type="button" class="color-dot" data-color="Verde salvia" style="--c:#cfe3d5" aria-label="Verde salvia"></button>
-                    <button type="button" class="color-dot" data-color="Rojo" style="--c:#ff3b3b" aria-label="Rojo"></button>
-                  </div>
-
-                  <div class="other-color">
-                    <input id="paperColorOther" type="text" placeholder="O escribe un color (ej: dorado, vino, menta)..." />
-                    <button type="button" class="ghostBtn" id="useOtherColor">Usar este color</button>
-                  </div>
-
-                  <small class="hint">Tip: si usas “otro color”, ese se manda como el color principal del papel.</small>
-                </div>
-              </div>
-            </div>
-
-            <div class="summary-actions">
-              <button id="btn-clear-ramo" class="btn-secondary" type="button">
-                Limpiar ramo completo
-              </button>
-
-              <button id="btn-whatsapp" class="btn-whatsapp" type="button">
-                <span>📲</span> Enviar a WhatsApp
-              </button>
-            </div>
-
-            <div class="builder-note">
-              * Los precios son aproximados por tallo y pueden variar según temporada.
-              Al enviarnos tu selección, te confirmamos disponibilidad y cotización final.
-            </div>
-
-            <!-- PREVIEW IA -->
-            <div class="preview-card">
-              <h4>Preview de tu ramo con IA</h4>
-              <p>
-                Cuando termines de armar tu ramo, genera un preview ilustrativo para ver
-                cómo podría verse el diseño.
-              </p>
-              <button id="btn-preview" class="btn-secondary" type="button">
-                Generar preview IA
-              </button>
-
-              <div id="preview-wrapper" class="preview-image-wrapper">
-                <div id="preview-loading" class="preview-loading">
-                  Generando preview a partir de tu selección...
-                </div>
-                <img id="preview-image" alt="Preview de tu ramo Floralte">
-                <div class="preview-hint">
-                  Esta imagen es una representación aproximada generada a partir de tus flores
-                  seleccionadas. El diseño final puede variar.
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== RAMOS ========== -->
-  <section id="ramos" class="view-section">
-    <div class="section-inner">
-      <div class="section-header">
-        <div class="section-tag">Ramos</div>
-        <h2>Ramos listos para enamorar</h2>
-        <div class="section-divider"></div>
-      </div>
-
-      <div class="galeria">
-        <img src="images/ram14.jpg" alt="Ramo Floralte 9">
-        <img src="images/ram15.jpg" alt="Ramo Floralte 10">
-        <img src="images/ram16.jpg" alt="Ramo Floralte 11">
-        <img src="images/ram18.jpg" alt="Ramo Floralte 12">
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== ARREGLOS ========== -->
-  <section id="arreglos" class="view-section">
-    <div class="section-inner">
-      <div class="section-header">
-        <div class="section-tag">Arreglos</div>
-        <h2>Arreglos para espacios y mesas</h2>
-        <div class="section-divider"></div>
-      </div>
-
-      <div class="galeria">
-        <img src="images/ar3.jpg" alt="Arreglo Floralte 1">
-        <img src="images/ar8.jpg" alt="Arreglo Floralte 2">
-        <img src="images/ar9.jpg" alt="Arreglo Floralte 3">
-        <img src="images/ar10.jpg" alt="Arreglo Floralte 4">
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== CORONAS ========== -->
-  <section id="coronas" class="view-section">
-    <div class="section-inner">
-      <div class="section-header">
-        <div class="section-tag">Coronas</div>
-        <h2>Coronas y arreglos para despedidas</h2>
-        <p>
-          Diseños sobrios y elegantes para acompañar a tus seres queridos con respeto
-          y cariño, utilizando flores frescas y armoniosas.
-        </p>
-        <div class="section-divider"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== REGALOS ========== -->
-  <section id="regalos" class="view-section">
-    <div class="section-inner">
-      <div class="section-header">
-        <div class="section-tag">Regalos</div>
-        <h2>Más que flores, detalles completos</h2>
-        <p>
-          Cajas florales, arreglos con chocolates, peluches, globos y otros detalles
-          para entregar un regalo listo, sin complicaciones.
-        </p>
-        <div class="section-divider"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== EVENTOS ========== -->
-  <section id="eventos" class="view-section">
-    <div class="section-inner">
-      <div class="section-header">
-        <div class="section-tag">Eventos</div>
-        <h2>Decoración floral para tus momentos grandes</h2>
-        <p>
-          Bodas, XV años, pedidas de mano, eventos empresariales y celebraciones
-          íntimas. Diseñamos un concepto completo que conecte con tu estilo y el
-          ambiente que quieres crear.
-        </p>
-        <div class="section-divider"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== CONTACTO / COTIZACIÓN ========== -->
-  <section id="contacto" class="view-section">
-    <div class="section-inner">
-      <div class="section-header">
-        <div class="section-tag">Cotización</div>
-        <h2>Cuéntanos lo que necesitas</h2>
-        <p>
-          Llena el formulario o escríbenos directamente por WhatsApp. Te
-          responderemos con una propuesta personalizada y opciones de diseño.
-        </p>
-        <div class="section-divider"></div>
-      </div>
-
-      <div class="contact-grid">
-        <div class="contact-info-card">
-          <h3>Atención Floralte</h3>
-          <p>Estamos en Guadalajara y atendemos pedidos con entrega programada.</p>
-          <ul>
-            <li><strong>WhatsApp:</strong> +52 33 3661 1674</li>
-            <li><strong>Horario:</strong> Lunes a sábado · 10:00 a 19:00 hrs</li>
-            <li><strong>Servicios:</strong> Detalles, ramos, eventos, empresas.</li>
-          </ul>
-        </div>
-
-        <form class="contact-form">
-          <div class="form-row">
-            <div class="form-group">
-              <label>Nombre completo</label>
-              <input type="text" placeholder="Tu nombre" required>
-            </div>
-            <div class="form-group">
-              <label>WhatsApp</label>
-              <input type="tel" placeholder="Ej. 33 1234 5678" required>
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label>Correo electrónico</label>
-              <input type="email" placeholder="tucorreo@ejemplo.com">
-            </div>
-            <div class="form-group">
-              <label>Tipo de servicio</label>
-              <select>
-                <option>Ramo / detalle</option>
-                <option>Evento social (boda, XV, etc.)</option>
-                <option>Evento empresarial</option>
-                <option>Decoración para casa/oficina</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label>Describe tu idea</label>
-            <textarea placeholder="Cuéntanos fecha, tipo de ocasión, colores que te gustan, presupuesto aproximado..."></textarea>
-          </div>
-
-          <button type="submit" class="btn-cta">
-            Enviar solicitud
-          </button>
-
-          <div class="form-note">
-            * Este formulario es ilustrativo. Puedes conectarlo a tu sistema de correo o CRM.
-          </div>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== QUIÉNES SOMOS ========== -->
-  <section id="quienes" class="view-section">
-    <div class="section-inner">
-      <div class="section-header">
-        <div class="section-tag">Nosotros</div>
-        <h2>Floralte Diseño Floral</h2>
-        <p>
-          Nacimos con la idea de transformar emociones en arreglos hechos a mano,
-          donde cada detalle importa.
-        </p>
-        <div class="section-divider"></div>
-      </div>
-
-      <div class="about-card">
-        <div>
-          <p>
-            En Floralte trabajamos con flores frescas y combinaciones de color
-            pensadas para contar historias: la tuya, la de quien recibe el ramo,
-            la de ese evento que quieres recordar siempre.
-          </p>
-          <ul class="about-highlights">
-            <li>• Diseños personalizados según ocasión y presupuesto.</li>
-            <li>• Experiencia en eventos pequeños y grandes.</li>
-            <li>• Enfoque en servicio, puntualidad y presentación.</li>
-          </ul>
-        </div>
-        <div>
-          <p>
-            Cada pieza se diseña con técnica, estilo y mucho amor por las flores.
-            Nos encanta asesorarte y ayudarte a elegir lo mejor para cada momento:
-            desde un “gracias” sencillo hasta un “sí, acepto” inolvidable.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== FOOTER ========== -->
-  <footer>
-    <div class="footer-inner">
-      <div>© <span id="year"></span> Floralte Diseño Floral. Todos los derechos reservados.</div>
-      <div>Hecho con 💐 en Guadalajara.</div>
-    </div>
-  </footer>
-
-  <!-- ========== WHATSAPP FLOTANTE SOLO MÓVIL ========== -->
-  <a
-    class="whatsapp-fab"
-    href="https://wa.me/523336611674?text=Hola%20Floralte,%20quiero%20hacer%20un%20pedido%20😍"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <span>📲</span> Pedir por WhatsApp
-  </a>
-
-  <!-- ========== OVERLAY RAMO EN PROGRESO ========== -->
-  <div id="ramo-overlay" class="ramo-overlay">
-    <div class="ramo-overlay-inner">
-      <div class="ramo-overlay-main">
-        <div class="ramo-overlay-title">Ramo en progreso</div>
-        <div id="ramo-overlay-detail" class="ramo-overlay-detail">
-          Aún no has agregado flores.
-        </div>
-      </div>
-      <button id="ramo-overlay-btn" class="ramo-overlay-btn" type="button">
-        Ver detalle
-      </button>
     </div>
   </div>
 
-  <!-- ========== JS ========== -->
+  <div id="petals" aria-hidden="true"></div>
+
+  <header>
+    <div class="navwrap">
+      <a class="logo" href="#hero" aria-label="Ir al inicio">
+        <div class="logo-badge" aria-hidden="true">🌸</div>
+        <div style="display:flex;flex-direction:column;line-height:1.05">
+          <strong>Floralte</strong>
+          <span>Diseño Floral</span>
+        </div>
+      </a>
+
+      <nav aria-label="Navegación principal">
+        <a class="navlink" href="#productos">Productos</a>
+        <a class="navlink" href="#arma-tu-ramo">Arma tu ramo</a>
+        <a class="navlink" href="#eventos">Eventos</a>
+        <a class="navlink" href="#resenas">Reseñas</a>
+        <a class="navlink" href="#contacto">Contacto</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="btn btn-ghost" id="btn-whats-quick" type="button">WhatsApp</button>
+        <button class="cartbtn" id="btnOpenCart" type="button" aria-label="Abrir carrito">
+          <span aria-hidden="true" class="cart-dot"></span>
+          <span class="badge" id="cartCount">0</span>
+        </button>
+        <button class="menu-toggle" type="button" aria-label="Abrir menú" id="menuToggle">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+<section class="heroLux" aria-label="Hero Floralte">
+  <div class="heroLux__overlay"></div>
+
+  <div class="heroLux__inner">
+    <div class="heroLux__copy">
+      <span class="heroLux__kicker">Floralte Diseño Floral</span>
+
+      <h1 class="heroLux__title">
+        <span class="heroLux__titleTop">Regala momentos únicos</span>
+        <span class="heroLux__titleMain">Regala Momentos Floralte</span>
+      </h1>
+
+      <p class="heroLux__sub">
+        Creatividad en cada diseño, amor en cada pétalo.
+      </p>
+
+      <div class="heroLux__actions">
+        <a class="heroLux__btn heroLux__btn--primary" href="#productos">Ver arreglos</a>
+        <a class="heroLux__btn heroLux__btn--ghost" href="#eventos">Cotizar evento</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <section id="productos" class="section">
+      <div class="inner">
+        <div class="section-head reveal">
+          <div class="kicker">Catálogo</div>
+          <h2>Productos por categoría</h2>
+          <p>Selecciona, agrega al carrito y envíanos el pedido por WhatsApp o continúa a Mercado Pago.</p>
+          <div class="divider"></div>
+        </div>
+
+        <div class="controls reveal">
+          <div class="chips" id="categoryChips"></div>
+          <div class="row">
+            <input class="search" id="searchInput" placeholder="Buscar: 'ramo', 'rosas', 'evento'…" />
+            <select class="select" id="sortSelect" aria-label="Ordenar productos">
+              <option value="featured">Recomendados</option>
+              <option value="price_asc">Precio: menor a mayor</option>
+              <option value="price_desc">Precio: mayor a menor</option>
+              <option value="name_asc">Nombre: A–Z</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grid reveal" id="productsGrid" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section id="arma-tu-ramo" class="section">
+      <div class="inner">
+        <div class="section-head reveal">
+          <div class="kicker">Personaliza</div>
+          <h2>Arma tu ramo</h2>
+          <p>Selecciona flores, color y cantidad. Te mandamos el resumen y total aproximado por WhatsApp.</p>
+          <div class="divider"></div>
+        </div>
+
+        <div class="builder-grid reveal">
+          <div class="panel" style="flex:1">
+            <h3 style="font-size:24px">Flores</h3>
+            <p style="font-weight:800; color:rgba(30,14,32,.62); margin-top:6px">
+              Si una imagen no carga, es porque falta el archivo en /images. Aún así, la flor se puede seleccionar.
+            </p>
+            <div class="builder-flowers" id="builder-flowers"></div>
+          </div>
+
+          <div class="panel summary" style="flex:0 0 420px">
+            <h3>Tu selección</h3>
+            <div class="summary-list" id="summary-list"></div>
+            <div class="totals" style="margin-top:10px">
+              <span>Total aprox</span>
+              <span id="summary-total">$0</span>
+            </div>
+
+            <div class="summary-actions">
+              <button class="btn btn-secondary" type="button" id="btn-clear-ramo">Limpiar</button>
+              <button class="btn btn-primary" type="button" id="btn-whatsapp-ramo">Enviar a WhatsApp</button>
+            </div>
+
+            <div class="hint" style="margin-top:10px">
+              Los precios son aproximados y pueden variar según temporada. Confirmamos disponibilidad y cotización final.
+            </div>
+
+            <div class="divider"></div>
+
+            <div style="display:flex;flex-direction:column;gap:10px">
+              <div class="label">Preview IA (opcional)</div>
+              <button class="btn btn-ghost" type="button" id="btn-preview">Generar preview IA</button>
+              <div id="previewBox" style="display:none;border-radius:18px;overflow:hidden;border:1px solid rgba(0,0,0,.08);background:#fff;box-shadow:0 12px 20px rgba(0,0,0,.06)">
+                <img id="previewImg" alt="Preview de ramo" />
+              </div>
+              <div class="hint">Requiere tu backend (endpoint /api/ramo-preview). Si no existe, no pasa nada.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="eventos" class="section">
+      <div class="inner">
+        <div class="section-head reveal">
+          <div class="kicker">Eventos</div>
+          <h2>Arma tu cotización de evento</h2>
+          <p>Tipo de evento, cantidad de mesas o personas y lo que quieres incluir. Te lo mandamos a WhatsApp para cotizar.</p>
+          <div class="divider"></div>
+        </div>
+
+        <div class="event-grid reveal">
+          <div class="card">
+            <h3>Datos del evento</h3>
+
+            <div class="grid2">
+              <div class="stack">
+                <div class="label">Tipo de evento</div>
+                <select class="field" id="eTipo">
+                  <option value="Boda">Boda</option>
+                  <option value="XV años">XV años</option>
+                  <option value="Cumpleaños">Cumpleaños</option>
+                  <option value="Empresarial">Empresarial</option>
+                  <option value="Otro">Otro</option>
+                </select>
+              </div>
+
+              <div class="stack">
+                <div class="label">Fecha (opcional)</div>
+                <input class="field" id="eFecha" type="date" />
+              </div>
+
+              <div class="stack">
+                <div class="label">Cantidad de mesas</div>
+                <input class="field" id="eMesas" type="number" min="0" value="10" />
+              </div>
+
+              <div class="stack">
+                <div class="label">Personas (aprox)</div>
+                <input class="field" id="ePersonas" type="number" min="0" value="100" />
+              </div>
+
+              <div class="stack" style="grid-column:1/-1">
+                <div class="label">Ubicación / salón</div>
+                <input class="field" id="eLugar" placeholder="Ej: Tlaquepaque, salón X, etc." />
+                <div class="hint">El transporte se cobra (si aplica). Indícanos ubicación exacta para confirmarlo.</div>
+              </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <h3 style="margin-top:6px">Servicios a incluir</h3>
+            <div class="checklist" id="servicesList"></div>
+
+            <div class="divider"></div>
+
+            <div class="stack">
+              <div class="label">Notas</div>
+              <textarea class="field" id="eNotas" rows="3" placeholder="Colores, estilo, referencias, horario de montaje…"></textarea>
+              <div class="drawer-actions">
+                <button class="btn btn-primary btn-wide" id="btnSendEventWA" type="button">Enviar a WhatsApp para cotizar</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Jardinería</h3>
+            <p style="font-weight:800;color:rgba(30,14,32,.62)">
+              También hacemos decoración de jardinería (eventos y hogares): diseño, plantas, macetas, mantenimiento y detalle floral.
+            </p>
+
+            <div class="divider"></div>
+
+            <div class="stack">
+              <div class="label">¿Qué necesitas?</div>
+              <select class="field" id="jTipo">
+                <option value="Decoración de jardinería">Decoración de jardinería</option>
+                <option value="Mantenimiento / poda">Mantenimiento / poda</option>
+                <option value="Plantas + macetas">Plantas + macetas</option>
+                <option value="Jardín para evento">Jardín para evento</option>
+              </select>
+            </div>
+
+            <div class="stack">
+              <div class="label">Ubicación</div>
+              <input class="field" id="jLugar" placeholder="Ej: Zapopan, Col. X, etc." />
+            </div>
+
+            <div class="stack">
+              <div class="label">Detalles</div>
+              <textarea class="field" id="jNotas" rows="4" placeholder="Medidas, estilo, presupuesto, fotos de referencia…"></textarea>
+            </div>
+
+            <button class="btn btn-ghost btn-wide" id="btnSendGardenWA" type="button">Cotizar jardinería por WhatsApp</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="resenas" class="section">
+      <div class="inner">
+        <div class="section-head reveal">
+          <div class="kicker">Reseñas</div>
+          <h2>Lo que dicen nuestros clientes</h2>
+         
+          <div class="divider"></div>
+        </div>
+
+        <div class="reviews reveal">
+          <div class="review-card">
+            <h3 style="font-size:24px">Reseñas destacadas</h3>
+            <div class="review-list" id="demoReviews"></div>
+          </div>
+
+          <div class="review-card">
+            <h3 style="font-size:24px">Google Maps</h3>
+            <p style="font-weight:800;color:rgba(30,14,32,.62)">
+             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3733.7771894728116!2d-103.31943022570525!3d20.63793680108909!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428b38eaf99c163%3A0xfeb328af41e401dc!2sFlorer%C3%ADa%20Floralte!5e0!3m2!1sen!2smx!4v1766874176529!5m2!1sen!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe><br>
+             
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" class="section">
+      <div class="inner">
+        <div class="section-head reveal">
+          <div class="kicker">Contacto</div>
+          <h2>¿Listo para pedir?</h2>
+          <p>Te atendemos por WhatsApp. También puedes agregar productos al carrito y enviarnos el pedido directo.</p>
+          <div class="divider"></div>
+        </div>
+
+        <div class="card reveal">
+          <div class="grid2">
+            <div class="stack">
+              <div class="label">Dirección</div>
+              <div style="font-weight:900">Avenida Niños Héroes 74, Rancho Blanco, Tlaquepaque</div>
+              <div class="hint">Horario y disponibilidad se confirman por WhatsApp.</div>
+            </div>
+
+            <div class="stack">
+              <div class="label">Envío</div>
+              <div style="font-weight:900">Gratis: Guadalajara · Zapopan · Tlaquepaque</div>
+              <div class="hint">Fuera de esas zonas: se cotiza transporte.</div>
+            </div>
+
+            <div class="stack">
+              <div class="label">Pagos</div>
+              <div style="font-weight:900">Transferencia / Mercado Pago</div>
+              <div class="hint">Hasta 12 meses con Mercado Pago.</div>
+            </div>
+
+            <div class="stack">
+              <div class="label">Acción</div>
+              <button class="btn btn-primary btn-wide" id="btnContactWA" type="button">Escribir por WhatsApp</button>
+              <button class="btn btn-ghost btn-wide" id="btnOpenCart3" type="button">Abrir carrito</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="foot">
+        <div style="display:flex;align-items:center;gap:10px">
+          <div class="logo-badge" aria-hidden="true">🌸</div>
+          <div style="display:flex;flex-direction:column;line-height:1.05">
+            <strong style="font-family:'Playfair Display',serif;font-size:18px">Floralte</strong>
+            <small>© <span id="year"></span> — Diseño Floral</small>
+          </div>
+        </div>
+        <small>Este sitio es una demo de catálogo + cotización por WhatsApp. Para cobro con Mercado Pago, pega tu link/endpoint en el código.</small>
+      </div>
+    </footer>
+  </main>
+
+  <div class="drawer-backdrop" id="cartBackdrop" aria-hidden="true"></div>
+  <aside class="drawer" id="cartDrawer" aria-label="Carrito">
+    <div class="drawer-head">
+      <h3 style="margin:0">Carrito</h3>
+      <button class="xbtn" id="btnCloseCart" type="button" aria-label="Cerrar carrito">✕</button>
+    </div>
+
+    <div class="drawer-body">
+      <div class="cart-empty" id="cartEmpty">
+        Aún no agregas productos. Elige algo del catálogo y se agrega aquí.
+      </div>
+
+      <div class="cart-items" id="cartItems" style="display:none"></div>
+
+      <div class="totals">
+        <span>Total aprox</span>
+        <span id="cartTotal">$0</span>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="stack">
+        <div class="label">Entrega</div>
+        <select class="field" id="oEntrega">
+          <option value="Entrega a domicilio">Entrega a domicilio</option>
+          <option value="Recoger en tienda">Recoger en tienda</option>
+        </select>
+        <div class="hint" id="shipHint">Selecciona ciudad para calcular envío.</div>
+      </div>
+
+      <div class="stack">
+        <div class="label">Ciudad</div>
+        <select class="field" id="oCiudad">
+          <option value="Guadalajara">Guadalajara</option>
+          <option value="Zapopan">Zapopan</option>
+          <option value="Tlaquepaque">Tlaquepaque</option>
+          <option value="Tonalá">Tonalá</option>
+          <option value="Otro">Otro</option>
+        </select>
+      </div>
+
+      <div class="stack">
+        <div class="label">Dirección (si es entrega)</div>
+        <input class="field" id="oDireccion" placeholder="Calle, número, colonia…" />
+      </div>
+
+      <div class="grid2">
+        <div class="stack">
+          <div class="label">Tu nombre</div>
+          <input class="field" id="oNombre" placeholder="Nombre" />
+        </div>
+        <div class="stack">
+          <div class="label">Tu WhatsApp</div>
+          <input class="field" id="oWhats" placeholder="33..." />
+        </div>
+      </div>
+
+      <div class="stack">
+        <div class="label">Pago</div>
+        <select class="field" id="oPago">
+          <option value="Transferencia">Transferencia</option>
+          <option value="Mercado Pago">Mercado Pago (hasta 12 meses)</option>
+        </select>
+      </div>
+
+      <div class="drawer-actions">
+        <button class="btn btn-ghost" id="btnSendOrderWA" type="button">Enviar pedido a WhatsApp</button>
+        <button class="btn btn-primary" id="btnCheckoutMP" type="button">Pagar con Mercado Pago</button>
+      </div>
+
+      <div class="hint">
+        Si tu ciudad no es GDL/Zapopan/Tlaquepaque, el transporte se cotiza.
+      </div>
+    </div>
+  </aside>
+
+  <div class="modal-backdrop" id="productModalBackdrop" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-label="Detalle de producto">
+      <div class="drawer-head" style="border-bottom:1px solid rgba(0,0,0,.08)">
+        <h3 style="margin:0" id="pmTitle">Producto</h3>
+        <button class="xbtn" id="btnCloseProductModal" type="button" aria-label="Cerrar">✕</button>
+      </div>
+      <div class="modal-grid">
+        <div class="modal-media">
+          <img id="pmImg" alt="Imagen del producto" />
+        </div>
+        <div class="modal-body">
+          <div class="kicker" id="pmCat" style="margin-bottom:10px">Categoría</div>
+          <h3 id="pmName">Nombre</h3>
+          <p id="pmDesc" style="font-weight:800;color:rgba(30,14,32,.70)"></p>
+
+          <div class="meta">
+            <div style="font-weight:900">Precio: <span id="pmPrice">$0</span></div>
+            <div style="display:flex;gap:10px;align-items:center">
+              <input class="qty" id="pmQty" type="number" min="1" value="1" aria-label="Cantidad" />
+              <button class="btn btn-primary" id="pmAdd" type="button">Agregar</button>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div style="font-weight:900;margin-top:6px">Productos relacionados</div>
+          <div class="rel-grid" id="pmRelated"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script>
-    // Año dinámico
-    document.getElementById('year').textContent = new Date().getFullYear();
+  // ======= Config =======
+  const WHATSAPP_NUMBER = "523322461009";
+  // Pega aquí tu link/checkout (o endpoint) de Mercado Pago:
+  const MERCADOPAGO_CHECKOUT_URL = "";
+  // Pega aquí tu link para dejar reseña:
+  const GOOGLE_REVIEW_URL = "";
 
-    // Menú móvil
-    const menuToggle = document.querySelector('.menu-toggle');
-    const nav = document.querySelector('header nav');
-    menuToggle.addEventListener('click', () => {
-      nav.classList.toggle('open');
-    });
+  // ======= Helpers =======
+  const $ = (q) => document.querySelector(q);
+  const $$ = (q) => Array.from(document.querySelectorAll(q));
+  const money = (n) => new Intl.NumberFormat("es-MX",{style:"currency",currency:"MXN"}).format(Number(n||0));
+  const safeOpen = (url) => window.open(url, "_blank", "noopener,noreferrer");
 
-    // Navegación por secciones (estilo "páginas")
-    const sectionLinks = document.querySelectorAll('[data-section]');
-    const sections = document.querySelectorAll('.view-section');
-
-    function showSection(id) {
-      sections.forEach(sec => {
-        if (sec.id === id) sec.classList.add('active');
-        else sec.classList.remove('active');
-      });
-
-      if (nav.classList.contains('open')) nav.classList.remove('open');
-      window.scrollTo({ top: 0, behavior: 'instant' });
+  function on(selOrEl, evt, fn, opts){
+    const el = (typeof selOrEl === "string") ? $(selOrEl) : selOrEl;
+    if(!el) return null;
+    el.addEventListener(evt, fn, opts);
+    return el;
+  }
+  function safeCall(name, fn){
+    try{ fn(); }
+    catch(e){
+      console.error("[Floralte] Error en:", name, e);
     }
+  }
+  function openWhatsApp(msg){
+    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
+    safeOpen(url);
+  }
+  function clamp(n,min,max){ return Math.max(min, Math.min(max, n)); }
 
-    window.showSection = showSection;
+  // ======= Data (puedes ampliar aquí) =======
+  const products = [
+    { id:"Rose-&-Lila", category:"Ramos", name:"Requiem", price:2500, img:"images/ram1.jpg",
+      desc:"Ramo en tonos lila/rosa, ideal para regalo. Empaque premium y listón." },
+    { id:"ramo-rosas", category:"Ramos", name:"Sweet Pink", price:1500, img:"images/ram2.jpg",
+      desc:"Lindas Gerberas en tonos rosa con toques en blanco, un ramo dulce pero elegante." },
+    { id:"ramo-mix", category:"Ramos", name:"Pilar of Autumn", price:1000, img:"images/ram3.jpg",
+      desc:"Combinación rosas intensos y toques púrpura. Súper fotogénico." },
+    { id:"corazon", category:"Arreglos", name:"Lovely Heart 200", price:9500, img:"images/arr1.jpg",
+      desc:"Corazón con 200 rosas sobre base de madera, el regalo perfecto." },
+    { id:"girarreglo", category:"Arreglos", name:"Sunshine", price:2600, img:"images/arr2.jpg",
+      desc:"Arreglo circular con girasoles y rosas sobre una base de madera." },
+{ id:"arr3", category:"Arreglos", name:"Purple Mayhem", price:4200, img:"images/arr3.jpg",
+      desc:"El ramo en tonos púrpura definitivo. Elegancia y sutileza." },
+{ id:"arr4", category:"Arreglos", name:"Imperial 100", price:4500, img:"images/arr4.jpg",
+      desc:"Arreglo con 100 rosas sobre una base de ceramica." },
+{ id:"ram4", category:"Ramos", name:"Blossom Mist", price:850, img:"images/ram4.jpg",
+      desc:"Ramo de una vista en tonos rosa, elegante y sutil." },
+{ id:"arr5", category:"Arreglos", name:"Wild Mix", price:1900, img:"images/arr5.jpg",
+      desc:"Hermoso arreglo con deslumbrantes tonos rosa sobre una base de madera, el regalo perfecto para toda ocasión." },
+{ id:"arr6", category:"Arreglos", name:"Wild Mix Luxury", price:2850, img:"images/arr6.jpg",
+      desc:"Hermoso arreglo con diferentes tonos y colores. Perfecto para toda ocasión." },
+  ];
 
-    sectionLinks.forEach(link => {
-      link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const target = link.getAttribute('data-section');
-        if (target) showSection(target);
-      });
-    });
-
-    // =========================================================
-    // ✅ NUEVO: ESTADO DE ENVOLTURA (PAPEL / ESTILO / COLOR)
-    // =========================================================
-    const envolturaState = {
-      paperType: "coreano",
-      wrapStyle: "circular",
-      paperColor: "Blanco",
-      paperColorSource: "preset" // preset | custom
-    };
-
-    const $ = (sel, root=document) => root.querySelector(sel);
-    const $$ = (sel, root=document) => Array.from(root.querySelectorAll(sel));
-
-    // Toggle helper (para segmented)
-    function activateSegment(groupEl, activeBtn){
-      if(!groupEl) return;
-      groupEl.querySelectorAll('.seg-btn').forEach(b => b.classList.remove('isActive'));
-      activeBtn.classList.add('isActive');
-    }
-
-    // Tipo de papel
-    const paperTypeGroup = $('#paper-type');
-    if (paperTypeGroup) {
-      paperTypeGroup.querySelectorAll('.seg-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-          activateSegment(paperTypeGroup, btn);
-          envolturaState.paperType = btn.dataset.paper || "coreano";
-        });
-      });
-    }
-
-    // Estilo
-    const wrapStyleGroup = $('#wrap-style');
-    if (wrapStyleGroup) {
-      wrapStyleGroup.querySelectorAll('.seg-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-          activateSegment(wrapStyleGroup, btn);
-          envolturaState.wrapStyle = btn.dataset.style || "circular";
-        });
-      });
-    }
-
-    // Colores preset
-    const paperColors = $('#paper-colors');
-    if (paperColors) {
-      paperColors.querySelectorAll('.color-dot').forEach(dot => {
-        dot.addEventListener('click', () => {
-          paperColors.querySelectorAll('.color-dot').forEach(d => d.classList.remove('isActive'));
-          dot.classList.add('isActive');
-          envolturaState.paperColor = dot.dataset.color || "Blanco";
-          envolturaState.paperColorSource = "preset";
-          const input = $('#paperColorOther');
-          if (input) input.value = "";
-        });
-      });
-    }
-
-    // Color custom
-    const useOtherColor = $('#useOtherColor');
-    if (useOtherColor) {
-      useOtherColor.addEventListener('click', () => {
-        const input = $('#paperColorOther');
-        const v = (input ? input.value : "").trim();
-        if (!v) return;
-        if (paperColors) paperColors.querySelectorAll('.color-dot').forEach(d => d.classList.remove('isActive'));
-        envolturaState.paperColor = v;
-        envolturaState.paperColorSource = "custom";
-      });
-    }
-
-    // Texto humano para WhatsApp / backend
-    function getEnvolturaLabel() {
-      const paperMap = { coreano: "Papel coreano", kraft: "Papel kraft", peyon: "Papel peyón" };
-      const styleMap = { circular: "Circular", "una-vista": "De una vista" };
-      const paper = paperMap[envolturaState.paperType] || "Papel";
-      const style = styleMap[envolturaState.wrapStyle] || "Circular";
-      const color = envolturaState.paperColor || "Blanco";
-      return `${paper} · Estilo: ${style} · Color: ${color}`;
-    }
-
-    // DATA: Flores para "Arma tu ramo"
-    const flores = [
+  // NOTA: si quieres TODAS tus flores exactas, aquí es donde se pegan tal cual (id, nombre, precio, colores, imagenesPorColor).
+  // Este set es el ejemplo; si tu versión tiene más, pégalas aquí y listo.
+  const flores = [
       { id: 'rosa',       nombre: 'Rosa',               precio: 50,  colores: ['Roja', 'Rosa', 'Blanca', 'Amarilla', 'Naranja', 'Lila'], imagen: 'images/rosroj.jpg',
         imagenesPorColor: {
           'Roja':     'images/rosroj.jpg',
@@ -1840,262 +1566,699 @@
       },
     ];
 
-    const builderContainer  = document.getElementById('builder-flowers');
-    const summaryList       = document.getElementById('summary-list');
-    const summaryTotal      = document.getElementById('summary-total');
-    const btnClear          = document.getElementById('btn-clear-ramo');
-    const btnWhatsapp       = document.getElementById('btn-whatsapp');
+  const eventServices = [
+    { id:"peceritas-vela", name:"Peceritas con vela", note:"centro de mesa en pecera con vela" },
+    { id:"florero-grande-vela", name:"Florero grande con vela", note:"florero alto con vela decorativa" },
+    { id:"kit-ramo-novia", name:"Kit ramo de novia", note:"ramo de novia (y posibles extras según paquete)" },
+    { id:"centros-redonda", name:"Centros de mesa redonda", note:"centros para mesas redondas" },
+    { id:"centros-rect", name:"Centros de mesa rectangular", note:"centros para mesas rectangulares" },
+    { id:"floreros-mesa-aleatorio", name:"Floreros para mesa (flor aleatoria)", note:"florero sencillo con flor de temporada" },
+    { id:"estructura-back-novios", name:"Estructuras para back de novios", note:"estructura base para decoración del back" },
+    { id:"mesa-novios", name:"Arreglo para mesa de novios", note:"arreglo frontal o central para mesa principal" },
+    { id:"decor-fuente", name:"Decoración de fuente", note:"si hay fuente en el lugar" },
+    { id:"decor-aerea", name:"Decoración aérea", note:"instalación aérea (según viabilidad del lugar)" },
+    { id:"decor-entrada", name:"Decoración de entrada", note:"arco / bienvenida / pasillo" },
+    { id:"transporte", name:"Transporte", note:"se cobra el transporte (según ubicación)" },
+  ];
 
-    // Overlay
-    const ramoOverlay       = document.getElementById('ramo-overlay');
-    const ramoOverlayDetail = document.getElementById('ramo-overlay-detail');
-    const ramoOverlayBtn    = document.getElementById('ramo-overlay-btn');
+  const demoReviews = [
+    { name:"Cliente", stars:5, text:"Diseño precioso y súper puntual. El ramo llegó impecable." },
+    { name:"Cliente", stars:5, text:"Atención rápida por WhatsApp y el arreglo quedó mejor que la foto." },
+    { name:"Cliente", stars:4, text:"Muy buena calidad de flor. El envío dentro de la zona fue gratis." },
+  ];
 
-    // Preview IA
-    const btnPreview        = document.getElementById('btn-preview');
-    const previewWrapper    = document.getElementById('preview-wrapper');
-    const previewImage      = document.getElementById('preview-image');
-    const previewLoading    = document.getElementById('preview-loading');
+  // ======= Global state =======
+  let activeCategory = "Todos";
+  const cart = new Map();
+  let ramo = [];
 
-    let ramo = []; // { id, nombre, color, qty, precioUnit }
+  // ======= Boot =======
+  document.addEventListener("DOMContentLoaded", () => {
+    // Year
+    const y = $("#year"); if(y) y.textContent = new Date().getFullYear();
 
-    // Construir tarjetas de flores
-    flores.forEach(flor => {
-      const card = document.createElement('div');
-      card.className = 'flor-card';
-      card.dataset.id = flor.id;
+    // Splash: siempre se cierra (sin romper nada)
+    safeCall("splash", () => {
+      const splash = $("#splash");
+      const hideSplash = () => {
+        const s = $("#splash");
+        if(!s) return;
+        s.classList.add("hide");
+        window.setTimeout(() => { if(s && s.parentNode) s.parentNode.removeChild(s); }, 700);
+      };
+      // click to enter
+      on(splash, "click", hideSplash);
+      // auto hide
+      window.setTimeout(hideSplash, 900);
+      // failsafe
+      window.setTimeout(hideSplash, 3500);
+      // also on full load
+      window.addEventListener("load", () => window.setTimeout(hideSplash, 600), {once:true});
+    });
 
-      let imagenInicial = flor.imagen || 'images/flores/placeholder.jpg';
-      if (flor.colores && flor.colores.length && flor.imagenesPorColor) {
-        const colorDefault = flor.colores[0];
-        if (flor.imagenesPorColor[colorDefault]) {
-          imagenInicial = flor.imagenesPorColor[colorDefault];
-        }
+    // Petals
+    safeCall("petals", () => {
+      const petals = $("#petals");
+      if(!petals) return;
+      const count = 16;
+      for(let i=0;i<count;i++){
+        const s = document.createElement("span");
+        s.className = "petal";
+        const left = Math.random()*100;
+        const delay = Math.random()*6;
+        const dur = 9 + Math.random()*10;
+        const size = 12 + Math.random()*12;
+        const hue = 330 + Math.random()*45;
+        const alpha = 0.10 + Math.random()*0.22;
+        s.style.left = left+"vw";
+        s.style.animationDelay = delay+"s";
+        s.style.animationDuration = dur+"s";
+        s.style.width = size+"px";
+        s.style.height = (size*1.55)+"px";
+        s.style.background = `hsla(${hue}, 72%, 62%, ${alpha})`;
+        petals.appendChild(s);
       }
+    });
 
+    // Menu toggle
+    safeCall("menu", () => {
+      const menuToggle = $("#menuToggle");
+      const nav = document.querySelector("header nav");
+      if(menuToggle && nav){
+        on(menuToggle, "click", () => nav.classList.toggle("open"));
+        $$(".navlink").forEach(a => on(a, "click", () => nav.classList.remove("open")));
+      }
+    });
+
+    // Hero buttons
+    on("#btnToProducts","click", () => $("#productos")?.scrollIntoView({behavior:"smooth"}));
+    on("#btnQuote","click", () => $("#eventos")?.scrollIntoView({behavior:"smooth"}));
+    on("#btnToRamo","click", () => $("#arma-tu-ramo")?.scrollIntoView({behavior:"smooth"}));
+    on("#btnOpenCart2","click", openCart);
+    on("#btnOpenCart3","click", openCart);
+
+    on("#btn-whats-quick","click", () => openWhatsApp("Hola Floralte, quiero hacer un pedido."));
+    on("#btnContactWA","click", () => openWhatsApp("Hola Floralte, quiero información y cotización."));
+
+    // Inits (no se detienen aunque algo falle)
+    safeCall("reviews", renderDemoReviews);
+    safeCall("productos", initProducts);
+    safeCall("carrito", initCart);
+    safeCall("armaTuRamo", initBouquetBuilder);
+    safeCall("eventos", initEvents);
+    safeCall("reveal", initReveal);
+
+    on("#btnLeaveReview","click", () => {
+      if(GOOGLE_REVIEW_URL && GOOGLE_REVIEW_URL.trim()) safeOpen(GOOGLE_REVIEW_URL.trim());
+      else alert("Pega tu link en GOOGLE_REVIEW_URL dentro del código.");
+    });
+  });
+
+  // ======= Reveal on scroll =======
+  function initReveal(){
+    const els = $$(".reveal");
+    if(!("IntersectionObserver" in window) || els.length===0){
+      els.forEach(el => el.classList.add("on"));
+      return;
+    }
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if(e.isIntersecting){ e.target.classList.add("on"); io.unobserve(e.target); }
+      });
+    }, {threshold: .08});
+    els.forEach(el => io.observe(el));
+  }
+
+  // ======= Products =======
+  function categories(){
+    const set = new Set(products.map(p => p.category));
+    return ["Todos", ...Array.from(set)];
+  }
+
+  function initProducts(){
+    renderCategoryChips();
+    renderProducts();
+    on("#searchInput","input", renderProducts);
+    on("#sortSelect","change", renderProducts);
+  }
+
+  function renderCategoryChips(){
+    const wrap = $("#categoryChips");
+    if(!wrap) return;
+    wrap.innerHTML = "";
+    categories().forEach(cat => {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "chip" + (cat===activeCategory ? " active" : "");
+      b.textContent = cat;
+      on(b, "click", () => {
+        activeCategory = cat;
+        $$(".chip").forEach(x => x.classList.remove("active"));
+        b.classList.add("active");
+        renderProducts();
+      });
+      wrap.appendChild(b);
+    });
+  }
+
+  function renderProducts(){
+    const grid = $("#productsGrid");
+    if(!grid) return;
+
+    const q = ($("#searchInput")?.value || "").trim().toLowerCase();
+    const sort = $("#sortSelect")?.value || "featured";
+
+    let list = products.slice();
+    if(activeCategory !== "Todos") list = list.filter(p => p.category === activeCategory);
+    if(q){
+      list = list.filter(p =>
+        (p.name||"").toLowerCase().includes(q) ||
+        (p.category||"").toLowerCase().includes(q) ||
+        (p.desc||"").toLowerCase().includes(q)
+      );
+    }
+
+    if(sort === "price_asc") list.sort((a,b) => (a.price||0) - (b.price||0));
+    else if(sort === "price_desc") list.sort((a,b) => (b.price||0) - (a.price||0));
+    else if(sort === "name_asc") list.sort((a,b) => (a.name||"").localeCompare(b.name||"", "es"));
+
+    grid.innerHTML = "";
+    if(list.length === 0){
+      grid.innerHTML = `<div class="card" style="grid-column:1/-1"><strong>No encontramos productos.</strong><div class="hint">Prueba con otra categoría o búsqueda.</div></div>`;
+      return;
+    }
+
+    list.forEach(p => {
+      const card = document.createElement("div");
+      card.className = "product";
+      card.setAttribute("role","button");
+      card.setAttribute("tabindex","0");
       card.innerHTML = `
-        <div class="flor-header">
-          <div class="flor-image-wrap">
-            <img class="flor-image" src="${imagenInicial}" alt="${flor.nombre}">
-          </div>
-          <div>
-            <div class="flor-name">${flor.nombre}</div>
-            <div class="flor-precio">Desde $${flor.precio} MXN por tallo</div>
-          </div>
+        <div class="product-media">
+          <span class="tag">${escapeHtml(p.category)}</span>
+          <img src="${escapeAttr(p.img)}" alt="${escapeAttr(p.name)}" loading="lazy">
         </div>
-        <div class="flor-controls">
-          ${flor.colores.length ? `
-            <div>
-              <label>Color</label><br>
-              <select class="flor-select">
-                ${flor.colores.map(c => `<option value="${c}">${c}</option>`).join('')}
-              </select>
-            </div>
-          ` : ''}
-          <div>
-            <label>Cantidad</label><br>
-            <input class="flor-qty" type="number" min="1" value="1" />
+        <div class="product-body">
+          <div class="product-name">${escapeHtml(p.name)}</div>
+          <div class="product-meta">
+            <span>${escapeHtml(p.category)}</span>
+            <span class="price">${p.price && p.price>0 ? money(p.price) : "Se cotiza"}</span>
           </div>
-          <button class="btn-add" type="button">
-            <span>+</span> Agregar
-          </button>
+          <div class="product-actions">
+            <input class="qty" type="number" min="1" value="1" aria-label="Cantidad">
+            <button class="btn btn-primary" type="button" style="padding:10px 12px">Agregar</button>
+          </div>
         </div>
       `;
 
-      const imgEl   = card.querySelector('.flor-image');
-      const select  = card.querySelector('.flor-select');
-      const btnAdd  = card.querySelector('.btn-add');
-
-      if (select && flor.imagenesPorColor) {
-        const actualizarImagen = () => {
-          const color = select.value;
-          const srcColor = flor.imagenesPorColor[color];
-          imgEl.src = srcColor || flor.imagen || imagenInicial;
-        };
-        select.addEventListener('change', actualizarImagen);
-        actualizarImagen();
-      }
-
-      btnAdd.addEventListener('click', () => {
-        const qtyInput = card.querySelector('.flor-qty');
-        const qty = parseInt(qtyInput.value, 10) || 0;
-        if (qty <= 0) return;
-
-        const select = card.querySelector('.flor-select');
-        const color = select ? select.value : '';
-
-        agregarFlorAlRamo(flor, qty, color);
-        qtyInput.value = 1;
+      const img = card.querySelector("img");
+      if(img) on(img, "error", () => {
+        img.style.display="none";
+        const media = img.closest(".product-media");
+        if(media) media.style.background = "rgba(255,79,164,.10)";
       });
 
-      builderContainer.appendChild(card);
-    });
-
-    function agregarFlorAlRamo(flor, qty, color) {
-      const keyColor = color || '';
-      const existing = ramo.find(item => item.id === flor.id && item.color === keyColor);
-
-      if (existing) existing.qty += qty;
-      else {
-        ramo.push({
-          id: flor.id,
-          nombre: flor.nombre,
-          color: keyColor,
-          qty,
-          precioUnit: flor.precio
-        });
-      }
-      renderRamo();
-    }
-
-    function renderRamo() {
-      summaryList.innerHTML = '';
-
-      if (ramo.length === 0) {
-        summaryList.innerHTML = `
-          <div class="summary-empty">
-            Aún no has agregado flores. Empieza eligiendo una en el panel de la izquierda.
-          </div>
-        `;
-        summaryTotal.textContent = '$0 MXN';
-
-        if (ramoOverlay) ramoOverlay.classList.remove('show');
-        if (previewWrapper) previewWrapper.classList.remove('show');
-        return;
-      }
-
-      let total = 0;
-      let totalTallos = 0;
-
-      ramo.forEach((item, index) => {
-        const subtotal = item.qty * item.precioUnit;
-        total += subtotal;
-        totalTallos += item.qty;
-
-        const row = document.createElement('div');
-        row.className = 'summary-item';
-        row.innerHTML = `
-          <div>
-            <strong>${item.nombre}</strong>
-            ${item.color ? `<small> · ${item.color}</small>` : ''}
-            <br>
-            <small>${item.qty} tallo(s) x $${item.precioUnit}</small>
-          </div>
-          <div>
-            <span>$${subtotal}</span><br>
-            <button data-index="${index}" class="btn-remove" type="button" style="border:none;background:none;color:#d14f7b;font-size:11px;cursor:pointer;">
-              Eliminar
-            </button>
-          </div>
-        `;
-        summaryList.appendChild(row);
+      const qty = card.querySelector(".qty");
+      const add = card.querySelector(".btn-primary");
+      on(add, "click", (e) => {
+        e.stopPropagation();
+        addToCart(p.id, clamp(parseInt(qty?.value,10)||1, 1, 999));
+        pulseCart();
       });
 
-      summaryTotal.textContent = `$${total} MXN`;
-
-      if (ramoOverlay && ramoOverlayDetail) {
-        const textoTallos = totalTallos === 1 ? '1 tallo' : `${totalTallos} tallos`;
-        ramoOverlayDetail.textContent = `${textoTallos} · Total aprox: $${total} MXN`;
-        ramoOverlay.classList.add('show');
-      }
-
-      summaryList.querySelectorAll('.btn-remove').forEach(btn => {
-        btn.addEventListener('click', () => {
-          const idx = parseInt(btn.dataset.index, 10);
-          ramo.splice(idx, 1);
-          renderRamo();
-        });
-      });
-    }
-
-    // Limpiar ramo completo
-    btnClear.addEventListener('click', () => {
-      ramo = [];
-      renderRamo();
-    });
-
-    // Scroll desde overlay al detalle
-    if (ramoOverlayBtn) {
-      ramoOverlayBtn.addEventListener('click', () => {
-        showSection('arma-tu-ramo');
-      });
-    }
-
-    // WhatsApp con composición + envoltura
-    btnWhatsapp.addEventListener('click', () => {
-      if (ramo.length === 0) {
-        alert('Primero agrega flores a tu ramo 🙂');
-        return;
-      }
-
-      let mensaje = 'Hola Floralte, quiero cotizar un ramo personalizado con esta composición:%0A%0A';
-
-      ramo.forEach(item => {
-        const linea = `• ${item.nombre}${item.color ? ' (' + item.color + ')' : ''}: ${item.qty} tallo(s) x $${item.precioUnit} MXN`;
-        mensaje += linea + '%0A';
-      });
-
-      mensaje += `%0AEnvoltura: ${encodeURIComponent(getEnvolturaLabel())}%0A`;
-      const totalTexto = summaryTotal.textContent;
-      mensaje += `%0ATotal aproximado: ${encodeURIComponent(totalTexto)}%0A%0AMi nombre es: `;
-
-      const telefono = '523336611674';
-      const url = `https://wa.me/${telefono}?text=${mensaje}`;
-
-      window.open(url, '_blank');
-    });
-
-    // Preview con IA (manda ramo + envoltura)
-    if (btnPreview) {
-      btnPreview.addEventListener('click', async () => {
-        if (ramo.length === 0) {
-          alert('Primero agrega flores a tu ramo para generar un preview 🌸');
-          return;
-        }
-
-        previewWrapper.classList.add('show');
-        previewLoading.style.display = 'block';
-        previewImage.style.display = 'none';
-        previewLoading.textContent = 'Generando preview a partir de tu selección...';
-
-        try {
-          const payload = {
-            ramo,
-            envoltura: { ...envolturaState },
-            envolturaLabel: getEnvolturaLabel()
-          };
-
-          const resp = await fetch('https://floralte-backend.onrender.com/api/generar-preview-ramos', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(payload)
-          });
-
-          if (!resp.ok) {
-            const errorText = await resp.text();
-            console.error('Respuesta no OK del backend:', errorText);
-            throw new Error('Error en el servidor');
-          }
-
-          const data = await resp.json();
-
-          if (!data.ok || !data.imageUrl) {
-            throw new Error('Respuesta sin imagen');
-          }
-
-          previewImage.src = data.imageUrl;
-          previewLoading.style.display = 'none';
-          previewImage.style.display = 'block';
-
-          // si tu backend retorna prompt, lo verás aquí
-          if (data.prompt) console.log('Prompt usado en el backend:', data.prompt);
-        } catch (error) {
-          console.error('Error en preview IA:', error);
-          previewLoading.textContent = 'No pudimos generar el preview en este momento. Intenta de nuevo más tarde.';
-          alert('Ocurrió un error al generar el preview. Revisa la consola (F12 → Console) para más detalles.');
+      on(card, "click", () => openProductModal(p.id));
+      on(card, "keydown", (e) => {
+        if(e.key==="Enter" || e.key===" "){
+          e.preventDefault();
+          openProductModal(p.id);
         }
       });
+
+      grid.appendChild(card);
+    });
+  }
+
+  function escapeHtml(s){ return String(s||"").replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));}
+  function escapeAttr(s){ return escapeHtml(s).replace(/"/g, "&quot;");}
+
+  // ======= Product modal =======
+  on("#btnCloseProductModal", "click", closeProductModal);
+
+  function openProductModal(productId){
+    const p = products.find(x => x.id === productId);
+    if(!p) return;
+
+    const back = $("#productModalBackdrop");
+    if(!back) return;
+
+    $("#pmTitle") && ($("#pmTitle").textContent = p.name);
+    $("#pmCat") && ($("#pmCat").textContent = p.category);
+    $("#pmName") && ($("#pmName").textContent = p.name);
+    $("#pmDesc") && ($("#pmDesc").textContent = p.desc || "Descripción próximamente.");
+    $("#pmPrice") && ($("#pmPrice").textContent = (p.price && p.price>0) ? money(p.price) : "Se cotiza");
+    $("#pmQty") && ($("#pmQty").value = "1");
+
+    const img = $("#pmImg");
+    if(img){
+      img.style.display = "";
+      img.src = p.img || "";
+      img.onerror = () => {
+        img.style.display="none";
+        if(img.parentElement) img.parentElement.style.background = "rgba(255,79,164,.10)";
+      };
     }
-  </script>
+
+    const relWrap = $("#pmRelated");
+    if(relWrap){
+      const related = products.filter(x => x.category===p.category && x.id!==p.id).slice(0,4);
+      relWrap.innerHTML = related.length ? "" : `<div class="hint" style="grid-column:1/-1">No hay relacionados por ahora.</div>`;
+      related.forEach(r => {
+        const el = document.createElement("div");
+        el.className = "rel";
+        el.innerHTML = `
+          <img src="${escapeAttr(r.img)}" alt="${escapeAttr(r.name)}" loading="lazy">
+          <div class="relb">
+            <strong>${escapeHtml(r.name)}</strong>
+            <small>${r.price && r.price>0 ? money(r.price) : "Se cotiza"}</small>
+          </div>
+        `;
+        const ri = el.querySelector("img");
+        if(ri) on(ri,"error", () => { ri.style.display="none"; el.style.background="rgba(255,79,164,.10)"; });
+        on(el,"click", () => openProductModal(r.id));
+        relWrap.appendChild(el);
+      });
+    }
+
+    const addBtn = $("#pmAdd");
+    if(addBtn){
+      addBtn.onclick = () => {
+        const q = clamp(parseInt($("#pmQty")?.value,10)||1, 1, 999);
+        addToCart(p.id, q);
+        pulseCart();
+        closeProductModal();
+        openCart();
+      };
+    }
+
+    back.classList.add("show");
+    on(back, "click", (e) => { if(e.target === back) closeProductModal(); }, {once:true});
+    on(document, "keydown", (e) => { if(e.key==="Escape") closeProductModal(); }, {once:true});
+  }
+
+  function closeProductModal(){
+    $("#productModalBackdrop")?.classList.remove("show");
+  }
+
+  // ======= Cart =======
+  function initCart(){
+    on("#btnOpenCart","click", openCart);
+    on("#btnCloseCart","click", closeCart);
+    on("#cartBackdrop","click", closeCart);
+
+    on("#btnCheckoutMP","click", () => {
+      if(cart.size === 0){ alert("Tu carrito está vacío."); return; }
+      if(MERCADOPAGO_CHECKOUT_URL && MERCADOPAGO_CHECKOUT_URL.trim()) safeOpen(MERCADOPAGO_CHECKOUT_URL.trim());
+      else alert("Pega tu link/endpoint de Mercado Pago en MERCADOPAGO_CHECKOUT_URL.");
+    });
+
+    on("#btnSendOrderWA","click", () => {
+      if(cart.size === 0){ alert("Agrega productos al carrito primero."); return; }
+      openWhatsApp(buildCartMessage());
+    });
+
+    on("#oCiudad","change", syncShipHint);
+    on("#oEntrega","change", syncShipHint);
+
+    syncShipHint();
+    updateCartBadge();
+    renderCartItems();
+  }
+
+  function openCart(){
+    $("#cartBackdrop")?.classList.add("show");
+    $("#cartDrawer")?.classList.add("show");
+    document.body.style.overflow = "hidden";
+    syncShipHint();
+  }
+  function closeCart(){
+    $("#cartBackdrop")?.classList.remove("show");
+    $("#cartDrawer")?.classList.remove("show");
+    document.body.style.overflow = "";
+  }
+  function pulseCart(){
+    const b = $("#btnOpenCart");
+    if(!b) return;
+    b.style.transform = "scale(1.03)";
+    setTimeout(()=> b.style.transform="", 140);
+  }
+
+  function addToCart(productId, qty){
+    const p = products.find(x => x.id === productId);
+    if(!p) return;
+    const current = cart.get(productId);
+    cart.set(productId, {product:p, qty: (current?current.qty:0) + qty});
+    updateCartBadge();
+    renderCartItems();
+  }
+  function setQty(productId, qty){
+    const row = cart.get(productId);
+    if(!row) return;
+    cart.set(productId, {product:row.product, qty: clamp(qty,1,999)});
+    updateCartBadge();
+    renderCartItems();
+  }
+  function removeFromCart(productId){
+    cart.delete(productId);
+    updateCartBadge();
+    renderCartItems();
+  }
+  function cartSubtotal(){
+    let sum = 0;
+    cart.forEach(({product, qty}) => {
+      if(product.price && product.price>0) sum += product.price * qty;
+    });
+    return sum;
+  }
+  function updateCartBadge(){
+    const count = Array.from(cart.values()).reduce((a, x) => a + x.qty, 0);
+    const c = $("#cartCount"); if(c) c.textContent = String(count);
+  }
+  function renderCartItems(){
+    const empty = $("#cartEmpty");
+    const items = $("#cartItems");
+    const total = $("#cartTotal");
+    if(!empty || !items || !total) return;
+
+    if(cart.size === 0){
+      empty.style.display = "block";
+      items.style.display = "none";
+      items.innerHTML = "";
+      total.textContent = money(0);
+      return;
+    }
+    empty.style.display = "none";
+    items.style.display = "flex";
+    items.innerHTML = "";
+
+    cart.forEach(({product, qty}) => {
+      const row = document.createElement("div");
+      row.className = "cart-item";
+      row.innerHTML = `
+        <div>
+          <strong>${escapeHtml(product.name)}</strong><br>
+          <small>${escapeHtml(product.category)} · ${product.price && product.price>0 ? money(product.price) : "Se cotiza"}</small>
+        </div>
+        <div class="cart-item-actions">
+          <input class="mini" type="number" min="1" value="${qty}" aria-label="Cantidad">
+          <button class="link-danger" type="button">Quitar</button>
+        </div>
+      `;
+      const mini = row.querySelector(".mini");
+      const del = row.querySelector(".link-danger");
+      on(mini, "change", (e) => setQty(product.id, parseInt(e.target.value,10)||1));
+      on(del, "click", () => removeFromCart(product.id));
+      items.appendChild(row);
+    });
+
+    total.textContent = money(cartSubtotal());
+    syncShipHint();
+  }
+
+  function shippingIsFree(city){
+    const c = (city || "").toLowerCase();
+    return c.includes("guadalajara") || c.includes("zapopan") || c.includes("tlaquepaque");
+  }
+  function syncShipHint(){
+    const city = $("#oCiudad")?.value || "Guadalajara";
+    const delivery = $("#oEntrega")?.value || "Entrega a domicilio";
+    const hint = $("#shipHint");
+    if(!hint) return;
+
+    if(delivery === "Recoger en tienda"){
+      hint.textContent = "Recoger en tienda: sin envío.";
+      return;
+    }
+    hint.textContent = shippingIsFree(city) ? `Entrega en ${city}: envío gratis.` : `Entrega en ${city}: se cotiza transporte.`;
+  }
+
+  function buildCartMessage(){
+    const name = ($("#oNombre")?.value || "").trim();
+    const phone = ($("#oWhats")?.value || "").trim();
+    const delivery = $("#oEntrega")?.value || "Entrega a domicilio";
+    const city = $("#oCiudad")?.value || "Guadalajara";
+    const addr = ($("#oDireccion")?.value || "").trim();
+    const pay = $("#oPago")?.value || "Transferencia";
+
+    let msg = "Hola Floralte, quiero hacer este pedido:\n\n";
+    cart.forEach(({product, qty}) => {
+      msg += `- ${product.name} x${qty} (${product.price && product.price>0 ? money(product.price) : "se cotiza"})\n`;
+    });
+    msg += `\nTotal aprox (solo items con precio): ${money(cartSubtotal())}`;
+
+    msg += `\nEntrega: ${delivery}`;
+    if(delivery === "Entrega a domicilio"){
+      msg += `\nCiudad: ${city}${shippingIsFree(city) ? " (envío gratis)" : " (se cotiza transporte)"}`;
+      if(addr) msg += `\nDirección: ${addr}`;
+    }else{
+      msg += `\nRecoger en tienda (Niños Héroes 74, Rancho Blanco, Tlaquepaque)`;
+    }
+    msg += `\nPago: ${pay}`;
+    if(name) msg += `\nNombre: ${name}`;
+    if(phone) msg += `\nWhatsApp: ${phone}`;
+
+    msg += "\n\n¿Me confirmas disponibilidad y total final?";
+    return msg;
+  }
+
+  // ======= Bouquet builder =======
+  function initBouquetBuilder(){
+    renderFlowers();
+    renderRamoSummary();
+
+    on("#btn-clear-ramo","click", () => { ramo = []; renderRamoSummary(); });
+
+    on("#btn-whatsapp-ramo","click", () => {
+      if(ramo.length === 0){ alert("Primero agrega flores a tu ramo."); return; }
+      openWhatsApp(buildRamoMessage());
+    });
+
+    on("#btn-preview","click", async () => {
+      if(ramo.length === 0){ alert("Agrega flores para generar preview."); return; }
+      try{
+        const res = await fetch("/api/ramo-preview", {
+          method:"POST",
+          headers:{ "Content-Type":"application/json" },
+          body: JSON.stringify({ ramo })
+        });
+        if(!res.ok) throw new Error("No se pudo generar preview.");
+        const data = await res.json();
+        if(!data || !data.url) throw new Error("Respuesta inválida.");
+        const img = $("#previewImg");
+        if(img) img.src = data.url;
+        const box = $("#previewBox");
+        if(box) box.style.display = "block";
+      }catch(err){
+        alert("Preview IA no disponible (requiere backend /api/ramo-preview).");
+      }
+    });
+  }
+
+  function renderFlowers(){
+    const wrap = $("#builder-flowers");
+    if(!wrap) return;
+    wrap.innerHTML = "";
+
+    flores.forEach(f => {
+      const card = document.createElement("div");
+      card.className = "flor-card";
+
+      const firstColor = (f.colores && f.colores.length) ? f.colores[0] : "";
+      const imgSrc = (f.imagenesPorColor && firstColor && f.imagenesPorColor[firstColor]) ? f.imagenesPorColor[firstColor] : (f.imagen || "");
+
+      card.innerHTML = `
+        <div class="flor-header">
+          <div class="flor-image"><img src="${escapeAttr(imgSrc)}" alt="${escapeAttr(f.nombre)}" loading="lazy"></div>
+          <div style="display:flex;flex-direction:column;gap:2px">
+            <div class="flor-name">${escapeHtml(f.nombre)}</div>
+            <div class="flor-precio">${money(f.precio)} / tallo</div>
+          </div>
+        </div>
+
+        <div class="flor-controls">
+          <label>Color</label>
+          <select class="flor-select" aria-label="Color">
+            ${(f.colores||[]).map(c => `<option value="${escapeAttr(c)}">${escapeHtml(c)}</option>`).join("")}
+          </select>
+
+          <label style="margin-left:6px">Cantidad</label>
+          <input class="flor-qty" type="number" min="1" value="1" aria-label="Cantidad">
+          <button class="addbtn" type="button">Agregar</button>
+        </div>
+      `;
+
+      const img = card.querySelector("img");
+      const colorSel = card.querySelector(".flor-select");
+      const qtyInput = card.querySelector(".flor-qty");
+      const addBtn = card.querySelector(".addbtn");
+
+      if(img) on(img, "error", () => {
+        img.style.display="none";
+        const box = img.closest(".flor-image");
+        if(box) box.style.background="rgba(255,79,164,.12)";
+      });
+
+      on(colorSel, "change", () => {
+        const c = colorSel.value;
+        if(f.imagenesPorColor && f.imagenesPorColor[c] && img){
+          img.style.display = "";
+          img.src = f.imagenesPorColor[c];
+        }
+      });
+
+      on(addBtn, "click", () => {
+        const qty = clamp(parseInt(qtyInput?.value,10)||1, 1, 999);
+        const color = (colorSel?.value || firstColor || "").trim();
+        addFlorToRamo(f, color, qty);
+      });
+
+      wrap.appendChild(card);
+    });
+  }
+
+  function addFlorToRamo(flor, color, qty){
+    const idx = ramo.findIndex(x => x.id === flor.id && x.color === color);
+    if(idx >= 0) ramo[idx].qty += qty;
+    else ramo.push({ id: flor.id, nombre: flor.nombre, color, qty, precioUnit: flor.precio });
+    renderRamoSummary();
+  }
+
+  function ramoTotal(){
+    return ramo.reduce((sum, x) => sum + (x.precioUnit * x.qty), 0);
+  }
+
+  function renderRamoSummary(){
+    const list = $("#summary-list");
+    const total = $("#summary-total");
+    if(!list || !total) return;
+
+    list.innerHTML = "";
+    if(ramo.length === 0){
+      list.innerHTML = `<div class="hint">Tu ramo aún está vacío. Agrega flores de la lista.</div>`;
+      total.textContent = money(0);
+      return;
+    }
+
+    ramo.forEach((x, i) => {
+      const row = document.createElement("div");
+      row.className = "sumrow";
+      row.innerHTML = `
+        <div>
+          <div style="font-weight:900">${escapeHtml(x.nombre)} <span style="font-weight:800;color:rgba(30,14,32,.62)">(${escapeHtml(x.color||"")})</span></div>
+          <div class="hint">${x.qty} × ${money(x.precioUnit)}</div>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px">
+          <div style="font-weight:900">${money(x.precioUnit * x.qty)}</div>
+          <button class="link-danger" type="button">Quitar</button>
+        </div>
+      `;
+      on(row.querySelector(".link-danger"), "click", () => {
+        ramo.splice(i,1);
+        renderRamoSummary();
+      });
+      list.appendChild(row);
+    });
+
+    total.textContent = money(ramoTotal());
+  }
+
+  function buildRamoMessage(){
+    let msg = "Hola Floralte, quiero este ramo:\n\n";
+    ramo.forEach(x => { msg += `- ${x.nombre} (${x.color}) x${x.qty}\n`; });
+    msg += `\nTotal aprox: ${money(ramoTotal())}`;
+    msg += "\n\n¿Me confirmas disponibilidad y cotización final?";
+    return msg;
+  }
+
+  // ======= Eventos =======
+  function initEvents(){
+    renderServices();
+    on("#btnSendEventWA","click", () => openWhatsApp(buildEventMessage()));
+    on("#btnSendGardenWA","click", () => openWhatsApp(buildGardenMessage()));
+  }
+
+  function renderServices(){
+    const wrap = $("#servicesList");
+    if(!wrap) return;
+    wrap.innerHTML = "";
+    eventServices.forEach(s => {
+      const row = document.createElement("label");
+      row.className = "chk";
+      row.innerHTML = `
+        <input type="checkbox" value="${escapeAttr(s.name)}">
+        <div>
+          <strong>${escapeHtml(s.name)}</strong>
+          <small>${escapeHtml(s.note || "")}</small>
+        </div>
+      `;
+      wrap.appendChild(row);
+    });
+  }
+
+  function buildEventMessage(){
+    const tipo = $("#eTipo")?.value || "Evento";
+    const fecha = $("#eFecha")?.value || "";
+    const mesas = $("#eMesas")?.value || "0";
+    const personas = $("#ePersonas")?.value || "0";
+    const lugar = ($("#eLugar")?.value || "").trim();
+    const notas = ($("#eNotas")?.value || "").trim();
+    const selected = $$("#servicesList input[type=checkbox]:checked").map(i => i.value);
+
+    let msg = `Hola Floralte, quiero cotizar un evento.\n\n`;
+    msg += `Tipo: ${tipo}\n`;
+    if(fecha) msg += `Fecha: ${fecha}\n`;
+    msg += `Mesas: ${mesas}\n`;
+    msg += `Personas: ${personas}\n`;
+    if(lugar) msg += `Lugar: ${lugar}\n`;
+
+    msg += `\nServicios:\n`;
+    if(selected.length) selected.forEach(x => msg += `- ${x}\n`);
+    else msg += "- (a definir)\n";
+
+    if(notas) msg += `\nNotas: ${notas}\n`;
+    msg += `\nNota: el transporte se cobra según ubicación. ¿Me ayudas con la cotización?`;
+    return msg;
+  }
+
+  function buildGardenMessage(){
+    const tipo = $("#jTipo")?.value || "Decoración de jardinería";
+    const lugar = ($("#jLugar")?.value || "").trim();
+    const notas = ($("#jNotas")?.value || "").trim();
+
+    let msg = `Hola Floralte, quiero cotizar jardinería.\n\n`;
+    msg += `Servicio: ${tipo}\n`;
+    if(lugar) msg += `Ubicación: ${lugar}\n`;
+    if(notas) msg += `Detalles: ${notas}\n`;
+    msg += "\n¿Me confirmas disponibilidad y presupuesto aproximado?";
+    return msg;
+  }
+
+  // ======= Reviews demo =======
+  function renderDemoReviews(){
+    const wrap = $("#demoReviews");
+    if(!wrap) return;
+    wrap.innerHTML = "";
+    demoReviews.forEach(r => {
+      const el = document.createElement("div");
+      el.className = "review";
+      el.innerHTML = `
+        <strong>${escapeHtml(r.name)}</strong>
+        <div class="stars">${"★".repeat(r.stars)}${"☆".repeat(5-r.stars)}</div>
+        <p>${escapeHtml(r.text)}</p>
+      `;
+      wrap.appendChild(el);
+    });
+  }
+</script>
+
 </body>
 </html>
