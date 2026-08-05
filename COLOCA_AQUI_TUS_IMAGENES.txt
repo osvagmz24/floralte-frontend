@@ -1,3 +1,0 @@
-Logo: logo-floralte.png
-Florería: floreria.jpg
-También agrega todas las imágenes del catálogo y las flores.
