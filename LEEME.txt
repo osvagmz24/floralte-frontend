@@ -1,0 +1,19 @@
+FLORALTE MULTIPÁGINA
+
+Archivos principales:
+- index.html: portada y portal
+- catalogo.html
+- arma-tu-ramo.html
+- eventos.html
+- sobre-nosotros.html
+- contacto.html
+- visitanos.html
+- styles.css
+- common.js y scripts de cada sección
+
+Coloca todas las fotografías dentro de /images.
+Logo: images/logo-floralte.png
+Foto de la florería: images/floreria.jpg
+Las demás rutas de imágenes están dentro de catalogo.js y ramo.js.
+
+IMPORTANTE: sube TODOS los archivos juntos al mismo directorio de tu hosting.
