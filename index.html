@@ -1,0 +1,1041 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#fff7f7">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<title>Floralte — Diseño Floral</title>
+<meta name="description" content="Floralte Diseño Floral. Ramos, arreglos, eventos y experiencias florales en Tlaquepaque.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --pink:#f2cbd5;--pink2:#f9e5e9;--pink3:#fff7f7;--rose:#b85f78;
+  --bronze:#b99a78;--bronze2:#d7c2a7;--bronzeDeep:#6f553c;
+  --ink:#2f2429;--muted:#75666d;--white:#fff;--line:rgba(76,52,62,.12);
+  --glass:rgba(255,255,255,.70);--shadow:0 26px 80px rgba(79,45,59,.14);
+  --shadowSoft:0 14px 42px rgba(79,45,59,.09);--radius:30px;--max:1240px;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{margin:0;font-family:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:var(--pink3);overflow-x:hidden}
+body.locked{overflow:hidden}a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}button{color:inherit}img{display:block;max-width:100%}h1,h2,h3{font-family:"Italiana",serif;margin:0}p{margin:0;color:var(--muted);line-height:1.72}.inner{width:min(var(--max),calc(100% - 28px));margin:auto}.section{position:relative;padding:100px 0;overflow:hidden}.section-head{max-width:820px;margin-bottom:36px}.section-head h2{font-size:clamp(3rem,7vw,5.7rem);line-height:.9;letter-spacing:-.045em;margin:15px 0 16px}.section-head p{max-width:700px}.kicker{display:inline-flex;align-items:center;gap:8px;padding:8px 13px;border:1px solid rgba(185,154,120,.28);border-radius:999px;background:rgba(255,255,255,.55);color:var(--bronzeDeep);font-size:10px;letter-spacing:.22em;text-transform:uppercase;font-weight:800}.btn{border:0;min-height:48px;padding:0 20px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;gap:9px;font-size:13px;font-weight:800;cursor:pointer;transition:.24s ease;touch-action:manipulation}.btn:hover{transform:translateY(-3px)}.btn:active{transform:scale(.97)}.btn-primary{color:#fff;background:linear-gradient(135deg,var(--bronzeDeep),var(--bronze));box-shadow:0 16px 34px rgba(111,85,60,.24)}.btn-pink{color:#fff;background:linear-gradient(135deg,var(--rose),#d9879d);box-shadow:0 16px 34px rgba(184,95,120,.22)}.btn-soft{background:rgba(255,255,255,.76);border:1px solid var(--line);box-shadow:var(--shadowSoft)}.btn-wide{width:100%}.icon-btn{width:46px;height:46px;border-radius:15px;border:1px solid var(--line);background:rgba(255,255,255,.76);display:grid;place-items:center;cursor:pointer;position:relative;box-shadow:var(--shadowSoft)}
+/* splash */
+#splash{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;background:linear-gradient(145deg,#fff8f8,#f7e7e9);transition:opacity .65s ease,visibility .65s ease}.hide{opacity:0!important;visibility:hidden!important;pointer-events:none!important}.splash-orbit{width:180px;height:180px;position:relative;display:grid;place-items:center}.splash-orbit::before,.splash-orbit::after{content:"";position:absolute;border-radius:50%;border:1px solid rgba(185,154,120,.42);animation:spin 4s linear infinite}.splash-orbit::before{inset:0}.splash-orbit::after{inset:23px;animation-direction:reverse;animation-duration:2.7s}.splash-logo{width:105px;height:105px;object-fit:contain;filter:drop-shadow(0 12px 20px rgba(111,85,60,.18))}@keyframes spin{to{transform:rotate(360deg)}}
+/* header */
+header{position:fixed;top:0;left:0;right:0;z-index:120;background:rgba(255,250,250,.76);backdrop-filter:blur(18px) saturate(135%);-webkit-backdrop-filter:blur(18px) saturate(135%);border-bottom:1px solid rgba(76,52,62,.08);transition:.3s}header.scrolled{background:rgba(255,250,250,.94);box-shadow:0 15px 50px rgba(64,35,47,.08)}.nav-wrap{width:min(var(--max),calc(100% - 24px));height:76px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{display:flex;align-items:center;gap:10px;min-width:0}.brand img{width:55px;height:55px;object-fit:contain}.brand-copy strong{display:block;font-family:"Italiana",serif;font-size:22px;line-height:.9}.brand-copy span{display:block;margin-top:7px;font-size:8px;letter-spacing:.27em;text-transform:uppercase;color:var(--bronzeDeep);font-weight:800}.nav-actions{display:flex;align-items:center;gap:8px}.cart-count{position:absolute;top:-7px;right:-7px;min-width:21px;height:21px;padding:0 5px;border-radius:999px;background:var(--rose);color:#fff;border:2px solid #fff;display:grid;place-items:center;font-size:10px;font-weight:800}.desktop-nav{display:flex;gap:3px}.nav-link{padding:10px 12px;border-radius:999px;font-size:12px;font-weight:700;color:#614e57;transition:.2s}.nav-link:hover{background:#fff;color:var(--bronzeDeep)}.menu-toggle{display:none}
+/* hero */
+.hero{min-height:100svh;position:relative;display:grid;align-items:center;padding-top:76px;background:linear-gradient(180deg,#fff8f8 0%,#f9e8eb 52%,#fff7f7 100%);overflow:hidden;isolation:isolate}.hero::before{content:"";position:absolute;width:70vw;aspect-ratio:1;border-radius:50%;left:-36vw;top:-34vw;background:radial-gradient(circle,rgba(242,203,213,.72),transparent 68%);z-index:-3}.hero::after{content:"";position:absolute;width:55vw;aspect-ratio:1;border-radius:50%;right:-28vw;bottom:-34vw;background:radial-gradient(circle,rgba(185,154,120,.24),transparent 68%);z-index:-3}.hero-logo-bg{position:absolute;left:50%;top:52%;width:min(720px,72vw);aspect-ratio:1;transform:translate(-50%,-50%);display:grid;place-items:center;z-index:-1;opacity:.16;pointer-events:none}.hero-logo-bg::before,.hero-logo-bg::after{content:"";position:absolute;border-radius:50%;border:1px solid rgba(111,85,60,.45);animation:spin 18s linear infinite}.hero-logo-bg::before{inset:0}.hero-logo-bg::after{inset:70px;animation-direction:reverse;animation-duration:13s}.hero-logo-bg img{width:58%;height:58%;object-fit:contain;filter:drop-shadow(0 35px 50px rgba(111,85,60,.22))}.hero-spark{position:absolute;width:9px;height:9px;border-radius:50%;background:#fff;box-shadow:0 0 28px var(--bronze),0 0 58px #fff;animation:float 4s ease-in-out infinite}.hero-spark.s1{top:17%;right:18%}.hero-spark.s2{bottom:20%;left:13%;animation-delay:1s}.hero-spark.s3{top:49%;left:4%;animation-delay:2s}@keyframes float{50%{transform:translateY(-14px) scale(1.5);opacity:.45}}.hero-inner{position:relative;z-index:2;width:min(1080px,calc(100% - 28px));margin:auto;padding:92px 0 110px;text-align:center;display:flex;flex-direction:column;align-items:center}.hero-eyebrow{display:flex;align-items:center;gap:11px;color:var(--bronzeDeep);font-size:10px;letter-spacing:.25em;text-transform:uppercase;font-weight:800}.hero-eyebrow::before,.hero-eyebrow::after{content:"";width:40px;height:1px;background:var(--bronze)}.hero h1{font-size:clamp(4.5rem,10vw,9.5rem);line-height:.78;letter-spacing:-.065em;font-weight:600;margin:28px 0;max-width:1050px}.hero h1 em{display:block;color:var(--rose);font-weight:600}.hero p{max-width:650px;font-size:clamp(1rem,1.8vw,1.2rem);color:#68575f}.hero-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:30px}.hero-actions .btn{min-width:190px}
+/* portal */
+.portal-backdrop{position:fixed;inset:0;z-index:500;background:rgba(35,23,29,.62);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);opacity:0;pointer-events:none;display:grid;place-items:center;padding:18px;transition:.35s}.portal-backdrop.show{opacity:1;pointer-events:auto}.portal{width:min(1120px,100%);max-height:92vh;overflow:auto;border-radius:36px;background:linear-gradient(145deg,rgba(255,255,255,.98),rgba(250,232,236,.96));box-shadow:0 50px 140px rgba(28,15,21,.34);padding:30px;position:relative;transform:translateY(25px) scale(.96);transition:.4s cubic-bezier(.2,.8,.2,1)}.portal-backdrop.show .portal{transform:none}.portal-head{text-align:center;max-width:720px;margin:auto}.portal-logo{width:76px;height:76px;object-fit:contain;margin:0 auto 8px}.portal-head span{font-size:9px;letter-spacing:.27em;text-transform:uppercase;color:var(--bronzeDeep);font-weight:800}.portal-head h2{font-size:clamp(2.8rem,6vw,5rem);line-height:.9;margin:10px 0}.portal-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;margin-top:26px}.portal-card{position:relative;min-height:175px;padding:22px;border-radius:25px;background:rgba(255,255,255,.72);border:1px solid rgba(88,58,70,.10);box-shadow:0 18px 44px rgba(76,40,54,.08);overflow:hidden;transition:.22s}.portal-card:hover{transform:translateY(-7px);box-shadow:0 30px 70px rgba(76,40,54,.16)}.portal-card strong{display:block;font-family:"Italiana",serif;font-size:27px;margin-top:28px}.portal-card small{display:block;margin-top:7px;color:var(--muted);line-height:1.45}.portal-card .num{font-size:9px;color:var(--bronze);font-weight:800}.portal-card .arrow{position:absolute;right:18px;bottom:17px;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--bronze2),var(--bronze));color:#fff}.close-portal{position:absolute;right:16px;top:16px;width:42px;height:42px;border-radius:50%;border:0;background:rgba(255,255,255,.82);cursor:pointer;font-size:18px}
+/* catalog */
+#catalogo{background:linear-gradient(180deg,#fff7f7,#f9e8eb 48%,#fff7f7)}.catalog-shell{padding:24px;border-radius:34px;background:rgba(255,255,255,.69);border:1px solid rgba(80,52,63,.09);box-shadow:var(--shadow);backdrop-filter:blur(14px)}.catalog-bar{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:18px}.catalog-path{display:flex;gap:7px;flex-wrap:wrap;font-size:12px;color:var(--muted);font-weight:700}.catalog-path strong{color:var(--bronzeDeep)}.catalog-back{display:none}.catalog-back.show{display:inline-flex}.category-grid,.subcategory-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.subcategory-grid{grid-template-columns:repeat(2,minmax(0,1fr));max-width:960px;margin:auto}.visual-card{position:relative;min-height:360px;border-radius:28px;overflow:hidden;border:0;padding:0;cursor:pointer;background:#eee;box-shadow:0 20px 50px rgba(61,35,45,.13);transition:.35s;text-align:left}.visual-card:hover{transform:translateY(-8px)}.visual-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:.6s}.visual-card:hover img{transform:scale(1.07)}.visual-card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(28,15,21,.04),rgba(28,15,21,.78))}.visual-card-content{position:absolute;z-index:2;left:22px;right:22px;bottom:22px;color:#fff}.visual-card-content small{font-size:9px;letter-spacing:.2em;text-transform:uppercase;font-weight:800}.visual-card-content h3{font-size:38px;line-height:.95;margin:8px 0}.visual-card-content p{color:rgba(255,255,255,.84);font-size:12px;line-height:1.5}.product-tools{display:flex;gap:10px;margin-bottom:18px}.field{width:100%;min-height:48px;border-radius:15px;border:1px solid var(--line);background:rgba(255,255,255,.9);padding:11px 13px;outline:none}.field:focus{border-color:rgba(185,154,120,.55);box-shadow:0 0 0 4px rgba(185,154,120,.10)}.products-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}.product-card{border-radius:25px;overflow:hidden;background:transparent;border:1px solid var(--line);box-shadow:var(--shadowSoft);cursor:pointer;transition:.28s}.product-card:hover{transform:translateY(-7px)}.product-media{width:100%;aspect-ratio:1/1;height:auto;background:transparent;overflow:hidden;position:relative}.product-media img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;transition:transform .55s ease}.product-card:hover .product-media img{transform:scale(1.025)}.product-tag{display:none}.product-body{display:none}.empty{padding:24px;border-radius:20px;background:#fff4f6;color:var(--muted);text-align:center}
+/* bouquet wizard */
+#arma{background:linear-gradient(180deg,#fff7f7,#f7e4e8 45%,#fff7f7)}.builder-intro{min-height:420px;border-radius:36px;padding:40px;display:grid;place-items:center;text-align:center;background:radial-gradient(circle at 50% 20%,rgba(255,255,255,.9),transparent 45%),linear-gradient(145deg,#f5d8df,#efd4da);box-shadow:var(--shadow);position:relative;overflow:hidden}.builder-intro::before,.builder-intro::after{content:"";position:absolute;border-radius:50%;border:1px solid rgba(185,154,120,.28)}.builder-intro::before{width:420px;height:420px;right:-190px;top:-230px}.builder-intro::after{width:300px;height:300px;left:-170px;bottom:-170px}.builder-intro-content{position:relative;z-index:2;max-width:700px}.builder-intro h3{font-size:clamp(3rem,7vw,5.5rem);line-height:.9}.builder-intro p{margin:15px auto 25px;max-width:600px}.design-now{min-height:60px;padding:0 30px;font-size:15px;box-shadow:0 22px 50px rgba(111,85,60,.25)}.wizard{display:none;margin-top:22px}.wizard.show{display:block}.wizard-progress{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:18px}.step-chip{padding:12px;border-radius:16px;background:rgba(255,255,255,.58);border:1px solid var(--line);font-size:11px;font-weight:800;color:var(--muted);text-align:center}.step-chip.active{background:#fff;color:var(--bronzeDeep);box-shadow:var(--shadowSoft);border-color:rgba(185,154,120,.35)}.wizard-panel{display:none}.wizard-panel.active{display:block}.wizard-panel[data-step="1"].active{padding-bottom:120px}.flower-group{padding:22px;border-radius:28px;background:rgba(255,255,255,.74);border:1px solid var(--line);box-shadow:var(--shadowSoft);margin-bottom:16px}.flower-group-head{display:flex;justify-content:space-between;gap:12px;align-items:end;margin-bottom:14px}.flower-group-head h3{font-size:34px}.flower-group-head p{font-size:12px;max-width:560px}.flowers-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.flower-card{padding:11px;border-radius:20px;border:1px solid var(--line);background:#fff;box-shadow:0 12px 28px rgba(69,39,50,.07);transition:.22s}.flower-card:hover{transform:translateY(-4px)}.flower-head{display:flex;gap:10px;align-items:center}.flower-image{width:68px;height:68px;border-radius:17px;overflow:hidden;background:var(--pink2);flex:0 0 auto}.flower-image img{width:100%;height:100%;object-fit:cover;transition:.25s}.flower-image img.changing{opacity:.25;transform:scale(.92)}.flower-name{font-weight:800;font-size:13px}.flower-price{font-size:11px;color:var(--muted);margin-top:4px}.flower-controls{display:grid;grid-template-columns:1fr 72px;gap:7px;margin-top:10px}.flower-controls .field{min-height:40px;padding:7px 9px;font-size:11px}.flower-add{grid-column:1/-1;min-height:39px;border:0;border-radius:12px;background:var(--pink2);color:var(--bronzeDeep);font-weight:800;cursor:pointer}.bouquet-mini-summary{position:fixed;left:50%;bottom:18px;z-index:150;width:min(900px,calc(100% - 28px));transform:translate(-50%,24px) scale(.98);margin:0;padding:14px 16px;border-radius:22px;background:rgba(255,255,255,.94);-webkit-backdrop-filter:blur(18px) saturate(130%);backdrop-filter:blur(18px) saturate(130%);border:1px solid rgba(185,154,120,.24);box-shadow:0 22px 65px rgba(57,33,42,.22);display:flex;align-items:center;justify-content:space-between;gap:12px;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .28s ease,transform .35s cubic-bezier(.2,.8,.2,1),visibility .28s}.bouquet-mini-summary.has-selection{opacity:1;visibility:visible;pointer-events:auto;transform:translate(-50%,0) scale(1)}.bouquet-mini-summary strong{font-size:13px}.bouquet-mini-summary span{display:block;font-size:11px;color:var(--muted);margin-top:3px}.selection-items{display:flex;flex-wrap:wrap;gap:6px;margin-top:7px;max-width:620px;max-height:54px;overflow:auto;scrollbar-width:none}.selection-items::-webkit-scrollbar{display:none}.selection-chip{display:inline-flex;align-items:center;gap:5px;padding:5px 8px;border-radius:999px;background:var(--pink2);border:1px solid rgba(185,154,120,.18);font-size:10px;font-weight:800;color:var(--bronzeDeep);white-space:nowrap}.selection-chip b{font-size:10px;color:var(--rose)}.paper-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}.paper-card{padding:18px;border-radius:22px;background:#fff;border:1px solid var(--line);cursor:pointer;transition:.22s}.paper-card:hover{transform:translateY(-4px)}.paper-card.selected{border-color:rgba(185,154,120,.8);box-shadow:0 0 0 4px rgba(185,154,120,.12),var(--shadowSoft)}.paper-card strong{display:block;font-family:"Italiana",serif;font-size:27px}.paper-card small{display:block;color:var(--muted);margin-top:6px}.paper-colors{display:flex;flex-wrap:wrap;gap:9px;margin-top:18px}.color-choice{min-width:95px;padding:11px 14px;border-radius:999px;border:1px solid var(--line);background:#fff;cursor:pointer;font-size:12px;font-weight:800}.color-choice.selected{border-color:var(--bronze);box-shadow:0 0 0 4px rgba(185,154,120,.12)}.final-card{padding:26px;border-radius:30px;background:rgba(255,255,255,.78);border:1px solid var(--line);box-shadow:var(--shadow);display:grid;grid-template-columns:1fr 1fr;gap:18px}.final-card h3{font-size:42px}.final-actions{display:flex;flex-direction:column;gap:10px;justify-content:center}.flower-card.just-added{animation:flowerAdded .58s cubic-bezier(.2,.8,.2,1)}.flower-add.tap-pop,.paper-card.tap-pop,.color-choice.tap-pop{animation:tapPop .42s cubic-bezier(.2,.8,.2,1)}.flower-card.choice-flash{box-shadow:0 0 0 4px rgba(184,95,120,.12),0 18px 38px rgba(69,39,50,.12)}@keyframes flowerAdded{0%{transform:scale(1)}35%{transform:scale(1.035);box-shadow:0 0 0 6px rgba(184,95,120,.10),0 18px 40px rgba(69,39,50,.14)}100%{transform:scale(1)}}@keyframes tapPop{0%{transform:scale(1)}45%{transform:scale(.95)}75%{transform:scale(1.035)}100%{transform:scale(1)}}.preview-box{display:none;margin-top:16px;border-radius:22px;overflow:hidden;border:1px solid var(--line);background:#fff}.preview-box.show{display:block}.preview-box img{width:100%;height:auto}.preview-status{font-size:11px;color:var(--muted);margin-top:10px}.is-loading{opacity:.7;pointer-events:none}
+/* events */
+#eventos{position:relative;overflow:hidden;isolation:isolate;background:#7b5361;color:#fff}.event-bg{position:absolute;inset:-20px;z-index:-3;background-size:cover;background-position:center;transform:scale(1.035);filter:saturate(.9);transition:opacity .4s,transform 1.1s,filter .5s}.event-bg.changing{opacity:.12;transform:scale(1.09);filter:blur(7px) saturate(.65)}.event-shade{position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,rgba(39,22,29,.82),rgba(75,41,54,.60) 50%,rgba(38,21,28,.68)),linear-gradient(180deg,rgba(185,154,120,.20),rgba(71,32,46,.30))}.event-content{position:relative;z-index:1}.event-content .section-head p{color:rgba(255,255,255,.8)}.event-content .kicker{color:#fff;background:rgba(255,255,255,.11);border-color:rgba(255,255,255,.2)}.panel{padding:23px;border-radius:29px;background:rgba(255,255,255,.9);border:1px solid rgba(80,52,63,.09);box-shadow:var(--shadowSoft);color:var(--ink);backdrop-filter:blur(16px)}.panel h3{font-size:38px}.event-layout,.about-layout,.visit-layout,.contact-layout{display:grid;grid-template-columns:1.1fr .9fr;gap:20px}.grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.stack{display:flex;flex-direction:column;gap:7px}.label{font-size:10px;font-weight:800;letter-spacing:.05em;color:var(--bronzeDeep)}textarea.field{resize:vertical}.services{display:flex;flex-direction:column;gap:9px}.service{display:flex;gap:10px;padding:12px;border-radius:16px;border:1px solid var(--line);background:#fff}.service input{accent-color:var(--bronze)}.service strong{font-size:12px}.service small{display:block;color:var(--muted);font-size:10px;margin-top:3px}
+/* about / visit / contact */
+.about-photo,.shop-photo{min-height:560px;border-radius:31px;overflow:hidden;position:relative;background:var(--pink2);box-shadow:var(--shadow)}.about-photo img,.shop-photo img{width:100%;height:100%;object-fit:cover}.about-copy{display:flex;flex-direction:column;justify-content:center}.about-copy h2{font-size:clamp(3.4rem,6vw,5.8rem);line-height:.86;margin:16px 0}.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;margin-top:24px}.fact{padding:16px;border-radius:18px;background:rgba(255,255,255,.72);border:1px solid var(--line)}.fact strong{display:block;font-family:"Italiana",serif;font-size:27px}.map{width:100%;height:470px;border:0;border-radius:25px}.contact-card{padding:28px}
+/* cart + product modal */
+.backdrop{position:fixed;inset:0;z-index:600;background:rgba(35,21,28,.52);opacity:0;pointer-events:none;transition:.25s}.backdrop.show{opacity:1;pointer-events:auto}.drawer{position:fixed;top:0;right:0;z-index:610;width:min(470px,94vw);height:100%;background:rgba(255,255,255,.98);backdrop-filter:blur(18px);box-shadow:-30px 0 80px rgba(35,21,28,.2);transform:translateX(105%);transition:.3s;display:flex;flex-direction:column;padding-bottom:env(safe-area-inset-bottom)}.drawer.show{transform:none}.drawer-head{display:flex;align-items:center;justify-content:space-between;padding:15px 17px;border-bottom:1px solid var(--line)}.drawer-head h3{font-size:30px}.close-btn{width:40px;height:40px;border-radius:50%;border:0;background:var(--pink2);cursor:pointer}.drawer-body{padding:17px;overflow:auto;display:flex;flex-direction:column;gap:12px}.cart-items{display:flex;flex-direction:column;gap:9px}.cart-item{display:flex;justify-content:space-between;gap:10px;padding:12px;border-radius:16px;border:1px solid var(--line);background:#fff}.cart-item strong{font-size:12px}.cart-item small{display:block;margin-top:4px;color:var(--muted);font-size:10px}.mini{width:70px;min-height:35px;border-radius:10px;border:1px solid var(--line);padding:5px 8px}.divider{height:1px;background:var(--line);margin:20px 0}.total{display:flex;justify-content:space-between;font-weight:900}.mp-btn{background:#009ee3;color:#fff;box-shadow:0 15px 32px rgba(0,158,227,.20)}.modal-backdrop{position:fixed;inset:0;z-index:650;background:rgba(35,21,28,.58);display:grid;place-items:center;padding:18px;opacity:0;pointer-events:none;transition:.25s}.modal-backdrop.show{opacity:1;pointer-events:auto}.product-modal{position:relative;width:min(960px,100%);max-height:92vh;overflow:auto;border-radius:30px;background:#fff;box-shadow:0 45px 120px rgba(35,21,28,.32)}.product-modal-close{position:absolute;top:14px;right:14px;z-index:20;width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.58);background:rgba(255,255,255,.9);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 10px 30px rgba(0,0,0,.15)}.product-modal-grid{display:grid;grid-template-columns:1.05fr .95fr}.modal-media{min-height:520px;background:var(--pink2)}.modal-media img{width:100%;height:100%;object-fit:contain}.modal-content{padding:27px}.modal-content h3{font-size:48px;line-height:.9;margin:10px 0}.modal-meta{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-top:20px}.qty{width:85px;min-height:45px;border-radius:13px;border:1px solid var(--line);padding:8px 10px}
+footer{padding:34px 14px 45px;background:#f7e8ea;border-top:1px solid var(--line)}.footer-inner{width:min(var(--max),100%);margin:auto;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}.footer-inner small{color:var(--muted)}.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}.reveal.on{opacity:1;transform:none}
+/* tablet */
+@media(max-width:1050px){.desktop-nav{position:fixed;top:82px;left:12px;right:12px;display:none;flex-direction:column;align-items:stretch;background:rgba(255,255,255,.98);padding:10px;border-radius:20px;box-shadow:var(--shadow)}.desktop-nav.open{display:flex}.menu-toggle{display:grid}.desktop-wa{display:none}.portal-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.category-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.category-grid .visual-card:last-child{grid-column:1/-1}.products-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.flowers-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.event-layout,.about-layout,.visit-layout,.contact-layout{grid-template-columns:1fr}.final-card{grid-template-columns:1fr}}
+/* phones */
+@media(max-width:760px){html{scroll-padding-top:70px}.section{padding:72px 0}.inner{width:min(100% - 22px,var(--max))}.nav-wrap{height:70px;width:calc(100% - 18px)}.brand img{width:47px;height:47px}.brand-copy strong{font-size:19px}.brand-copy span{
+  display:block;
+  margin-top:5px;
+  font-size:6px;
+  letter-spacing:.22em;}.icon-btn{width:43px;height:43px}.hero{min-height:100svh;padding-top:70px}.hero-inner{padding:56px 0 86px;width:calc(100% - 22px)}.hero-logo-bg{width:125vw;opacity:.115;top:49%}.hero-logo-bg::after{inset:54px}.hero h1{font-size:clamp(4rem,19vw,6.6rem);line-height:.8;margin:22px 0}.hero p{font-size:15px;max-width:92%}.hero-actions{width:100%;margin-top:26px}.hero-actions .btn{width:100%;min-height:54px}.hero-eyebrow{font-size:9px;letter-spacing:.18em}.hero-eyebrow::before,.hero-eyebrow::after{width:24px}.portal-backdrop{padding:10px}.portal{padding:22px 13px 16px;border-radius:28px;max-height:94svh}.portal-grid{grid-template-columns:1fr;gap:9px}.portal-card{min-height:124px;padding:17px}.portal-card strong{font-size:25px;margin-top:18px}.category-grid,.subcategory-grid,.products-grid{grid-template-columns:1fr}.category-grid .visual-card:last-child{grid-column:auto}.visual-card{min-height:320px;border-radius:24px}.catalog-shell{padding:13px;border-radius:27px}.catalog-bar{align-items:flex-start}.catalog-path{font-size:11px}.product-tools{flex-direction:column}.product-media{height:auto;aspect-ratio:1/1}.product-media img{object-fit:cover}.builder-intro{min-height:360px;padding:28px 18px;border-radius:28px}.builder-intro h3{font-size:clamp(3.2rem,15vw,5rem)}.design-now{width:100%;min-height:58px}.wizard-progress{position:sticky;top:76px;z-index:45;background:rgba(255,247,247,.9);backdrop-filter:blur(12px);padding:7px 0}.step-chip{font-size:9px;padding:10px 5px}.flower-group{padding:14px;border-radius:22px}.flower-group-head{display:block}.flower-group-head h3{font-size:30px}.flower-group-head p{margin-top:6px}.flowers-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.flower-card{padding:9px}.flower-head{align-items:flex-start}.flower-image{width:58px;height:58px}.flower-name{font-size:12px}.flower-price{font-size:10px}.flower-controls{grid-template-columns:1fr 62px}.bouquet-mini-summary{bottom:calc(10px + env(safe-area-inset-bottom));border-radius:18px;padding:12px;width:calc(100% - 20px)}.bouquet-mini-summary .btn{min-height:44px;padding:0 14px}.paper-grid{grid-template-columns:1fr}.paper-card{padding:16px}.final-card{padding:18px;border-radius:24px}.final-card h3{font-size:36px}.event-layout,.about-layout,.visit-layout,.contact-layout{grid-template-columns:1fr}.grid-2{grid-template-columns:1fr}.panel{padding:16px;border-radius:24px}.about-photo,.shop-photo{min-height:390px}.map{height:360px}.product-modal-grid{grid-template-columns:1fr}.modal-media{min-height:300px;height:44vh}.modal-content{padding:20px}.modal-content h3{font-size:38px}.drawer{width:100vw}.section-head h2{font-size:clamp(3rem,14vw,5rem)}.facts{grid-template-columns:1fr 1fr}}
+@media(max-width:430px){.flowers-grid{grid-template-columns:1fr}.flower-card{display:grid;grid-template-columns:1fr}.flower-head{align-items:center}.facts{grid-template-columns:1fr}.product-media{aspect-ratio:1/1}.hero-logo-bg{width:145vw}.portal-card{min-height:112px}.bouquet-mini-summary{flex-direction:column;align-items:stretch}.bouquet-mini-summary .btn{width:100%}}
+
+/* =========================================================
+   FLORALTE · DETALLES PREMIUM DE INTERACCIÓN
+   ========================================================= */
+.section-head h2,.about-copy h2{
+  position:relative;
+  display:inline-block;
+  isolation:isolate;
+  text-wrap:balance;
+}
+.section-head h2::before,.about-copy h2::before{
+  content:"✦";
+  position:absolute;
+  right:-28px;
+  top:-8px;
+  font-family:"Manrope",sans-serif;
+  font-size:14px;
+  color:var(--bronze);
+  opacity:0;
+  transform:translateY(8px) rotate(-25deg) scale(.55);
+  filter:drop-shadow(0 0 12px rgba(185,154,120,.45));
+  pointer-events:none;
+}
+.section-head h2::after,.about-copy h2::after{
+  content:"";
+  position:absolute;
+  left:2px;
+  bottom:-11px;
+  width:min(180px,42%);
+  height:2px;
+  border-radius:99px;
+  background:linear-gradient(90deg,transparent,var(--bronze),var(--rose),transparent);
+  transform:scaleX(0);
+  transform-origin:left center;
+  opacity:.75;
+  pointer-events:none;
+}
+.section-head.reveal.on h2,.about-copy.reveal.on h2{
+  animation:floralteTitleBloom .9s cubic-bezier(.16,.8,.22,1) both;
+}
+.section-head.reveal.on h2::before,.about-copy.reveal.on h2::before{
+  animation:titleSpark 1.05s .28s cubic-bezier(.16,.8,.22,1) forwards;
+}
+.section-head.reveal.on h2::after,.about-copy.reveal.on h2::after{
+  animation:titleLine 1.1s .16s cubic-bezier(.16,.8,.22,1) forwards;
+}
+#eventos .section-head h2::before{color:#f5d9c0}
+#eventos .section-head h2::after{background:linear-gradient(90deg,transparent,#f3d8c0,#fff,transparent)}
+@keyframes floralteTitleBloom{
+  0%{opacity:0;transform:translateY(22px);filter:blur(7px)}
+  55%{filter:blur(0)}
+  100%{opacity:1;transform:none;filter:none}
+}
+@keyframes titleSpark{
+  0%{opacity:0;transform:translateY(8px) rotate(-25deg) scale(.55)}
+  55%{opacity:1;transform:translateY(-2px) rotate(12deg) scale(1.2)}
+  100%{opacity:.72;transform:none}
+}
+@keyframes titleLine{to{transform:scaleX(1)}}
+
+#arma::before,#arma::after{
+  content:"";
+  position:absolute;
+  border-radius:50%;
+  pointer-events:none;
+  filter:blur(2px);
+  opacity:.45;
+  z-index:0;
+}
+#arma::before{
+  width:360px;height:360px;left:-180px;top:18%;
+  background:radial-gradient(circle,rgba(242,203,213,.58),transparent 67%);
+  animation:builderAura 9s ease-in-out infinite;
+}
+#arma::after{
+  width:420px;height:420px;right:-230px;top:52%;
+  background:radial-gradient(circle,rgba(185,154,120,.22),transparent 68%);
+  animation:builderAura 11s 1.2s ease-in-out infinite reverse;
+}
+#arma>.inner{position:relative;z-index:1}
+@keyframes builderAura{50%{transform:translate3d(24px,-20px,0) scale(1.08);opacity:.7}}
+.wizard-progress{position:relative;overflow:hidden}
+.wizard-progress::after{
+  content:"";position:absolute;inset:0 auto 0 -35%;width:28%;pointer-events:none;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.75),transparent);
+  transform:skewX(-18deg);animation:wizardSweep 5s ease-in-out infinite;
+}
+@keyframes wizardSweep{0%,65%{left:-35%}100%{left:125%}}
+.step-chip.active{position:relative;overflow:hidden;animation:stepGlow 2.6s ease-in-out infinite}
+@keyframes stepGlow{50%{box-shadow:0 12px 38px rgba(185,154,120,.19),0 0 0 4px rgba(242,203,213,.16)}}
+.flower-card{position:relative;overflow:hidden;will-change:transform,box-shadow}
+.flower-card::before{
+  content:"";position:absolute;inset:-60%;pointer-events:none;opacity:0;
+  background:conic-gradient(from 90deg,transparent,rgba(242,203,213,.30),transparent 28%,rgba(185,154,120,.18),transparent 58%);
+  transition:opacity .28s ease;
+}
+.flower-card:hover::before,.flower-card.is-selected::before{opacity:1;animation:cardHalo 8s linear infinite}
+.flower-card.is-selected{border-color:rgba(184,95,120,.34);box-shadow:0 15px 42px rgba(96,48,66,.12),0 0 0 3px rgba(242,203,213,.18)}
+@keyframes cardHalo{to{transform:rotate(360deg)}}
+.flower-head,.flower-controls{position:relative;z-index:2}
+.choice-spark{
+  position:absolute;z-index:5;left:50%;top:50%;width:8px;height:8px;border-radius:50%;
+  background:#fff;box-shadow:0 0 0 1px rgba(185,154,120,.2),0 0 18px rgba(184,95,120,.75);
+  pointer-events:none;animation:choiceSpark .75s cubic-bezier(.16,.8,.22,1) forwards;
+}
+@keyframes choiceSpark{
+  0%{opacity:1;transform:translate(-50%,-50%) scale(.25)}
+  100%{opacity:0;transform:translate(var(--sx),var(--sy)) scale(1.2)}
+}
+.flower-add{position:relative;overflow:hidden;transition:transform .2s ease,background .25s ease,color .25s ease,box-shadow .25s ease}
+.flower-add.added-feedback{background:linear-gradient(135deg,var(--bronzeDeep),var(--bronze));color:#fff;box-shadow:0 10px 26px rgba(111,85,60,.22)}
+.paper-card{position:relative;overflow:hidden}
+.paper-card.selected::after{
+  content:"✦";position:absolute;right:15px;top:13px;color:var(--rose);font-size:12px;
+  animation:paperStar 1.8s ease-in-out infinite;filter:drop-shadow(0 0 8px rgba(184,95,120,.35));
+}
+@keyframes paperStar{50%{transform:rotate(35deg) scale(1.28);opacity:.42}}
+.final-card{position:relative;overflow:hidden}
+.final-card::before{
+  content:"";position:absolute;width:250px;height:250px;border-radius:50%;right:-110px;top:-120px;
+  background:radial-gradient(circle,rgba(242,203,213,.42),transparent 67%);pointer-events:none;
+}
+.final-card>*{position:relative;z-index:1}
+.preview-box.show{animation:previewReveal .8s cubic-bezier(.16,.8,.22,1) both;box-shadow:0 22px 65px rgba(68,35,49,.13)}
+@keyframes previewReveal{0%{opacity:0;transform:translateY(18px) scale(.965);filter:blur(5px)}100%{opacity:1;transform:none;filter:none}}
+
+/* Generación IA: overlay premium con selección visible */
+.ai-generating-overlay{
+  position:fixed;inset:0;z-index:900;display:grid;place-items:center;padding:18px;
+  background:rgba(42,25,33,.48);backdrop-filter:blur(18px) saturate(120%);-webkit-backdrop-filter:blur(18px) saturate(120%);
+  opacity:0;visibility:hidden;pointer-events:none;transition:opacity .3s ease,visibility .3s ease;
+}
+.ai-generating-overlay.show{opacity:1;visibility:visible;pointer-events:auto}
+.ai-generating-card{
+  width:min(620px,100%);max-height:90svh;overflow:auto;text-align:center;padding:32px 24px 26px;border-radius:34px;
+  background:linear-gradient(145deg,rgba(255,255,255,.97),rgba(249,229,233,.96));
+  border:1px solid rgba(255,255,255,.7);box-shadow:0 45px 120px rgba(35,21,28,.32);position:relative;overflow-x:hidden;
+  transform:translateY(18px) scale(.96);transition:transform .4s cubic-bezier(.16,.8,.22,1);
+}
+.ai-generating-overlay.show .ai-generating-card{transform:none}
+.ai-generating-card::before,.ai-generating-card::after{
+  content:"";position:absolute;border-radius:50%;border:1px solid rgba(185,154,120,.22);pointer-events:none;
+}
+.ai-generating-card::before{width:330px;height:330px;left:-225px;top:-180px;animation:spin 14s linear infinite}
+.ai-generating-card::after{width:270px;height:270px;right:-190px;bottom:-145px;animation:spin 11s linear infinite reverse}
+.ai-pulse-logo{width:128px;height:128px;margin:0 auto 8px;position:relative;display:grid;place-items:center}
+.ai-pulse-logo::before,.ai-pulse-logo::after{
+  content:"";position:absolute;border-radius:50%;border:1px solid rgba(185,154,120,.42);animation:aiRing 2.25s ease-out infinite;
+}
+.ai-pulse-logo::before{inset:2px}.ai-pulse-logo::after{inset:17px;animation-delay:.55s}
+.ai-pulse-logo img{width:88px;height:88px;object-fit:contain;opacity:.46;animation:aiLogoPulse 1.45s ease-in-out infinite;filter:drop-shadow(0 15px 24px rgba(111,85,60,.22))}
+@keyframes aiRing{0%{transform:scale(.72);opacity:.75}100%{transform:scale(1.25);opacity:0}}
+@keyframes aiLogoPulse{50%{transform:scale(.91);opacity:.22;filter:drop-shadow(0 6px 12px rgba(111,85,60,.16))}}
+.ai-generating-card h3{font-size:clamp(2.5rem,7vw,4.2rem);line-height:.88;margin:13px auto 9px;max-width:500px}
+.ai-generating-card h3 em{color:var(--rose);font-weight:600}
+.ai-generating-card>p{font-size:12px;max-width:480px;margin:auto}
+.ai-generation-status{margin-top:12px!important;font-size:11px!important;color:var(--bronzeDeep)!important;font-weight:800;letter-spacing:.04em}
+.ai-selected-flowers{display:flex;gap:8px;overflow:auto;padding:16px 2px 7px;margin-top:6px;scrollbar-width:none;text-align:left}
+.ai-selected-flowers::-webkit-scrollbar{display:none}
+.ai-flower-token{flex:0 0 104px;padding:8px;border-radius:17px;background:rgba(255,255,255,.76);border:1px solid var(--line);box-shadow:0 8px 22px rgba(72,41,53,.08)}
+.ai-flower-token img{width:100%;aspect-ratio:1;border-radius:12px;object-fit:cover;background:var(--pink2)}
+.ai-flower-token strong{display:block;font-size:10px;margin-top:7px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ai-flower-token span{display:block;font-size:9px;color:var(--muted);margin-top:2px}
+.ai-loading-line{height:4px;overflow:hidden;border-radius:999px;background:rgba(185,154,120,.12);margin:17px auto 0;max-width:420px}
+.ai-loading-line span{display:block;width:42%;height:100%;border-radius:999px;background:linear-gradient(90deg,var(--pink),var(--bronze),var(--rose));animation:aiLoad 1.5s ease-in-out infinite}
+@keyframes aiLoad{0%{transform:translateX(-115%)}100%{transform:translateX(340%)}}
+
+/* Botón para añadir ramo personalizado */
+#addBouquetToCart{position:relative;overflow:hidden}
+#addBouquetToCart::after{content:"";position:absolute;top:-30%;bottom:-30%;width:28%;left:-40%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.48),transparent);transform:skewX(-18deg);animation:addCartShine 4.6s ease-in-out infinite}
+@keyframes addCartShine{0%,70%{left:-40%}100%{left:130%}}
+.custom-cart-note{display:block;margin-top:4px;color:var(--rose)!important;font-weight:700}
+
+@media(max-width:760px){
+  .section-head h2::before,.about-copy h2::before{right:-15px;top:-11px;font-size:11px}
+  .ai-generating-card{padding:26px 15px 20px;border-radius:28px}
+  .ai-pulse-logo{width:108px;height:108px}.ai-pulse-logo img{width:74px;height:74px}
+  .ai-flower-token{flex-basis:92px}
+}
+
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+.brand-marquee{
+  position:relative;
+  overflow:hidden;
+  width:100%;
+  padding:34px 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255,247,247,.96),
+      rgba(242,203,213,.45),
+      rgba(215,194,167,.28),
+      rgba(255,247,247,.96)
+    );
+
+  border-top:1px solid rgba(111,85,60,.08);
+  border-bottom:1px solid rgba(111,85,60,.08);
+}
+
+.brand-marquee::before,
+.brand-marquee::after{
+  content:"";
+  position:absolute;
+  top:0;
+  bottom:0;
+  width:140px;
+  z-index:2;
+  pointer-events:none;
+}
+
+.brand-marquee::before{
+  left:0;
+  background:linear-gradient(
+    90deg,
+    #fff7f7,
+    transparent
+  );
+}
+
+.brand-marquee::after{
+  right:0;
+  background:linear-gradient(
+    -90deg,
+    #fff7f7,
+    transparent
+  );
+}
+
+.marquee-track{
+  width:max-content;
+  display:flex;
+  align-items:center;
+  gap:34px;
+
+  animation:floralteMarquee 30s linear infinite;
+}
+
+.marquee-track span{
+  font-family:"Italiana",serif;
+
+  font-size:clamp(
+    32px,
+    4vw,
+    64px
+  );
+
+  font-weight:600;
+  letter-spacing:.08em;
+
+  color:rgba(111,85,60,.72);
+
+  white-space:nowrap;
+}
+
+.marquee-track i{
+  font-style:normal;
+  font-size:18px;
+
+  color:var(--rose);
+
+  opacity:.7;
+
+  text-shadow:
+    0 0 18px rgba(184,95,120,.32);
+
+  animation:marqueeSpark 2.3s ease-in-out infinite;
+}
+
+@keyframes floralteMarquee{
+  from{
+    transform:translateX(0);
+  }
+
+  to{
+    transform:translateX(-50%);
+  }
+}
+
+@keyframes marqueeSpark{
+  50%{
+    transform:rotate(90deg) scale(1.35);
+    opacity:.35;
+  }
+}
+
+
+/* =========================================================
+   FLORALTE DEFINITIVO · EXPERIENCIA VISUAL 2026
+   Cambios estéticos + carrito flotante + límite IA
+   ========================================================= */
+
+/* Header vivo: cambia de tono conforme avanza la experiencia */
+#header{
+  --header-bg:rgba(249,224,230,.90);
+  --header-border:rgba(184,95,120,.17);
+  --header-ink:#533b46;
+  --header-accent:#b85f78;
+  background:var(--header-bg)!important;
+  border-bottom-color:var(--header-border)!important;
+  box-shadow:0 14px 48px rgba(90,44,62,.07);
+  transition:background .75s cubic-bezier(.2,.8,.2,1),border-color .75s ease,box-shadow .75s ease,color .75s ease;
+}
+#header.scrolled{background:var(--header-bg)!important;box-shadow:0 18px 58px rgba(64,35,47,.12)}
+#header .brand-copy strong,#header .brand-copy span,#header .nav-link{transition:color .6s ease,background .35s ease,transform .25s ease}
+#header .brand-copy strong,#header .nav-link{color:var(--header-ink)}
+#header .brand-copy span{color:var(--header-accent)}
+#header .nav-link:hover{color:var(--header-accent);background:rgba(255,255,255,.56);transform:translateY(-1px)}
+#header .icon-btn{transition:background .55s ease,border-color .55s ease,transform .25s ease,color .55s ease}
+#header[data-section="inicio"]{--header-bg:rgba(249,220,228,.90);--header-border:rgba(184,95,120,.18);--header-ink:#513541;--header-accent:#b85f78}
+#header[data-section="catalogo"]{--header-bg:rgba(229,211,190,.91);--header-border:rgba(111,85,60,.16);--header-ink:#4f3c2f;--header-accent:#8d6b4c}
+#header[data-section="arma"]{--header-bg:rgba(245,211,222,.92);--header-border:rgba(184,95,120,.20);--header-ink:#5d3343;--header-accent:#c56f88}
+#header[data-section="eventos"]{--header-bg:rgba(111,71,87,.92);--header-border:rgba(255,255,255,.12);--header-ink:#fff8fa;--header-accent:#f1cfda;box-shadow:0 18px 58px rgba(38,21,28,.22)}
+#header[data-section="eventos"] .icon-btn,#header[data-section="eventos"] .desktop-wa{background:rgba(255,255,255,.13);border-color:rgba(255,255,255,.16);color:#fff}
+#header[data-section="eventos"] .brand-copy span{color:#f0d4dc}
+#header[data-section="nosotros"]{--header-bg:rgba(245,233,221,.93);--header-border:rgba(185,154,120,.18);--header-ink:#594638;--header-accent:#b18461}
+#header[data-section="visitanos"]{--header-bg:rgba(240,218,218,.93);--header-border:rgba(160,105,113,.16);--header-ink:#5d3d44;--header-accent:#a65f72}
+#header[data-section="contacto"]{--header-bg:rgba(248,219,227,.94);--header-border:rgba(184,95,120,.19);--header-ink:#54333f;--header-accent:#b85f78}
+
+/* Cada sección conserva la familia Floralte, pero gana identidad */
+#catalogo{background:radial-gradient(circle at 88% 18%,rgba(215,194,167,.24),transparent 28%),linear-gradient(180deg,#fff8f7,#f7e6e7 48%,#fff8f7)}
+#arma{background:radial-gradient(circle at 14% 20%,rgba(255,255,255,.95),transparent 30%),radial-gradient(circle at 84% 56%,rgba(215,194,167,.20),transparent 28%),linear-gradient(180deg,#fff7f8,#f5dfe6 48%,#fff8f7)}
+#nosotros{background:radial-gradient(circle at 15% 14%,rgba(242,203,213,.24),transparent 30%),linear-gradient(180deg,#fffaf8,#f5ede4)}
+#visitanos{background:radial-gradient(circle at 84% 10%,rgba(184,95,120,.12),transparent 30%),linear-gradient(180deg,#fff9f8,#f1e1df)}
+#contacto{background:radial-gradient(circle at 18% 75%,rgba(185,154,120,.18),transparent 30%),linear-gradient(180deg,#fff8f8,#f5dce3)}
+
+/* Títulos grandes: color por sección */
+#catalogo .section-head h2{background:linear-gradient(105deg,#6f553c 2%,#b99a78 38%,#8b5664 72%,#b85f78);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+#arma .section-head h2{background:linear-gradient(105deg,#9d4f68,#d7839b 42%,#8b6848 92%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+#eventos .section-head h2{background:linear-gradient(105deg,#fff,#f3d7df 48%,#e5c6a8);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;filter:drop-shadow(0 8px 28px rgba(0,0,0,.13))}
+#nosotros .about-copy h2{background:linear-gradient(105deg,#6b513a,#b08362 47%,#a75570);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+#visitanos .section-head h2{background:linear-gradient(105deg,#7d4c58,#b85f78 45%,#9b7655);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+#contacto .section-head h2{background:linear-gradient(105deg,#6f553c,#a7795b 30%,#b85f78 78%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+#arma .builder-intro h3,#arma .flower-group-head h3,#arma .final-card h3{background:linear-gradient(105deg,#5e3c49,#a85b74 54%,#8d6c4d);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+#visitanos .panel h3,#contacto .panel h3{color:#7d4c58}
+
+/* Hero: reflejo de luz + logo con profundidad */
+.hero h1{
+  color:transparent;-webkit-text-fill-color:transparent;
+  background:linear-gradient(112deg,#2f2429 8%,#2f2429 28%,#9d8164 37%,#fff 43%,#8f6f56 49%,#2f2429 58%,#2f2429 100%);
+  background-size:270% 100%;-webkit-background-clip:text;background-clip:text;
+  animation:heroLightReflection 7.4s ease-in-out infinite;
+  filter:drop-shadow(0 16px 38px rgba(64,35,47,.10));
+}
+.hero h1 em{
+  color:transparent!important;-webkit-text-fill-color:transparent;
+  background:linear-gradient(112deg,#a84f69 8%,#c96f8a 31%,#fff7fa 42%,#d9aa8d 49%,#b85f78 61%,#a84f69 100%);
+  background-size:260% 100%;-webkit-background-clip:text;background-clip:text;
+  animation:heroLightReflection 6.2s .45s ease-in-out infinite;
+  text-shadow:none;
+}
+@keyframes heroLightReflection{0%,18%{background-position:100% 50%}55%,72%{background-position:0% 50%}100%{background-position:100% 50%}}
+.hero-logo-bg{animation:heroLogoDepth 7s ease-in-out infinite;will-change:transform,opacity,filter}
+.hero-logo-bg img{animation:heroLogoInner 7s ease-in-out infinite;will-change:transform,filter}
+@keyframes heroLogoDepth{0%,100%{transform:translate(-50%,-50%) scale(.92);opacity:.11;filter:blur(.15px)}50%{transform:translate(-50%,-52%) scale(1.09);opacity:.22;filter:blur(0)}}
+@keyframes heroLogoInner{0%,100%{transform:translateZ(0) scale(.94);filter:drop-shadow(0 22px 36px rgba(111,85,60,.14))}50%{transform:translateZ(0) scale(1.08);filter:drop-shadow(0 42px 58px rgba(184,95,120,.24))}}
+.hero-eyebrow{animation:heroEyebrowFloat 4.4s ease-in-out infinite}
+@keyframes heroEyebrowFloat{50%{transform:translateY(-3px);letter-spacing:.29em}}
+
+/* Catálogo: capas, destellos y entradas con profundidad */
+.catalog-shell{position:relative;overflow:hidden;background:linear-gradient(145deg,rgba(255,255,255,.79),rgba(255,250,248,.57));box-shadow:0 30px 90px rgba(79,45,59,.12)}
+.catalog-shell::before{content:"";position:absolute;inset:-40% -20%;pointer-events:none;background:conic-gradient(from 210deg,transparent,rgba(242,203,213,.15),transparent 28%,rgba(185,154,120,.13),transparent 56%);animation:catalogAmbient 18s linear infinite}
+.catalog-shell>*{position:relative;z-index:1}
+@keyframes catalogAmbient{to{transform:rotate(360deg)}}
+.visual-card{transform-style:preserve-3d;perspective:900px;transition:transform .55s cubic-bezier(.16,.8,.22,1),box-shadow .55s ease,filter .4s ease}
+.visual-card::before{content:"";position:absolute;z-index:2;top:-25%;bottom:-25%;left:-55%;width:33%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-18deg);transition:left .75s cubic-bezier(.16,.8,.22,1);pointer-events:none}
+.visual-card:hover{transform:translateY(-12px) scale(1.018) rotateX(1.5deg);box-shadow:0 36px 86px rgba(61,35,45,.22);filter:saturate(1.06)}
+.visual-card:hover::before{left:125%}
+.visual-card img{transform:scale(1.015);transition:transform 1s cubic-bezier(.16,.8,.22,1),filter .8s ease}
+.visual-card:hover img{transform:scale(1.105) translateY(-1%);filter:saturate(1.06) contrast(1.02)}
+.visual-card-content{transform:translateZ(34px);transition:transform .55s cubic-bezier(.16,.8,.22,1)}
+.visual-card:hover .visual-card-content{transform:translateZ(48px) translateY(-5px)}
+.visual-card-content span{display:inline-flex;margin-top:10px;align-items:center;gap:6px;font-size:11px;font-weight:800;transition:transform .35s ease,letter-spacing .35s ease}
+.visual-card:hover .visual-card-content span{transform:translateX(7px);letter-spacing:.04em}
+#catalogView.catalog-enter .visual-card,#catalogView.catalog-enter .product-card,#catalogView.catalog-enter .product-tools{animation:catalogStageIn .72s cubic-bezier(.16,.8,.22,1) both}
+#catalogView.catalog-enter .visual-card:nth-child(2),#catalogView.catalog-enter .product-card:nth-child(2){animation-delay:.07s}
+#catalogView.catalog-enter .visual-card:nth-child(3),#catalogView.catalog-enter .product-card:nth-child(3){animation-delay:.14s}
+#catalogView.catalog-enter .product-card:nth-child(4){animation-delay:.18s}
+#catalogView.catalog-enter .product-card:nth-child(5){animation-delay:.22s}
+#catalogView.catalog-enter .product-card:nth-child(6){animation-delay:.26s}
+@keyframes catalogStageIn{0%{opacity:0;transform:translateY(26px) scale(.965);filter:blur(7px)}100%{opacity:1;transform:none;filter:none}}
+.product-card{position:relative;transition:transform .45s cubic-bezier(.16,.8,.22,1),box-shadow .45s ease,filter .4s ease}
+.product-card::after{content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit;box-shadow:inset 0 0 0 1px rgba(255,255,255,.32);opacity:.55;transition:opacity .35s ease,box-shadow .35s ease}
+.product-card:hover{transform:translateY(-10px) scale(1.015);box-shadow:0 28px 68px rgba(69,39,50,.16);filter:saturate(1.05)}
+.product-card:hover::after{opacity:1;box-shadow:inset 0 0 0 1px rgba(255,255,255,.62),0 0 0 4px rgba(242,203,213,.12)}
+.product-modal{opacity:0;transform:translateY(28px) scale(.955);transition:opacity .42s ease,transform .48s cubic-bezier(.16,.8,.22,1)}
+.modal-backdrop.show .product-modal{opacity:1;transform:none}
+
+/* Arma tu ramo: atmósfera mágica */
+#arma{isolation:isolate}
+.magic-motes{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+.magic-mote{position:absolute;left:var(--x);top:var(--y);width:var(--s);height:var(--s);border-radius:50%;background:radial-gradient(circle,#fff 0 20%,rgba(255,255,255,.8) 21% 34%,rgba(242,203,213,.45) 35% 60%,transparent 70%);box-shadow:0 0 16px rgba(184,95,120,.34),0 0 28px rgba(185,154,120,.18);opacity:.12;animation:magicMote var(--d) var(--delay) ease-in-out infinite;filter:blur(var(--blur))}
+@keyframes magicMote{0%,100%{transform:translate3d(0,10px,0) scale(.65);opacity:.10}40%{opacity:.62}55%{transform:translate3d(var(--dx),-34px,0) scale(1.25);opacity:.45}}
+.builder-intro{border:1px solid rgba(255,255,255,.72);box-shadow:0 34px 110px rgba(92,49,66,.14),inset 0 0 70px rgba(255,255,255,.42)}
+.builder-intro::before{animation:builderRingDrift 10s ease-in-out infinite}
+.builder-intro::after{animation:builderRingDrift 13s 1s ease-in-out infinite reverse}
+@keyframes builderRingDrift{50%{transform:translate(34px,-22px) scale(1.08);border-color:rgba(184,95,120,.26)}}
+.design-now{position:relative;overflow:hidden;animation:magicCTA 3.2s ease-in-out infinite}
+.design-now::after{content:"";position:absolute;top:-40%;bottom:-40%;width:30%;left:-45%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.62),transparent);transform:skewX(-20deg);animation:magicCtaSweep 3.5s ease-in-out infinite}
+@keyframes magicCTA{50%{transform:translateY(-3px);box-shadow:0 26px 64px rgba(111,85,60,.30),0 0 0 6px rgba(242,203,213,.12)}}
+@keyframes magicCtaSweep{0%,55%{left:-45%}100%{left:135%}}
+.wizard.show{animation:wizardMaterialize .8s cubic-bezier(.16,.8,.22,1) both}
+@keyframes wizardMaterialize{0%{opacity:0;transform:translateY(24px);filter:blur(8px)}100%{opacity:1;transform:none;filter:none}}
+.wizard-panel.active{animation:wizardPanelEnter .62s cubic-bezier(.16,.8,.22,1) both}
+@keyframes wizardPanelEnter{0%{opacity:0;transform:translateX(16px) scale(.988)}100%{opacity:1;transform:none}}
+.flower-group{position:relative;overflow:hidden;background:linear-gradient(145deg,rgba(255,255,255,.86),rgba(255,248,250,.70));box-shadow:0 22px 65px rgba(74,41,54,.09)}
+.flower-group::after{content:"";position:absolute;width:240px;height:240px;border-radius:50%;right:-150px;top:-150px;background:radial-gradient(circle,rgba(242,203,213,.34),transparent 68%);pointer-events:none;animation:flowerGroupAura 6s ease-in-out infinite}
+@keyframes flowerGroupAura{50%{transform:scale(1.2) translate(-8px,8px);opacity:.55}}
+.flower-card{transition:transform .42s cubic-bezier(.16,.8,.22,1),box-shadow .42s ease,border-color .35s ease,background .35s ease}
+.flower-card:hover{transform:translateY(-7px) scale(1.012);box-shadow:0 22px 58px rgba(88,44,61,.14)}
+.flower-card.is-selected{background:linear-gradient(145deg,#fff,rgba(252,232,238,.82));animation:selectedFlowerGlow 2.8s ease-in-out infinite}
+.flower-card.is-selected .flower-image{box-shadow:0 0 0 3px rgba(255,255,255,.84),0 0 0 6px rgba(184,95,120,.12),0 12px 32px rgba(184,95,120,.17)}
+@keyframes selectedFlowerGlow{50%{box-shadow:0 18px 50px rgba(184,95,120,.16),0 0 0 4px rgba(242,203,213,.23)}}
+.selection-chip{animation:selectionChipIn .4s cubic-bezier(.16,.8,.22,1) both}
+@keyframes selectionChipIn{0%{opacity:0;transform:translateY(7px) scale(.88)}100%{opacity:1;transform:none}}
+.paper-card{transition:transform .42s cubic-bezier(.16,.8,.22,1),box-shadow .4s ease,background .4s ease,border-color .4s ease}
+.paper-card:hover{transform:translateY(-7px) scale(1.012);box-shadow:0 24px 55px rgba(83,47,61,.12)}
+.paper-card.selected{background:radial-gradient(circle at 88% 10%,rgba(242,203,213,.45),transparent 30%),#fff;box-shadow:0 22px 58px rgba(184,95,120,.14),0 0 0 4px rgba(242,203,213,.19)}
+.final-card{background:radial-gradient(circle at 85% 12%,rgba(242,203,213,.30),transparent 30%),linear-gradient(145deg,rgba(255,255,255,.92),rgba(255,247,249,.82))}
+
+/* Micro-partículas al tocar opciones */
+.tap-magic-particle{position:fixed;z-index:1200;left:0;top:0;width:7px;height:7px;border-radius:50%;pointer-events:none;background:#fff;box-shadow:0 0 16px rgba(184,95,120,.75),0 0 26px rgba(185,154,120,.42);animation:tapMagicParticle .8s cubic-bezier(.16,.8,.22,1) forwards}
+@keyframes tapMagicParticle{0%{opacity:1;transform:translate(-50%,-50%) scale(.35)}100%{opacity:0;transform:translate(calc(-50% + var(--mx)),calc(-50% + var(--my))) scale(1.2)}}
+
+/* Carrito flotante, visible solo cuando ya hay productos */
+.floating-cart-mini{position:fixed;right:18px;bottom:18px;z-index:145;display:flex;align-items:center;gap:10px;min-height:56px;padding:8px 13px 8px 9px;border:1px solid rgba(184,95,120,.19);border-radius:999px;background:rgba(255,250,251,.92);backdrop-filter:blur(18px) saturate(135%);-webkit-backdrop-filter:blur(18px) saturate(135%);box-shadow:0 18px 55px rgba(61,35,45,.19);cursor:pointer;opacity:0;visibility:hidden;transform:translateY(18px) scale(.9);transition:opacity .3s ease,transform .42s cubic-bezier(.16,.8,.22,1),visibility .3s ease,bottom .4s ease,box-shadow .3s ease}
+.floating-cart-mini.show{opacity:1;visibility:visible;transform:none}
+.floating-cart-mini:hover{transform:translateY(-4px) scale(1.02);box-shadow:0 25px 68px rgba(61,35,45,.24)}
+.floating-cart-mini.pulse{animation:floatingCartPulse .62s cubic-bezier(.16,.8,.22,1)}
+@keyframes floatingCartPulse{35%{transform:scale(1.08);box-shadow:0 0 0 8px rgba(242,203,213,.20),0 24px 64px rgba(61,35,45,.22)}}
+.floating-cart-icon{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#b85f78,#d98da1);color:#fff;font-size:17px;box-shadow:0 10px 25px rgba(184,95,120,.24);position:relative}
+.floating-cart-count{position:absolute;right:-4px;top:-5px;min-width:19px;height:19px;padding:0 5px;border-radius:999px;background:#6f553c;color:#fff;border:2px solid #fff;font-size:9px;font-weight:900;display:grid;place-items:center}
+.floating-cart-copy{display:flex;flex-direction:column;align-items:flex-start;line-height:1.12}.floating-cart-copy strong{font-size:11px}.floating-cart-copy span{font-size:10px;color:var(--rose);font-weight:800;margin-top:3px}
+body.bouquet-selection-active .floating-cart-mini{bottom:112px}
+
+/* Contador de IA */
+.ai-limit-note{display:block;text-align:center;margin:-2px 0 3px;font-size:10px;color:var(--muted);font-weight:700;letter-spacing:.02em}
+.ai-limit-note strong{color:var(--rose)}
+.ai-limit-note.exhausted{color:#9a5266}
+#previewBouquet.ai-limit-reached{opacity:.56;filter:saturate(.6);cursor:not-allowed}
+
+/* Más vida a las fotos y paneles sin tocar contenidos */
+.about-photo,.shop-photo{transition:transform .7s cubic-bezier(.16,.8,.22,1),box-shadow .7s ease}
+.about-photo:hover,.shop-photo:hover{transform:translateY(-7px) scale(1.008);box-shadow:0 38px 95px rgba(73,42,54,.16)}
+.about-photo img,.shop-photo img{transition:transform 1.2s cubic-bezier(.16,.8,.22,1),filter .8s ease}
+.about-photo:hover img,.shop-photo:hover img{transform:scale(1.035);filter:saturate(1.04)}
+.panel{transition:transform .45s cubic-bezier(.16,.8,.22,1),box-shadow .45s ease}
+.panel:hover{transform:translateY(-4px);box-shadow:0 25px 70px rgba(60,36,46,.13)}
+
+@media(max-width:760px){
+  #header[data-section="eventos"] .desktop-nav{background:rgba(92,56,71,.97)}
+  #header[data-section="eventos"] .nav-link{color:#fff}
+  .visual-card:hover{transform:translateY(-7px) scale(1.008)}
+  .floating-cart-mini{right:10px;bottom:calc(10px + env(safe-area-inset-bottom));min-height:50px;padding:6px 9px 6px 7px}
+  .floating-cart-icon{width:37px;height:37px}.floating-cart-copy strong{display:none}.floating-cart-copy span{font-size:9px;max-width:74px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  body.bouquet-selection-active .floating-cart-mini{bottom:calc(164px + env(safe-area-inset-bottom))}
+  .hero h1{animation-duration:6s}
+}
+
+
+/* =========================================================
+   FLORALTE · TIPOGRAFÍA EDITORIAL PREMIUM
+   Mantiene toda la estructura y funciones originales.
+   ========================================================= */
+body,button,input,select,textarea{font-family:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif}
+h1,h2,h3,.brand-copy strong,.visual-card-content h3,.paper-card strong,.fact strong,.portal-card strong,.drawer-head h3,.modal-content h3{font-family:"Italiana",Georgia,serif;font-weight:400}
+.hero h1,.section-head h2,.about-copy h2{font-family:"Italiana",Georgia,serif;font-weight:400;letter-spacing:-.055em}
+.kicker,.hero-eyebrow,.brand-copy span,.label,.nav-link,.btn{font-family:"Manrope",sans-serif}
+
+</style>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1540509977146182');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1540509977146182&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+</head>
+<body>
+<div id="splash"><div class="splash-orbit"><img class="splash-logo" src="images/logo-floralte.png" alt="Floralte"></div></div>
+<header id="header"><div class="nav-wrap"><a class="brand" href="#inicio"><img src="images/logo-floralte.png" alt="Floralte"><span class="brand-copy"><strong>Floralte</strong><span>Diseño Floral</span></span></a><nav class="desktop-nav" id="mainNav"><a class="nav-link" href="#catalogo">Catálogo</a><a class="nav-link" href="#arma">Arma tu ramo</a><a class="nav-link" href="#eventos">Eventos</a><a class="nav-link" href="#nosotros">Nosotros</a><a class="nav-link" href="#visitanos">Visítanos</a><a class="nav-link" href="#contacto">Contacto</a></nav><div class="nav-actions"><button class="btn btn-soft desktop-wa" id="headerWA">WhatsApp</button><button class="icon-btn" id="openCart" aria-label="Abrir carrito">🛍<span class="cart-count" id="cartCount">0</span></button><button class="icon-btn menu-toggle" id="menuToggle" aria-label="Menú">☰</button></div></div></header>
+<main>
+<section class="hero" id="inicio">
+  <div class="hero-logo-bg" aria-hidden="true"><span class="hero-spark s1"></span><span class="hero-spark s2"></span><span class="hero-spark s3"></span><img src="images/logo-floralte.png" alt=""></div>
+  <div class="hero-inner"><div class="hero-eyebrow">Floralte Diseño Floral</div><h1>Regala momentos <em>inolvidables.</em></h1><p>Diseños florales creados con intención, detalle y una estética que transforma cada regalo en una experiencia.</p><div class="hero-actions"><button class="btn btn-primary" id="discoverBtn">Explorar Floralte ✦</button><a class="btn btn-soft" href="#catalogo">Ver catálogo</a></div></div>
+</section>
+<section class="brand-marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>FLORALTE</span>
+    <i>✦</i>
+    <span>DISEÑO FLORAL</span>
+    <i>✦</i>
+    <span>MOMENTOS INOLVIDABLES</span>
+    <i>✦</i>
+    <span>HECHO A MANO</span>
+    <i>✦</i>
+    <span>TLAQUEPAQUE</span>
+    <i>✦</i>
+
+    <span>FLORALTE</span>
+    <i>✦</i>
+    <span>DISEÑO FLORAL</span>
+    <i>✦</i>
+    <span>MOMENTOS INOLVIDABLES</span>
+    <i>✦</i>
+    <span>HECHO A MANO</span>
+    <i>✦</i>
+    <span>TLAQUEPAQUE</span>
+    <i>✦</i>
+  </div>
+</section>
+<section class="section" id="catalogo"><div class="inner"><div class="section-head reveal"><span class="kicker">Nuestros diseños</span><h2>Encuentra el detalle perfecto.</h2><p>Explora nuestras colecciones por categoría y descubre cada diseño.</p></div><div class="catalog-shell reveal"><div class="catalog-bar"><div class="catalog-path" id="catalogPath"><strong>Catálogo</strong><span>›</span><span>Elige una categoría</span></div><button class="btn btn-soft catalog-back" id="catalogBack">← Volver</button></div><div id="catalogView"></div></div></div></section>
+<section class="section" id="arma"><div class="inner"><div class="section-head reveal"><span class="kicker">Arma tu ramo</span><h2>Diseña algo completamente tuyo.</h2><p>Elige tus flores y después selecciona el estilo del ramo. Al final puedes enviarlo por WhatsApp o generar una visualización aproximada con IA.</p></div><div class="builder-intro reveal" id="builderIntro"><div class="builder-intro-content"><span class="kicker">Experiencia Floralte</span><h3>Entrar a la Experiencia Floralte</h3><p>Te guiamos paso a paso para crear una combinación con flores principales, flores secundarias y el estilo que más te guste.</p><button class="btn btn-primary design-now" id="startBuilder">Diseña tu ramo ahora ✦</button></div></div><div class="wizard" id="bouquetWizard"><div class="wizard-progress"><div class="step-chip active" data-stepchip="1">1 · Flores</div><div class="step-chip" data-stepchip="2">2 · Estilo</div><div class="step-chip" data-stepchip="3">3 · Finalizar</div></div><div class="wizard-panel active" data-step="1"><div class="flower-group"><div class="flower-group-head"><div><span class="kicker">Flores principales</span><h3>El corazón del ramo</h3></div><p>Rosas, gerberas, girasoles, lisianthus, lilis, hortensias y otras flores protagonistas.</p></div><div class="flowers-grid" id="primaryFlowers"></div></div><div class="flower-group"><div class="flower-group-head"><div><span class="kicker">Flores secundarias</span><h3>Textura, movimiento y detalle</h3></div><p>Flores pequeñas, acentos y follajes para completar la composición.</p></div><div class="flowers-grid" id="secondaryFlowers"></div></div><div class="bouquet-mini-summary" id="floatingSelection"><div><strong id="selectionCount">0 flores seleccionadas</strong><span id="selectionTotal">Total aproximado: $0</span><div class="selection-items" id="selectionItems" aria-live="polite"></div></div><button class="btn btn-primary" id="completeFlowers">Completar selección →</button></div></div><div class="wizard-panel" data-step="2"><div class="flower-group"><div class="flower-group-head"><div><span class="kicker">Estilo del ramo</span><h3>Elige cómo quieres que se vea</h3></div><p>Selecciona entre un estilo francés, más circular y romántico, o un estilo coreano, de una vista y con mayor presencia de envoltura.</p></div><div class="paper-grid" id="paperGrid"></div><div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:22px"><button class="btn btn-soft" data-prev="1">← Volver a flores</button><button class="btn btn-primary" id="completeWrap">Completar estilo →</button></div></div></div><div class="wizard-panel" data-step="3"><div class="final-card"><div><span class="kicker">Tu diseño está listo</span><h3>Ahora hazlo realidad.</h3><p id="finalSummary" style="margin-top:12px"></p><div class="preview-status" id="previewStatus">La visualización IA es aproximada.</div><div class="preview-box" id="previewBox"><img id="previewImg" alt="Vista previa IA del ramo"></div></div><div class="final-actions"><button class="btn btn-primary btn-wide" id="sendBouquet">Enviar pedido a WhatsApp</button><button class="btn btn-soft btn-wide" id="previewBouquet">Visualizar mi ramo con IA ✦</button><small class="ai-limit-note" id="aiLimitNote" aria-live="polite"></small><button class="btn btn-pink btn-wide" id="addBouquetToCart">Agregar mi ramo al carrito 🛍</button><button class="btn btn-soft btn-wide" data-prev="2">← Cambiar estilo</button></div></div></div></div></div></section>
+<section class="section" id="eventos"><div class="event-bg" id="eventBg"></div><div class="event-shade"></div><div class="inner event-content"><div class="section-head reveal"><span class="kicker">Eventos</span><h2>Crea una atmósfera inolvidable.</h2><p>La imagen cambia con el tipo de evento que selecciones para inspirarte mientras cotizas.</p></div><div class="event-layout"><div class="panel reveal"><h3>Datos del evento</h3><div class="grid-2"><div class="stack"><label class="label">Tipo de evento</label><select class="field" id="eTipo"><option>Boda</option><option>XV años</option><option>Cumpleaños</option><option>Empresarial</option><option>Otro</option></select></div><div class="stack"><label class="label">Fecha</label><input class="field" id="eFecha" type="date"></div><div class="stack"><label class="label">Mesas</label><input class="field" id="eMesas" type="number" min="0" value="10"></div><div class="stack"><label class="label">Personas</label><input class="field" id="ePersonas" type="number" min="0" value="100"></div><div class="stack" style="grid-column:1/-1"><label class="label">Ubicación o salón</label><input class="field" id="eLugar" placeholder="Ej. Tlaquepaque, salón X"></div></div><div class="divider"></div><h3 style="font-size:28px">Servicios</h3><div class="services" id="servicesList"></div><div class="divider"></div><div class="stack"><label class="label">Notas</label><textarea class="field" id="eNotas" rows="4" placeholder="Colores, estilo, referencias, horario de montaje…"></textarea><button class="btn btn-primary btn-wide" id="sendEvent">Enviar para cotizar</button></div></div><div class="panel reveal"><h3>Jardinería</h3><p>Decoración, plantas, macetas, mantenimiento y ambientación floral para hogares y eventos.</p><div class="divider"></div><div class="stack"><label class="label">¿Qué necesitas?</label><select class="field" id="jTipo"><option>Decoración de jardinería</option><option>Mantenimiento / poda</option><option>Plantas + macetas</option><option>Jardín para evento</option></select></div><div class="stack" style="margin-top:12px"><label class="label">Ubicación</label><input class="field" id="jLugar" placeholder="Ej. Zapopan, Col. X"></div><div class="stack" style="margin-top:12px"><label class="label">Detalles</label><textarea class="field" id="jNotas" rows="6" placeholder="Medidas, estilo, presupuesto…"></textarea></div><button class="btn btn-soft btn-wide" id="sendGarden" style="margin-top:12px">Cotizar jardinería</button></div></div></div></section>
+<section class="section" id="nosotros"><div class="inner"><div class="about-layout"><div class="about-photo reveal"><img src="images/floreria.png" alt="Florería Floralte"></div><div class="about-copy reveal"><span class="kicker">Sobre nosotros</span><h2>Diseñamos emociones con flores.</h2><p>Floralte nace de la pasión por convertir flores, texturas y color en momentos que permanecen. Cada pieza se trabaja de forma artesanal, cuidando la selección, el equilibrio y la presentación.</p><div class="facts"><div class="fact"><strong>Hecho a mano</strong><span>Composiciones únicas</span></div><div class="fact"><strong>Diseño premium</strong><span>Detalles cuidados</span></div><div class="fact"><strong>Eventos</strong><span>Montajes personalizados</span></div><div class="fact"><strong>Tlaquepaque</strong><span>Atención local</span></div></div></div></div></div></section>
+<section class="section" id="visitanos"><div class="inner"><div class="section-head reveal"><span class="kicker">Visítanos</span><h2>Conoce Floralte en persona.</h2><p>Visítanos en Rancho Blanco, Tlaquepaque.</p></div><div class="visit-layout"><div class="shop-photo reveal"><img src="images/tia.jpeg" alt="Floralte"></div><div class="panel reveal"><h3>Floralte</h3><p>Avenida Niños Héroes 74, Rancho Blanco, Tlaquepaque.</p><div class="divider"></div><iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3733.7771894728116!2d-103.31943022570525!3d20.63793680108909!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428b38eaf99c163%3A0xfeb328af41e401dc!2sFlorer%C3%ADa%20Floralte!5e0!3m2!1sen!2smx!4v1766874176529!5m2!1sen!2smx" loading="lazy" title="Mapa Floralte"></iframe><button class="btn btn-primary btn-wide" id="visitWA" style="margin-top:12px">Avisar que voy a visitar</button></div></div></div></section>
+<section class="section" id="contacto"><div class="inner"><div class="section-head reveal"><span class="kicker">Contacto</span><h2>¿Listo para regalar algo inolvidable?</h2><p>Escríbenos por WhatsApp, arma tu pedido desde el catálogo o visita nuestra florería.</p></div><div class="panel contact-card reveal"><div class="grid-2"><div class="stack"><span class="label">Dirección</span><strong>Avenida Niños Héroes 74, Rancho Blanco, Tlaquepaque</strong></div><div class="stack"><span class="label">Envíos</span><strong>Zona Tlaquepaque Centro</strong><p style="font-size:11px">Fuera de esta zona se cotiza.</p></div><div class="stack"><span class="label">Pagos</span><strong>Transferencia / Mercado Pago</strong></div><div class="stack"><span class="label">Acción</span><button class="btn btn-primary btn-wide" id="contactWA">Escribir por WhatsApp</button><button class="btn btn-soft btn-wide" id="contactCart">Abrir carrito</button></div></div></div></div></section>
+</main>
+<footer><div class="footer-inner"><a class="brand" href="#inicio"><img src="images/logo-floralte.png" alt="Floralte"><span class="brand-copy"><strong>Floralte</strong><span>Diseño Floral</span></span></a><small>© <span id="year"></span> Floralte — Diseño Floral</small></div></footer>
+<div class="portal-backdrop" id="portal"><div class="portal"><button class="close-portal" id="closePortal">✕</button><div class="portal-head"><img class="portal-logo" src="images/logo-floralte.png" alt="Floralte"><span>Elige tu experiencia</span><h2>Descubre Floralte</h2><p>Ve directo a lo que quieres explorar.</p></div><div class="portal-grid" id="portalGrid"></div></div></div>
+<div class="backdrop" id="cartBackdrop"></div><aside class="drawer" id="cartDrawer"><div class="drawer-head"><h3>Carrito</h3><button class="close-btn" id="closeCart">✕</button></div><div class="drawer-body"><div class="empty" id="cartEmpty">Aún no agregas productos.</div><div class="cart-items" id="cartItems"></div><div class="total"><span>Total aproximado</span><span id="cartTotal">$0</span></div><div class="divider"></div><div class="stack"><label class="label">Entrega</label><select class="field" id="oEntrega"><option>Entrega a domicilio</option><option>Recoger en tienda</option></select></div><div class="stack"><label class="label">Ciudad</label><select class="field" id="oCiudad"><option>Guadalajara</option><option>Zapopan</option><option>Tlaquepaque</option><option>Tonalá</option><option>Otro</option></select></div><div class="stack"><label class="label">Dirección</label><input class="field" id="oDireccion" placeholder="Calle, número, colonia…"></div><div class="grid-2"><div class="stack"><label class="label">Nombre</label><input class="field" id="oNombre"></div><div class="stack"><label class="label">WhatsApp</label><input class="field" id="oWhats"></div></div><button class="btn btn-primary btn-wide" id="sendOrder">Enviar pedido a WhatsApp</button><button class="btn mp-btn btn-wide" id="checkoutMP">Pagar con Mercado Pago</button><p style="font-size:10px">Mercado Pago requiere el endpoint <code>/api/crear-preferencia</code> o un enlace fijo configurado en el código.</p></div></aside>
+<button class="floating-cart-mini" id="floatingCartMini" type="button" aria-label="Abrir carrito"><span class="floating-cart-icon">🛍<span class="floating-cart-count" id="floatingCartCount">0</span></span><span class="floating-cart-copy"><strong>Tu carrito</strong><span id="floatingCartTotal">$0</span></span></button>
+<div class="modal-backdrop" id="productModal"><div class="product-modal"><button class="close-btn product-modal-close" id="closeProduct" aria-label="Cerrar producto">✕</button><div class="product-modal-grid"><div class="modal-media"><img id="pmImg" alt="Producto"></div><div class="modal-content"><span class="kicker" id="pmCat">Categoría</span><h3 id="pmName">Producto</h3><p id="pmDesc"></p><div class="modal-meta"><strong id="pmPrice" style="font-size:21px;color:var(--bronzeDeep)">$0</strong><div style="display:flex;gap:8px"><input class="qty" id="pmQty" type="number" min="1" value="1"><button class="btn btn-primary" id="pmAdd">Agregar</button></div></div></div></div></div></div>
+<div class="ai-generating-overlay" id="aiGeneratingOverlay" aria-hidden="true"><div class="ai-generating-card"><div class="ai-pulse-logo"><img src="images/logo-floralte.png" alt="Floralte"></div><span class="kicker">Floralte IA</span><h3>Se está generando tu Ramo, <em>ten paciencia!</em></h3><p>Estamos componiendo tu selección y el estilo elegido para crear una visualización aproximada.</p><p class="ai-generation-status" id="aiGenerationStatus">Preparando tus flores…</p><div class="ai-selected-flowers" id="aiSelectedFlowers"></div><div class="ai-loading-line"><span></span></div></div></div>
+<script>
+"use strict";
+const WHATSAPP_NUMBER="523336611674";
+const AI_ENDPOINT="/api/generar-preview-ramos";
+const MERCADOPAGO_ENDPOINT="/api/crear-preferencia";
+const MERCADOPAGO_FIXED_URL=""; // Si usas un link fijo de pago, pégalo aquí.
+
+const AI_GENERATION_LIMIT=4;
+const AI_USAGE_KEY="floralteAiGenerationsV1";
+const AI_VISITOR_KEY="floralteVisitorIdV1";
+function getAiVisitorId(){
+  let id="";try{id=localStorage.getItem(AI_VISITOR_KEY)||""}catch{}
+  if(!id){id=`floralte-${Date.now().toString(36)}-${Math.random().toString(36).slice(2,10)}`;try{localStorage.setItem(AI_VISITOR_KEY,id)}catch{}}
+  return id;
+}
+function getAiUsage(){let n=0;try{n=Number(localStorage.getItem(AI_USAGE_KEY)||0)}catch{}return Math.max(0,Math.min(AI_GENERATION_LIMIT,Number.isFinite(n)?n:0))}
+function getAiRemaining(){return Math.max(0,AI_GENERATION_LIMIT-getAiUsage())}
+function registerAiGeneration(){const next=Math.min(AI_GENERATION_LIMIT,getAiUsage()+1);try{localStorage.setItem(AI_USAGE_KEY,String(next))}catch{}updateAiLimitUI();return next}
+function updateAiLimitUI(){
+  const remaining=getAiRemaining(),note=$("#aiLimitNote"),btn=$("#previewBouquet");
+  if(note){note.innerHTML=remaining>0?`Te quedan <strong>${remaining} de ${AI_GENERATION_LIMIT}</strong> visualizaciones IA en este dispositivo.`:`Has usado tus <strong>${AI_GENERATION_LIMIT} visualizaciones IA</strong> disponibles.`;note.classList.toggle('exhausted',remaining===0)}
+  if(btn){btn.disabled=remaining===0;btn.classList.toggle('ai-limit-reached',remaining===0);btn.title=remaining===0?'Límite de visualizaciones IA alcanzado':''}
+}
+
+const $=(q,s=document)=>s.querySelector(q), $$=(q,s=document)=>Array.from(s.querySelectorAll(q));
+const money=n=>new Intl.NumberFormat("es-MX",{style:"currency",currency:"MXN",maximumFractionDigits:0}).format(Number(n||0));
+const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"})[c]);
+const on=(el,e,fn,o)=>{el=typeof el==="string"?$(el):el;if(el)el.addEventListener(e,fn,o)};
+const lock=v=>document.body.classList.toggle("locked",v);
+function whatsapp(text){window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`,"_blank","noopener,noreferrer")}
+const navItems=[["#catalogo","Nuestros diseños","Explora ramos, arreglos y momentos","01"],["#arma","Arma tu Ramo","Diseña paso a paso","02"],["#eventos","Cotiza tu evento","Bodas, celebraciones y montajes","03"],["#nosotros","Sobre nosotros","Conoce nuestra esencia","04"],["#visitanos","Visítanos","Conoce nuestra tienda","05"],["#contacto","Contacto","Haz un pedido o pide información","06"]];
+/* =========================================================
+   CATÁLOGO FLORALTE — EDITA AQUÍ TUS PRODUCTOS
+   Cada subcategoría tiene 12 espacios.
+   Cambia name, price, img y desc cuando quieras.
+   ========================================================= */
+function placeholderProducts(prefix,label){
+  return Array.from({length:12},(_,i)=>({
+    id:`${prefix}${i+1}`,
+    name:`${label} ${i+1}`,
+    price:0,
+    img:`images/${prefix}${i+1}.png`,
+    desc:"Próximamente"
+  }));
+}
+
+const productosFrances=[
+  {id:"rf1",name:"Corazón de Rosas Rojas",price:1200,img:"images/rf1.png",desc:"El favorito de Cupido"},
+  {id:"rf2",name:"Halo Celestial",price:800,img:"images/rf2.png",desc:"Inspirado en la belleza etérea de un halo"},
+  {id:"rf4",name:"Hello Kitty",price:1800,img:"images/rf4.png",desc:"Nuestro ramo más tierno"},
+  {id:"rf5",name:"Ramo Arturo",price:1400,img:"images/rf5.png",desc:"Un ramo con volumen y presencia"},
+  {id:"rf6",name:"Colette",price:800,img:"images/rf6.png",desc:"Delicado y encantador"},
+  {id:"rf8",name:"Sunset Reach",price:1500,img:"images/rf8.png",desc:"Nuestro diseño mas radiante y hot"},
+  {id:"rf9",name:"Asgard",price:2500,img:"images/rf9.png",desc:"Si buscas un ramo grande, éste sin duda lo está!"},
+  {id:"rc4",name:"Brillo Sereno",price:500,img:"images/rc4.png",desc:"Nuestro ramo más tierno"},
+  {id:"rf11",name:"Pink Darling",price:950,img:"images/rf11.png",desc:"24 rosas rositas con un detalle de color que contrasta de manera perfecta (Puede variar)"},
+  {id:"rf12",name:"Princesa de Rosas",price:1800,img:"images/rf12.png",desc:""},
+  {id:"rf13",name:"Aurora de verano",price:750,img:"images/rf13.png",desc:""},
+  {id:"rf14",name:"Brisa de colores",price:400,img:"images/rf14.png",desc:""},
+  
+ 
+];
+
+const productosCoreano=[
+  {id:"rc2",name:"Amore Mío",price:800,img:"images/rc2.png",desc:"Perfecto para llevar junto a una bella serenata una noche de Luna llena"},
+  {id:"rf10",name:"Merydean",price:1000,img:"images/rf10.png",desc:"Sofisticados tonos rosa y crema"},
+  {id:"rc5",name:"Sparkless Pink",price:800,img:"images/rc5.png",desc:"Rosa elegante. El regalo perfecto para ella"},
+  {id:"rc6",name:"Slow Carmesí",price:1500,img:"images/rc6.png",desc:"Buscas algo mas romantico? La enamorarás x2 con éste ramo"},
+  {id:"rc7",name:"Mariposa Doreé",price:950,img:"images/rc7.png",desc:"Le´Sweet"},
+  {id:"rc8",name:"Alice Lidelle",price:1800,img:"images/rc8.png",desc:"Clasicos colores rojo vibrante y blanco.La combinación perfecta. "},
+  {id:"rc12",name:"Michelle Chumajer",price:1200,img:"images/rc12.png",desc:""},
+  {id:"rc9",name:"Clean Leia",price:750,img:"images/rc9.png",desc:""},
+  {id:"rc10",name:"Europa",price:2500,img:"images/rc10.png",desc:""},
+  {id:"rc11",name:"Bleu Holanda",price:1200,img:"images/rc11.png",desc:""},
+  {id:"rf15",name:"Aura Dorada",price:1800,img:"images/rf15.png",desc:""},
+  
+  
+];
+const productosCajas=[
+  {id:"ard1",name:"El Marigalante",price:3800,img:"images/ard1.png",desc:"Uno de nuestros arreglos en base favoritos"},
+  {id:"ard2",name:"Canasta Brisa",price:950,img:"images/ard2.png",desc:"Inspirado en la belleza etérea de un halo"},
+  {id:"ard3",name:"Feliz Cumpleaños",price:950,img:"images/ard3.png",desc:"Nuestro ramo más tierno"},
+];
+
+const productosEspeciales=placeholderProducts("ae","Diseño especial");
+const productosAmor=placeholderProducts("ma","Amor");
+const productosCelebraciones=placeholderProducts("mc","Celebración");
+
+const catalog=[
+  {
+    id:"ramos",name:"Ramos Signature",img:"images/ramoss.png",
+    description:"Diseños elegantes con identidad Floralte.",
+    subcategories:[
+      {id:"frances",name:"Francés",img:"images/frances.png",description:"Composiciones estilo francés/circular",products:productosFrances},
+      {id:"coreano",name:"Coreano",img:"images/coreano.png",description:"Diseños estilo coreano/una vista",products:productosCoreano}
+    ]
+  },
+  {
+    id:"arreglos",name:"Arreglos Floralte",img:"images/arss.png",
+    description:"Composiciones con base, volumen y presencia.",
+    subcategories:[
+      {id:"cajas",name:"Cajas florales",img:"images/amoris.png",description:"Bases y cajas elegantes.",products:productosCajas},
+      {id:"especiales",name:"Diseños especiales",img:"images/amori.png",description:"Piezas de autor para sorprender.",products:productosEspeciales}
+    ]
+  },
+  {
+    id:"momentos",name:"Momentos",img:"images/momentos.png",
+    description:"Flores para cada historia y celebración.",
+    subcategories:[
+      {id:"amor",name:"Amor y aniversario",img:"images/amori.png",description:"Diseños románticos.",products:productosAmor},
+      {id:"celebraciones",name:"Celebraciones",img:"images/amori.png",description:"Cumpleaños, graduaciones y logros.",products:productosCelebraciones}
+    ]
+  }
+];
+
+const allProducts=catalog.flatMap(c=>c.subcategories.flatMap(s=>s.products.map(p=>({...p,category:c.name,categoryId:c.id,subcategory:s.name,subcategoryId:s.id}))));
+
+const flowers=[
+ {id:"rosa",group:"primary",name:"Rosa",price:50,colors:["Roja","Rosa","Blanca","Amarilla","Naranja","Lila"],img:"images/rosroj.jpg",images:{Roja:"images/rosroj.jpg",Rosa:"images/rosros.jpg",Blanca:"images/rosblan.jpg",Amarilla:"images/rosam.jpg",Naranja:"images/rosnar.gif",Lila:"images/roslil.png"}},
+ {id:"rosaPremium",group:"primary",name:"Rosa Premium",price:70,colors:["Acapella"],img:"images/rosac.jpg",images:{Acapella:"images/rosac.jpg"}},
+ {id:"gerbera",group:"primary",name:"Gerbera",price:50,colors:["Rosa","Roja","Naranja","Amarilla","Blanca"],img:"images/gerros.jpg",images:{Roja:"images/gerroj.jpg",Rosa:"images/gerros.jpg",Blanca:"images/gerblan.jpg",Amarilla:"images/gerama.jpg",Naranja:"images/gernar.jpg"}},
+ {id:"girasol",group:"primary",name:"Girasol",price:40,colors:[],img:"images/gir.jpg"},
+ {id:"lisianthus",group:"primary",name:"Lisianthus",price:90,colors:["Bicolor","Rosa","Morado","Blanco"],img:"images/libi.png",images:{Bicolor:"images/libi.png",Rosa:"images/liros.png",Morado:"images/limor.png",Blanco:"images/liblan.png"}},
+ {id:"lili",group:"primary",name:"Lili",price:70,colors:[],img:"images/lil.jpg"},
+ {id:"babyrose",group:"primary",name:"Baby Rose",price:50,colors:["Rosa","Blanco","Rojo","Amarillo","Lila"],img:"images/babros.jpg",images:{Rosa:"images/babros.jpg",Blanco:"images/bablan.jpg",Rojo:"images/babroj.jpg",Amarillo:"images/babama.jpg",Lila:"images/bablila.jpg"}},
+ {id:"hortensia",group:"primary",name:"Hortensia",price:250,colors:["Azul","Tinto","Lila","Rosa"],img:"images/horazul.jpg",images:{Azul:"images/horazul.jpg",Tinto:"images/hortin.jpg",Lila:"images/horlila.jpg",Rosa:"images/horros.jpg"}},
+ {id:"dendrobium",group:"primary",name:"Orquídea Dendrobium",price:80,colors:["Blanco","Morado"],img:"images/deblan.jpg",images:{Blanco:"images/deblan.jpg",Morado:"images/demor.jpg"}},
+ {id:"cymbidium",group:"primary",name:"Orquídea Cymbidium",price:700,colors:["Amarillo","Blanco"],img:"images/cymama.jpg",images:{Amarillo:"images/cymama.jpg",Blanco:"images/cymblan.jpg"}},
+ {id:"protea",group:"primary",name:"Protea",price:900,colors:["Rosa","Blanca"],img:"images/proros.gif",images:{Rosa:"images/proros.gif",Blanca:"images/problan.jpg"}},
+ {id:"margarita",group:"secondary",name:"Margaritas",price:15,colors:["Blanco","Amarillo","Lila","Naranja"],img:"images/marblan.jpg",images:{Blanco:"images/marblan.jpg",Amarillo:"images/marama.jpg",Lila:"images/marlila.jpg",Naranja:"images/marnar.jpg"}},
+ {id:"astromelia",group:"secondary",name:"Astromelia",price:15,colors:["Morado","Blanco","Rosa"],img:"images/asmor.jpg",images:{Morado:"images/asmor.jpg",Blanco:"images/asblan.jpg",Rosa:"images/asros.jpg"}},
+ {id:"craspedia",group:"secondary",name:"Craspedia",price:80,colors:[],img:"images/crasp.jpg"},
+ {id:"snapdragon",group:"secondary",name:"Snapdragon",price:30,colors:["Rosa","Blanco","Lila"],img:"images/snaros.gif",images:{Rosa:"images/snaros.gif",Blanco:"images/snablan.gif",Lila:"images/snalila.gif"}},
+ {id:"eryngium",group:"secondary",name:"Eryngium",price:40,colors:[],img:"images/eryn.gif"},
+ {id:"hypericum",group:"secondary",name:"Hypericum",price:40,colors:[],img:"images/hype.gif"},
+ {id:"ornithogalum",group:"secondary",name:"Ornithogalum",price:100,colors:[],img:"images/orni.png"},
+ {id:"clavel",group:"secondary",name:"Clavel",price:20,colors:["Rojo","Rosa","Blanco"],img:"images/claroj.jpg",images:{Rojo:"images/claroj.jpg",Rosa:"images/claros.jpg",Blanco:"images/clablan.jpg"}}
+];
+const paperTypes=[
+  {id:"frances",name:"Estilo Francés",desc:"Composición circular, romántica, elegante y de apariencia artesanal"},
+  {id:"coreano",name:"Estilo Coreano",desc:"Diseño de una vista, moderno, voluminoso y con envoltura protagonista"}
+];
+const eventServices=["Centros de mesa","Mesa principal","Arco floral","Ramo de novia","Boutonnieres","Decoración de entrada","Pecera con vela","Montaje y desmontaje"];
+let catalogState={level:"categories",categoryId:null,subcategoryId:null},cart={},bouquet=[],activeProduct=null,selectedPaper="frances",lastBouquetPreviewUrl="";
+try{cart=JSON.parse(localStorage.getItem("floralteCart")||"{}")||{}}catch{cart={}}
+function openPortal(){renderPortal();$("#portal").classList.add("show");lock(true)}function closePortal(){$("#portal").classList.remove("show");lock(false)}
+function renderPortal(){$("#portalGrid").innerHTML=navItems.map(([href,title,desc,num])=>`<a class="portal-card" href="${href}"><span class="num">${num}</span><strong>${title}</strong><small>${desc}</small><span class="arrow">→</span></a>`).join("");$$('.portal-card').forEach(a=>on(a,'click',closePortal))}
+function animateCatalogStage(){const v=$("#catalogView");if(!v)return;v.classList.remove('catalog-enter');void v.offsetWidth;v.classList.add('catalog-enter');setTimeout(()=>v.classList.remove('catalog-enter'),1100)}
+function renderCatalog(){if(catalogState.level==="categories")renderCategories();else if(catalogState.level==="subcategories")renderSubcategories();else renderProducts();updatePath();animateCatalogStage()}
+function renderCategories(){$("#catalogBack").classList.remove("show");$("#catalogView").innerHTML=`<div class="category-grid">${catalog.map((c,i)=>`<button class="visual-card" data-cat="${c.id}"><img src="${c.img}" alt="${esc(c.name)}"><div class="visual-card-content"><small>0${i+1} · Categoría</small><h3>${esc(c.name)}</h3><p>${esc(c.description)}</p><span>Explorar →</span></div></button>`).join("")}</div>`;$$('[data-cat]').forEach(b=>on(b,'click',()=>{catalogState={level:'subcategories',categoryId:b.dataset.cat,subcategoryId:null};renderCatalog()}))}
+function renderSubcategories(){const c=catalog.find(x=>x.id===catalogState.categoryId);$("#catalogBack").classList.add("show");$("#catalogView").innerHTML=`<div class="subcategory-grid">${c.subcategories.map((s,i)=>`<button class="visual-card" data-sub="${s.id}"><img src="${s.img}" alt="${esc(s.name)}"><div class="visual-card-content"><small>0${i+1} · Colección</small><h3>${esc(s.name)}</h3><p>${esc(s.description)}</p><span>Ver 12 diseños →</span></div></button>`).join("")}</div>`;$$('[data-sub]').forEach(b=>on(b,'click',()=>{catalogState.level='products';catalogState.subcategoryId=b.dataset.sub;renderCatalog()}))}
+function renderProducts(){const c=catalog.find(x=>x.id===catalogState.categoryId),s=c.subcategories.find(x=>x.id===catalogState.subcategoryId);$("#catalogBack").classList.add("show");$("#catalogView").innerHTML=`<div class="product-tools"><input class="field" id="productSearch" placeholder="Buscar diseño…"><select class="field" id="productSort" style="max-width:230px"><option value="featured">Recomendados</option><option value="asc">Precio menor</option><option value="desc">Precio mayor</option></select></div><div class="products-grid" id="productsGrid"></div>`;function draw(){let list=[...s.products],q=$("#productSearch").value.toLowerCase();if(q)list=list.filter(p=>(p.name+' '+p.desc).toLowerCase().includes(q));const sort=$("#productSort").value;if(sort==='asc')list.sort((a,b)=>a.price-b.price);if(sort==='desc')list.sort((a,b)=>b.price-a.price);$("#productsGrid").innerHTML=list.map(p=>`<article class="product-card" data-product="${p.id}"><div class="product-media"><img src="${p.img}" alt="${esc(p.name)}"><span class="product-tag">${esc(s.name)}</span></div><div class="product-body"></div></article>`).join("");$$('[data-product]').forEach(card=>on(card,'click',()=>openProduct(card.dataset.product)))}on('#productSearch','input',draw);on('#productSort','change',draw);draw()}
+function updatePath(){const c=catalog.find(x=>x.id===catalogState.categoryId),s=c?.subcategories.find(x=>x.id===catalogState.subcategoryId);let h='<strong>Catálogo</strong>';if(c)h+=`<span>›</span><span>${esc(c.name)}</span>`;if(s)h+=`<span>›</span><span>${esc(s.name)}</span>`;$("#catalogPath").innerHTML=h}
+function openProduct(id){activeProduct=allProducts.find(p=>p.id===id);if(!activeProduct)return;$("#pmImg").src=activeProduct.img;$("#pmCat").textContent=`${activeProduct.category} · ${activeProduct.subcategory}`;$("#pmName").textContent=activeProduct.name;$("#pmDesc").textContent=activeProduct.desc;$("#pmPrice").textContent=money(activeProduct.price);$("#pmQty").value=1;$("#productModal").classList.add("show");lock(true)}function closeProduct(){$("#productModal").classList.remove("show");lock(false)}
+function addCart(id,qty=1){const p=allProducts.find(x=>x.id===id);if(!p)return;if(cart[id])cart[id].quantity+=qty;else cart[id]={...p,quantity:qty};saveCart();renderCart();pulseFloatingCart()}function saveCart(){localStorage.setItem('floralteCart',JSON.stringify(cart));syncCart()}function syncCart(){const list=Object.values(cart),count=list.reduce((s,x)=>s+x.quantity,0),total=list.reduce((s,x)=>s+x.price*x.quantity,0);$("#cartCount").textContent=count;const floating=$("#floatingCartMini");if(floating){$("#floatingCartCount").textContent=count;$("#floatingCartTotal").textContent=money(total);floating.classList.toggle('show',count>0)}}function pulseFloatingCart(){const el=$("#floatingCartMini");if(!el)return;el.classList.remove('pulse');void el.offsetWidth;el.classList.add('pulse');setTimeout(()=>el.classList.remove('pulse'),700)}
+function renderCart(){
+  const list=Object.values(cart),host=$("#cartItems");
+  $("#cartEmpty").style.display=list.length?'none':'block';
+  host.innerHTML=list.map(x=>`<div class="cart-item"><div><strong>${esc(x.name)}</strong><small>${money(x.price)} c/u</small>${x.isCustom&&x.customSummary?`<small class="custom-cart-note">${esc(x.customSummary)}</small>`:''}</div><div style="display:flex;flex-direction:column;gap:6px;align-items:flex-end"><input class="mini" data-cartqty="${x.id}" type="number" min="1" value="${x.quantity}"><button class="remove" data-cartremove="${x.id}">Quitar</button></div></div>`).join('');
+  $("#cartTotal").textContent=money(list.reduce((s,x)=>s+x.price*x.quantity,0));
+  $$('[data-cartqty]').forEach(i=>on(i,'change',()=>{cart[i.dataset.cartqty].quantity=Math.max(1,Number(i.value)||1);saveCart();renderCart()}));
+  $$('[data-cartremove]').forEach(b=>on(b,'click',()=>{delete cart[b.dataset.cartremove];saveCart();renderCart()}));
+}
+function openCart(){renderCart();$("#cartBackdrop").classList.add('show');$("#cartDrawer").classList.add('show');lock(true)}function closeCart(){$("#cartBackdrop").classList.remove('show');$("#cartDrawer").classList.remove('show');lock(false)}
+async function checkoutMercadoPago(){
+  const list=Object.values(cart);
+  if(!list.length)return alert('El carrito está vacío.');
+  if(MERCADOPAGO_FIXED_URL){window.location.href=MERCADOPAGO_FIXED_URL;return}
+  const btn=$("#checkoutMP"),old=btn.textContent;
+  btn.disabled=true;btn.textContent='Preparando Mercado Pago…';
+  try{
+    const orderSnapshot={
+      createdAt:new Date().toISOString(),
+      total:list.reduce((s,x)=>s+x.price*x.quantity,0),
+      items:list.map(x=>({
+        id:x.id,name:x.name,quantity:x.quantity,price:x.price,
+        isCustom:Boolean(x.isCustom),customSummary:x.customSummary||'',
+        bouquet:x.isCustom?(x.bouquet||[]):undefined,
+        style:x.style||'',previewUrl:x.previewUrl||''
+      })),
+      customer:{name:$("#oNombre").value,phone:$("#oWhats").value},
+      delivery:{type:$("#oEntrega").value,city:$("#oCiudad").value,address:$("#oDireccion").value}
+    };
+    try{localStorage.setItem('floraltePendingOrder',JSON.stringify(orderSnapshot))}catch{}
+    const res=await fetch(MERCADOPAGO_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({
+      items:list.map(x=>({id:x.id,title:x.name,quantity:x.quantity,unit_price:x.price,currency_id:'MXN',description:x.isCustom?(x.customSummary||'Ramo personalizado Floralte'):(x.desc||''),previewUrl:x.previewUrl||''})),
+      customer:orderSnapshot.customer,
+      delivery:orderSnapshot.delivery,
+      order:orderSnapshot,
+      notifyWhatsApp:true,
+      merchantWhatsApp:WHATSAPP_NUMBER
+    })});
+    const raw=await res.text();let data;
+    try{data=JSON.parse(raw)}catch{throw new Error(`Mercado Pago devolvió una respuesta inválida (${res.status}).`)}
+    if(!res.ok){
+      const err=data?.error??data?.message??'No se pudo iniciar Mercado Pago.';
+      throw new Error(typeof err==='string'?err:(err?.message||'No se pudo iniciar Mercado Pago.'));
+    }
+    const url=data.init_point||data.sandbox_init_point||data.url;
+    if(!url)throw new Error('El backend no devolvió la URL de Mercado Pago.');
+    window.location.href=url;
+  }catch(e){console.error(e);alert(e.message)}finally{btn.disabled=false;btn.textContent=old}
+}
+function flowerImage(f,c){return f.images?.[c]||f.img}
+function flowerCard(f){const first=f.colors[0]||'Natural';return `<article class="flower-card"><div class="flower-head"><div class="flower-image"><img id="flower-${f.id}" src="${flowerImage(f,first)}" alt="${esc(f.name)}"></div><div><div class="flower-name">${esc(f.name)}</div><div class="flower-price">${money(f.price)} por tallo</div></div></div><div class="flower-controls"><select class="field" data-color="${f.id}">${(f.colors.length?f.colors:['Natural']).map(c=>`<option>${esc(c)}</option>`).join('')}</select><input class="field" data-qty="${f.id}" type="number" min="1" value="1"><button class="flower-add" data-flower="${f.id}">Agregar</button></div></article>`}
+function burstChoice(el){
+  if(!el)return;
+  for(let i=0;i<6;i++){
+    const dot=document.createElement('span');
+    dot.className='choice-spark';
+    const a=(Math.PI*2/6)*i+(Math.random()*.35);
+    const r=32+Math.random()*24;
+    dot.style.setProperty('--sx',`${Math.cos(a)*r}px`);
+    dot.style.setProperty('--sy',`${Math.sin(a)*r}px`);
+    el.appendChild(dot);
+    setTimeout(()=>dot.remove(),820);
+  }
+}
+function renderFlowers(){
+  $("#primaryFlowers").innerHTML=flowers.filter(f=>f.group==='primary').map(flowerCard).join('');
+  $("#secondaryFlowers").innerHTML=flowers.filter(f=>f.group==='secondary').map(flowerCard).join('');
+
+  $$('[data-color]').forEach(s=>on(s,'change',()=>{
+    const f=flowers.find(x=>x.id===s.dataset.color),img=$(`#flower-${f.id}`),src=flowerImage(f,s.value),card=s.closest('.flower-card');
+    img.classList.add('changing');
+    card?.classList.add('choice-flash');
+    setTimeout(()=>card?.classList.remove('choice-flash'),420);
+    const p=new Image();
+    p.onload=()=>{img.src=src;img.classList.remove('changing')};
+    p.src=src;
+  }));
+
+  $$('[data-flower]').forEach(b=>on(b,'click',()=>{
+    const f=flowers.find(x=>x.id===b.dataset.flower),color=$(`[data-color="${f.id}"]`).value,qty=Math.max(1,Number($(`[data-qty="${f.id}"]`).value)||1),existing=bouquet.find(x=>x.id===f.id&&x.color===color),card=b.closest('.flower-card');
+    if(existing)existing.qty+=qty;
+    else bouquet.push({...f,color,qty,selectedImage:flowerImage(f,color)});
+    b.classList.remove('tap-pop'); card?.classList.remove('just-added');
+    void b.offsetWidth;
+    b.classList.add('tap-pop'); card?.classList.add('just-added','is-selected');
+    burstChoice(card);
+    const oldLabel=b.textContent;
+    b.textContent='✓ Agregado';b.classList.add('added-feedback');
+    setTimeout(()=>{b.textContent=oldLabel;b.classList.remove('tap-pop','added-feedback');card?.classList.remove('just-added')},720);
+    updateBouquetSummary();
+  }));
+}
+function bouquetTotals(){return {count:bouquet.reduce((s,x)=>s+x.qty,0),total:bouquet.reduce((s,x)=>s+x.price*x.qty,0)}}
+function updateBouquetSummary(){
+  const t=bouquetTotals();
+  $("#selectionCount").textContent=`${t.count} ${t.count===1?'flor seleccionada':'flores seleccionadas'}`;
+  $("#selectionTotal").textContent=`Total aproximado: ${money(t.total)}`;
+  const floating=$("#floatingSelection");
+  if(floating)floating.classList.toggle('has-selection',t.count>0);document.body.classList.toggle('bouquet-selection-active',t.count>0&&document.querySelector('.wizard-panel[data-step="1"]')?.classList.contains('active'));
+  const items=$("#selectionItems");
+  if(items){
+    items.innerHTML=bouquet.map(x=>`<span class="selection-chip"><b>${x.qty}×</b>${esc(x.name)} · ${esc(x.color)}</span>`).join('');
+  }
+  $$('.flower-card').forEach(card=>{
+    const id=card.querySelector('[data-flower]')?.dataset.flower;
+    card.classList.toggle('is-selected',Boolean(id&&bouquet.some(x=>x.id===id)));
+  });
+  const style=paperTypes.find(x=>x.id===selectedPaper)?.name||selectedPaper;
+  $("#finalSummary").textContent=`${t.count} flores · ${money(t.total)} · ${style}.`;
+}
+function goStep(n){
+  $$('[data-step]').forEach(p=>p.classList.toggle('active',Number(p.dataset.step)===n));
+  $$('[data-stepchip]').forEach(c=>c.classList.toggle('active',Number(c.dataset.stepchip)===n));
+  const floating=$("#floatingSelection");
+  if(floating){
+    const t=bouquetTotals();
+    floating.classList.toggle('has-selection',n===1&&t.count>0);document.body.classList.toggle('bouquet-selection-active',n===1&&t.count>0);
+  }
+  $("#bouquetWizard").scrollIntoView({behavior:'smooth',block:'start'});
+}
+function renderPaperChoices(){
+  $("#paperGrid").innerHTML=paperTypes.map(p=>`<button class="paper-card ${p.id===selectedPaper?'selected':''}" data-paper="${p.id}"><strong>${p.name}</strong><small>${p.desc}</small></button>`).join('');
+  $$('[data-paper]').forEach(b=>on(b,'click',()=>{
+    selectedPaper=b.dataset.paper;
+    b.classList.add('tap-pop');
+    setTimeout(()=>b.classList.remove('tap-pop'),450);
+    renderPaperChoices();
+    updateBouquetSummary();
+  }));
+}
+function showAIGenerating(){
+  const overlay=$("#aiGeneratingOverlay"),host=$("#aiSelectedFlowers"),status=$("#aiGenerationStatus");
+  if(host){
+    host.innerHTML=bouquet.map(x=>`<div class="ai-flower-token"><img src="${x.selectedImage||x.img}" alt="${esc(x.name)}"><strong>${esc(x.name)}</strong><span>${x.qty} × ${esc(x.color)}</span></div>`).join('');
+  }
+  if(status)status.textContent='Preparando tus flores…';
+  overlay?.classList.add('show');overlay?.setAttribute('aria-hidden','false');lock(true);
+  const messages=['Preparando tus flores…','Componiendo volumen y color…','Aplicando el estilo Floralte…','Afinando los últimos detalles…'];
+  let i=0;
+  window.__floralteAiTimer=setInterval(()=>{i=(i+1)%messages.length;if(status)status.textContent=messages[i]},1800);
+}
+function hideAIGenerating(){
+  clearInterval(window.__floralteAiTimer);
+  const overlay=$("#aiGeneratingOverlay");overlay?.classList.remove('show');overlay?.setAttribute('aria-hidden','true');lock(false);
+}
+function bouquetSignature(){
+  const raw=selectedPaper+'|'+bouquet.map(x=>`${x.id}:${x.color}:${x.qty}`).sort().join('|');
+  let h=0;for(let i=0;i<raw.length;i++)h=((h<<5)-h)+raw.charCodeAt(i)|0;
+  return Math.abs(h).toString(36);
+}
+function addBouquetToCart(){
+  if(!bouquet.length)return alert('Agrega flores primero.');
+  const t=bouquetTotals(),style=paperTypes.find(x=>x.id===selectedPaper)?.name||selectedPaper;
+  const id=`ramo-personalizado-${bouquetSignature()}`;
+  const item={
+    id,name:`Ramo personalizado · ${style}`,price:t.total,img:'images/logo-floralte.png',desc:'Ramo personalizado creado en Arma tu Ramo',
+    category:'Arma tu Ramo',categoryId:'arma',subcategory:style,subcategoryId:selectedPaper,quantity:1,isCustom:true,style,
+    customSummary:`${t.count} flores · ${style}`,
+    previewUrl:/^https?:\/\//i.test(lastBouquetPreviewUrl)?lastBouquetPreviewUrl:'',
+    bouquet:bouquet.map(x=>({id:x.id,name:x.name,color:x.color,qty:x.qty,price:x.price,image:x.selectedImage}))
+  };
+  if(cart[id])cart[id].quantity+=1;else cart[id]=item;
+  saveCart();renderCart();pulseFloatingCart();
+  const btn=$("#addBouquetToCart"),old=btn?.textContent;
+  if(btn){btn.textContent='✓ Ramo agregado al carrito';setTimeout(()=>btn.textContent=old,1200)}
+  setTimeout(openCart,260);
+}
+async function dataUrlToFile(url,name='ramo-floralte.png'){
+  const r=await fetch(url),blob=await r.blob();
+  return new File([blob],name,{type:blob.type||'image/png'});
+}
+async function shareOrderWithPreview(text,title='Pedido Floralte'){
+  if(lastBouquetPreviewUrl&&navigator.share&&typeof File!=='undefined'){
+    try{
+      const file=await dataUrlToFile(lastBouquetPreviewUrl);
+      if(!navigator.canShare||navigator.canShare({files:[file]})){
+        await navigator.share({files:[file],text,title});
+        return true;
+      }
+    }catch(e){if(e?.name==='AbortError')return true;console.warn('No se pudo compartir la imagen directamente:',e)}
+  }
+  whatsapp(text+(lastBouquetPreviewUrl&&/^https?:/i.test(lastBouquetPreviewUrl)?`\n\nVista previa: ${lastBouquetPreviewUrl}`:''));
+  return false;
+}
+async function sendBouquetWithImage(){
+  if(!bouquet.length)return alert('Agrega flores primero.');
+  const t=bouquetTotals(),style=paperTypes.find(x=>x.id===selectedPaper)?.name||selectedPaper;
+  const text=`Hola Floralte, quiero pedir este ramo personalizado:\n\n${bouquet.map(x=>`- ${x.qty} × ${x.name} (${x.color})`).join('\n')}\n\nFlores totales: ${t.count}\nTotal aproximado: ${money(t.total)}\nEstilo: ${style}\n\n¿Me confirman disponibilidad y total final?`;
+  return shareOrderWithPreview(text,`Ramo Floralte · ${money(t.total)}`);
+}
+async function generatePreview(){
+  if(!bouquet.length)return alert('Agrega flores primero.');
+  if(getAiRemaining()<=0){updateAiLimitUI();return alert(`Ya utilizaste las ${AI_GENERATION_LIMIT} visualizaciones IA disponibles en este dispositivo.`)}
+  const btn=$("#previewBouquet"),status=$("#previewStatus"),box=$("#previewBox"),img=$("#previewImg");
+  btn.disabled=true;btn.classList.add('is-loading');btn.textContent='Generando visualización…';
+  status.textContent='Estamos creando tu preview con IA…';box.classList.remove('show');img.removeAttribute('src');showAIGenerating();
+  try{
+    const payload={
+      ramo:bouquet.map(x=>({id:x.id,nombre:x.name,name:x.name,color:x.color,qty:Number(x.qty)||1,imagen:x.selectedImage})),
+      estilo:selectedPaper,
+      visitorId:getAiVisitorId(),
+      generationNumber:getAiUsage()+1
+    };
+    console.log('Floralte IA →',payload);
+    const res=await fetch(AI_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(payload)});
+    const raw=await res.text();
+    let data;
+    try{data=raw?JSON.parse(raw):{}}catch{
+      console.error('Respuesta no JSON:',raw);
+      throw new Error(res.status===404?`No encontré el endpoint de IA: ${AI_ENDPOINT}`:`El servidor no devolvió JSON válido (${res.status}).`);
+    }
+    if(!res.ok||data.ok===false){
+      const err=data?.error??data?.message??data;
+      let msg='No se pudo generar la visualización.';
+      if(typeof err==='string')msg=err;
+      else if(err?.message)msg=String(err.message);
+      else if(err?.error?.message)msg=String(err.error.message);
+      else if(err&&typeof err==='object'){
+        const code=err.code||err.type||data.code;
+        msg=code?`Error de IA: ${code}`:`Error del servidor (${res.status}).`;
+        console.error('Error completo IA:',err);
+      }
+      throw new Error(msg);
+    }
+    let url=data.imageUrl||data.url||data.image_url||null;
+    const b64=data.b64_json||data?.data?.[0]?.b64_json||data?.image?.b64_json;
+    if(!url&&b64)url=`data:image/png;base64,${b64}`;
+    if(!url)throw new Error('La IA respondió, pero no devolvió una imagen utilizable.');
+    await new Promise((resolve,reject)=>{
+      img.onload=resolve;
+      img.onerror=()=>reject(new Error('La imagen se generó, pero el navegador no pudo mostrarla.'));
+      img.src=url;
+    });
+    lastBouquetPreviewUrl=url;
+    registerAiGeneration();
+    if(/^https?:\/\//i.test(url)){
+      const customId=`ramo-personalizado-${bouquetSignature()}`;
+      if(cart[customId]){cart[customId].previewUrl=url;saveCart()}
+    }
+    box.classList.add('show');
+    status.textContent='Listo. Esta es una visualización aproximada de tu ramo.';
+    box.scrollIntoView({behavior:'smooth',block:'nearest'});
+  }catch(e){
+    console.error('ERROR PREVIEW IA:',e);
+    status.textContent='No se pudo generar la visualización.';
+    alert(e?.message||'Ocurrió un error al generar el ramo.');
+  }finally{
+    hideAIGenerating();
+    btn.disabled=getAiRemaining()<=0;btn.classList.remove('is-loading');btn.classList.toggle('ai-limit-reached',getAiRemaining()<=0);btn.textContent='Visualizar mi ramo con IA ✦';updateAiLimitUI();
+  }
+}
+function sendBouquet(){return sendBouquetWithImage()}
+
+function updateHeaderTheme(){
+  const header=$("#header");if(!header)return;
+  const ids=['inicio','catalogo','arma','eventos','nosotros','visitanos','contacto'];
+  const marker=window.scrollY+window.innerHeight*.36;
+  let active='inicio';
+  ids.forEach(id=>{const el=document.getElementById(id);if(el&&el.offsetTop<=marker)active=id});
+  header.dataset.section=active;
+}
+function initHeaderThemes(){updateHeaderTheme();on(window,'scroll',updateHeaderTheme,{passive:true});on(window,'resize',updateHeaderTheme,{passive:true})}
+function initBouquetMagic(){
+  const section=$("#arma");if(!section||section.querySelector('.magic-motes'))return;
+  const field=document.createElement('div');field.className='magic-motes';field.setAttribute('aria-hidden','true');
+  for(let i=0;i<22;i++){
+    const mote=document.createElement('i');mote.className='magic-mote';
+    mote.style.setProperty('--x',`${3+Math.random()*94}%`);mote.style.setProperty('--y',`${4+Math.random()*92}%`);
+    mote.style.setProperty('--s',`${4+Math.random()*8}px`);mote.style.setProperty('--d',`${5.5+Math.random()*7}s`);
+    mote.style.setProperty('--delay',`${-Math.random()*8}s`);mote.style.setProperty('--dx',`${-24+Math.random()*48}px`);mote.style.setProperty('--blur',`${Math.random()*1.1}px`);
+    field.appendChild(mote);
+  }
+  section.prepend(field);
+}
+function tapMagicBurst(x,y){
+  for(let i=0;i<7;i++){
+    const p=document.createElement('span');p.className='tap-magic-particle';p.style.left=`${x}px`;p.style.top=`${y}px`;
+    const a=(Math.PI*2/7)*i+(Math.random()*.25),r=24+Math.random()*32;
+    p.style.setProperty('--mx',`${Math.cos(a)*r}px`);p.style.setProperty('--my',`${Math.sin(a)*r}px`);document.body.appendChild(p);setTimeout(()=>p.remove(),850);
+  }
+}
+function initTapMagic(){document.addEventListener('pointerdown',e=>{if(e.target.closest('[data-flower],[data-paper],.visual-card,.product-card,.design-now'))tapMagicBurst(e.clientX,e.clientY)},{passive:true})}
+
+function initEvents(){$("#servicesList").innerHTML=eventServices.map(s=>`<label class="service"><input type="checkbox" value="${esc(s)}"><span><strong>${esc(s)}</strong><small>Inclúyelo en tu cotización</small></span></label>`).join('');const imgs={"Boda":"images/evento-boda.png","XV años":"images/evento-xv.png","Cumpleaños":"images/evento-cumpleanos.jpg","Empresarial":"images/evento-empresarial.jpg","Otro":"images/evento-otro.jpg"},bg=$("#eventBg"),sel=$("#eTipo");const change=()=>{const next=imgs[sel.value]||imgs.Otro;bg.classList.add('changing');const p=new Image();p.onload=()=>{bg.style.backgroundImage=`url("${next}")`;requestAnimationFrame(()=>bg.classList.remove('changing'))};p.onerror=()=>{bg.style.backgroundImage='linear-gradient(135deg,#ead4d8,#b99a78)';bg.classList.remove('changing')};p.src=next};on(sel,'change',change);change()}
+function reveal(){const els=$$('.reveal');if(!('IntersectionObserver'in window)){els.forEach(x=>x.classList.add('on'));return}const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('on');io.unobserve(x.target)}}),{threshold:.08});els.forEach(e=>io.observe(e))}
+function init(){setTimeout(()=>$("#splash").classList.add('hide'),700);setTimeout(()=>$("#splash")?.remove(),1450);reveal();renderPortal();renderCatalog();renderFlowers();renderPaperChoices();updateBouquetSummary();initBouquetMagic();initTapMagic();initHeaderThemes();initEvents();syncCart();updateAiLimitUI();$("#year").textContent=new Date().getFullYear();on(window,'scroll',()=>$("#header").classList.toggle('scrolled',scrollY>20),{passive:true});on('#discoverBtn','click',openPortal);on('#closePortal','click',closePortal);on('#portal','click',e=>{if(e.target===e.currentTarget)closePortal()});on('#menuToggle','click',()=>$("#mainNav").classList.toggle('open'));$$('.nav-link').forEach(a=>on(a,'click',()=>$("#mainNav").classList.remove('open')));on('#catalogBack','click',()=>{if(catalogState.level==='products'){catalogState.level='subcategories';catalogState.subcategoryId=null}else{catalogState={level:'categories',categoryId:null,subcategoryId:null}}renderCatalog()});on('#openCart','click',openCart);on('#floatingCartMini','click',openCart);on('#contactCart','click',openCart);on('#closeCart','click',closeCart);on('#cartBackdrop','click',closeCart);on('#closeProduct','click',closeProduct);on('#productModal','click',e=>{if(e.target===e.currentTarget)closeProduct()});on('#pmAdd','click',()=>{if(activeProduct){addCart(activeProduct.id,Math.max(1,Number($("#pmQty").value)||1));closeProduct();openCart()}});on('#startBuilder','click',()=>{$("#builderIntro").style.display='none';$("#bouquetWizard").classList.add('show');goStep(1)});on('#completeFlowers','click',()=>{if(!bouquet.length)return alert('Selecciona al menos una flor.');goStep(2)});on('#completeWrap','click',()=>{updateBouquetSummary();goStep(3)});$$('[data-prev]').forEach(b=>on(b,'click',()=>goStep(Number(b.dataset.prev))));on('#sendBouquet','click',sendBouquet);on('#previewBouquet','click',generatePreview);on('#addBouquetToCart','click',addBouquetToCart);on('#headerWA','click',()=>whatsapp('Hola Floralte, quiero información.'));on('#contactWA','click',()=>whatsapp('Hola Floralte, quiero hacer un pedido.'));on('#visitWA','click',()=>whatsapp('Hola Floralte, quiero visitar la florería. ¿Me comparten el horario de hoy?'));on('#sendEvent','click',()=>{const services=$$('#servicesList input:checked').map(x=>x.value).join(', ')||'Por definir';whatsapp(`Hola Floralte, quiero cotizar un evento.\nTipo: ${$("#eTipo").value}\nFecha: ${$("#eFecha").value||'Por definir'}\nMesas: ${$("#eMesas").value}\nPersonas: ${$("#ePersonas").value}\nLugar: ${$("#eLugar").value||'Por definir'}\nServicios: ${services}\nNotas: ${$("#eNotas").value||'Sin notas'}`)});on('#sendGarden','click',()=>whatsapp(`Hola Floralte, quiero cotizar jardinería.\nServicio: ${$("#jTipo").value}\nLugar: ${$("#jLugar").value||'Por definir'}\nDetalles: ${$("#jNotas").value||'Sin detalles'}`));on('#sendOrder','click',()=>{
+  const list=Object.values(cart);if(!list.length)return alert('El carrito está vacío.');
+  const details=list.map(x=>{
+    let line=`- ${x.quantity} × ${x.name} — ${money(x.price*x.quantity)}`;
+    if(x.isCustom&&Array.isArray(x.bouquet))line+=`\n  ${x.bouquet.map(f=>`${f.qty}× ${f.name} (${f.color})`).join(', ')}`;
+    return line;
+  }).join('\n');
+  const text=`Hola Floralte, quiero hacer este pedido:\n\n${details}\n\nTotal aproximado: ${money(list.reduce((s,x)=>s+x.price*x.quantity,0))}\nEntrega: ${$("#oEntrega").value}\nCiudad: ${$("#oCiudad").value}\nDirección: ${$("#oDireccion").value||'Por definir'}\nNombre: ${$("#oNombre").value||'Por definir'}`;
+  if(list.some(x=>x.isCustom)&&lastBouquetPreviewUrl)shareOrderWithPreview(text,`Pedido Floralte · ${money(list.reduce((s,x)=>s+x.price*x.quantity,0))}`);
+  else whatsapp(text);
+});on('#checkoutMP','click',checkoutMercadoPago);document.addEventListener('keydown',e=>{if(e.key==='Escape'){closePortal();closeCart();closeProduct()}})}
+document.addEventListener('DOMContentLoaded',init);
+</script>
+</body>
+</html>
